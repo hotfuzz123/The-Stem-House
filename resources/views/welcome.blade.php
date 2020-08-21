@@ -32,7 +32,7 @@
         <div class="preloader"></div>
 
         <div class="header_top home2">
-            <div class="container">
+            <div class="container hi">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="ht_left_widget home2 float-left">
