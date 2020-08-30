@@ -378,143 +378,81 @@
     </div>
 </section>
 
-<!-- Our Blog Post -->
+<!-- Our Blog -->
 <section class="our-blog">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h3 class="mt0">Upcoming Events</h3>
+                    <h3 class="mt0">Blog</h3>
                     <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <div class="blog_post_slider_home2">
+                <div class="blog_post_slider_home4">
                     <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/4.jpg') }}" alt="4.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
+                        <div class="blog_post_home4">
+                            <div class="bph4_thumb">
+                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h41.jpg') }}" alt="h41.jpg">
+                                <div class="bph4_date_meta">
+                                    <p class="year">2019</p>
+                                    <p class="date">April 24</p>
+                                </div>
                             </div>
                             <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
-                                </div>
-                                <h4>A Solution Built for Teachers</h4>
+                                <h5>Tips</h5>
+                                <h4>Attract More Attention Sales And Profits</h4>
+                                <p>A job ravenously while Far much that one rank beheld after outside ignobly more when oh fussy insect wow.</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/5.jpg') }}" alt="5.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
+                        <div class="blog_post_home4">
+                            <div class="bph4_thumb">
+                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
+                                <div class="bph4_date_meta">
+                                    <p class="year">2019</p>
+                                    <p class="date">April 24</p>
+                                </div>
                             </div>
                             <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
+                                <h5>Marketing</h5>
+                                <h4>11 Tips to Help You Get New Clients</h4>
+                                <p>Think back over your life. Think about the people that had a positive influence on Far much that one rank beheld.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="blog_post_home4">
+                            <div class="bph4_thumb">
+                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h43.jpg') }}" alt="h43.jpg">
+                                <div class="bph4_date_meta">
+                                    <p class="year">2019</p>
+                                    <p class="date">April 24</p>
                                 </div>
+                            </div>
+                            <div class="details">
+                                <h5>Tips</h5>
                                 <h4>An Overworked Newspaper Editor</h4>
+                                <p>Repeatedly dreamed alas opossum but dramatical despite expeditiously that jeepers loosely yikes the as compactly far</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/4.jpg') }}" alt="4.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
+                        <div class="blog_post_home4">
+                            <div class="bph4_thumb">
+                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
+                                <div class="bph4_date_meta">
+                                    <p class="year">2019</p>
+                                    <p class="date">April 24</p>
+                                </div>
                             </div>
                             <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
-                                </div>
-                                <h4>A Solution Built for Teachers</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/5.jpg') }}" alt="5.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
-                                </div>
-                                <h4>An Overworked Newspaper Editor</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/4.jpg') }}" alt="4.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
-                                </div>
-                                <h4>A Solution Built for Teachers</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="blog_post_home2">
-                            <div class="bph2_header">
-                                <img class="img-fluid" src="{{ ('public/frontend/images/blog/5.jpg') }}" alt="5.jpg">
-                                <a href="#" class="bph2_date_meta">
-                                    <span class="year">28 <br> March</span>
-                                </a>
-                            </div>
-                            <div class="details">
-                                <div class="post_meta">
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-calendar"></i> 8:00 am - 5:00 pm</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-placeholder"></i> Vancouver, Canada</a></li>
-                                    </ul>
-                                </div>
-                                <h4>An Overworked Newspaper Editor</h4>
+                                <h5>Tips</h5>
+                                <h4>Attract More Attention Sales And Profits</h4>
+                                <p>A job ravenously while Far much that one rank beheld after outside ignobly more when oh fussy insect wow.</p>
                             </div>
                         </div>
                     </div>
@@ -524,365 +462,9 @@
     </div>
 </section>
 
-<!-- Our Popular Courses -->
-<section class="popular-courses bgc-thm2">
-    <div class="container-fluid style2">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <div class="main-title text-center">
-                    <h3 class="mt0 color-white">Popular Courses</h3>
-                    <p class="color-white">Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="popular_course_slider">
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t1.jpg') }}" alt="t1.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Best Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Introduction Web Design with HTML</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t2.jpg') }}" alt="t2.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Designing a Responsive Mobile Website with Muse</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t3.jpg') }}" alt="t3.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Adobe XD: Prototyping Tips and Tricks</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t4.jpg') }}" alt="t4.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Best Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Sketch: Creating Responsive SVG</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t5.jpg') }}" alt="t5.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Best Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Design Instruments for Communication</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t6.jpg') }}" alt="t6.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>How to be a DJ? Make Electronic Music</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t7.jpg') }}" alt="t7.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>How to Make Beautiful Landscape Photos?</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="top_courses home2 mb0">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{ ('public/frontend/images/courses/t8.jpg') }}" alt="t8.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Best Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Fashion Photography From Professional</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a>
-                                        </li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Our Testimonials -->
-<section id="our-testimonials" class="our-testimonial">
-    <div class="container-fluid">
+<!-- Testimonials -->
+<section class="our-testimonials bgc-fa">
+    <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
@@ -892,111 +474,82 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="testimonial_slider_home2">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="testimonial_slider_home3">
                     <div class="item">
-                        <div class="testimonial_item home2">
-                            <div class="details">
-                                <div class="icon"><span class="fa fa-quote-left"></span></div>
-                                <p>It was really fun getting to know the team during the project. They were all
-                                    helpful in answering my questions and made me feel completely at ease.The
-                                    design ended up being twice as good as I could have ever envisioned!</p>
-                            </div>
-                            <div class="thumb">
-                                <img class="img-fluid rounded-circle" src="{{ ('public/frontend/images/testimonial/1.jpg') }}"
-                                    alt="1.jpg">
-                                <div class="title">Aura Brooks</div>
-                                <div class="subtitle">Graphic Designer, Owl Eyes</div>
+                        <div class="testimonial_grid">
+                            <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
+                            <div class="testimonial_content">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/1.jpg') }}" alt="1.jpg">
+                                    <h4>Alex Gibson</h4>
+                                    <p>Telemarketer</p>
+                                </div>
+                                <div class="details">
+                                    <p>This is the best job-board theme that our company has come across! Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite…</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimonial_item home2">
-                            <div class="details">
-                                <div class="icon"><span class="fa fa-quote-left"></span></div>
-                                <p>It was really fun getting to know the team during the project. They were all
-                                    helpful in answering my questions and made me feel completely at ease.The
-                                    design ended up being twice as good as I could have ever envisioned!</p>
-                            </div>
-                            <div class="thumb">
-                                <img class="img-fluid rounded-circle" src="{{ ('public/frontend/images/testimonial/2.jpg') }}"
-                                    alt="2.jpg">
-                                <div class="title">Ali TUFAN</div>
-                                <div class="subtitle">Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimonial_item home2">
-                            <div class="details">
-                                <div class="icon"><span class="fa fa-quote-left"></span></div>
-                                <p>It was really fun getting to know the team during the project. They were all
-                                    helpful in answering my questions and made me feel completely at ease.The
-                                    design ended up being twice as good as I could have ever envisioned!</p>
-                            </div>
-                            <div class="thumb">
-                                <img class="img-fluid rounded-circle" src="{{ ('public/frontend/images/testimonial/3.jpg') }}"
-                                    alt="3.jpg">
-                                <div class="title">Jack Graham</div>
-                                <div class="subtitle">Co founder, Coffee Inc</div>
+                        <div class="testimonial_grid">
+                            <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
+                            <div class="testimonial_content">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/2.jpg') }}" alt="2.jpg">
+                                    <h4>Alex Gibson</h4>
+                                    <p>Telemarketer</p>
+                                </div>
+                                <div class="details">
+                                    <p>This is the best job-board theme that our company has come across! Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite…</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimonial_item home2">
-                            <div class="details">
-                                <div class="icon"><span class="fa fa-quote-left"></span></div>
-                                <p>It was really fun getting to know the team during the project. They were all
-                                    helpful in answering my questions and made me feel completely at ease.The
-                                    design ended up being twice as good as I could have ever envisioned!</p>
-                            </div>
-                            <div class="thumb">
-                                <img class="img-fluid rounded-circle" src="{{ ('public/frontend/images/testimonial/1.jpg') }}"
-                                    alt="1.jpg">
-                                <div class="title">Ali TUFAN</div>
-                                <div class="subtitle">Client</div>
+                        <div class="testimonial_grid">
+                            <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
+                            <div class="testimonial_content">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/3.jpg') }}" alt="3.jpg">
+                                    <h4>Alex Gibson</h4>
+                                    <p>Telemarketer</p>
+                                </div>
+                                <div class="details">
+                                    <p>This is the best job-board theme that our company has come across! Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite…</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimonial_item home2">
-                            <div class="details">
-                                <div class="icon"><span class="fa fa-quote-left"></span></div>
-                                <p>It was really fun getting to know the team during the project. They were all
-                                    helpful in answering my questions and made me feel completely at ease.The
-                                    design ended up being twice as good as I could have ever envisioned!</p>
-                            </div>
-                            <div class="thumb">
-                                <img class="img-fluid rounded-circle" src="{{ ('public/frontend/images/testimonial/2.jpg') }}"
-                                    alt="2.jpg">
-                                <div class="title">Jack Graham</div>
-                                <div class="subtitle">Co founder, Coffee Inc</div>
+                        <div class="testimonial_grid">
+                            <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
+                            <div class="testimonial_content">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/4.jpg') }}" alt="4.jpg">
+                                    <h4>Alex Gibson</h4>
+                                    <p>Telemarketer</p>
+                                </div>
+                                <div class="details">
+                                    <p>This is the best job-board theme that our company has come across! Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite…</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt60">
-            <div class="col-sm-6 col-lg-6 col-xl-6">
-                <div class="becomea_instructor tac-xxsd">
-                    <div class="bi_grid">
-                        <h3>Become an Instructor</h3>
-                        <p>Teach what you love. Dove Schooll gives you the tools to create an <br class="dn-lg">
-                            online course.</p>
-                        <a class="btn btn-thm" href="#">Start Teaching <span
-                                class="flaticon-right-arrow-1"></span></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-6 col-xl-6">
-                <div class="becomea_instructor style2 text-right tac-xxsd">
-                    <div class="bi_grid">
-                        <h3>Dove School For Business</h3>
-                        <p>Get unlimited access to 2,500 of Udemy’s top courses for <br class="dn-lg"> your
-                            team.</p>
-                        <a class="btn btn-dark" href="#">Doing Business <span
-                                class="flaticon-right-arrow-1"></span></a>
+                    <div class="item">
+                        <div class="testimonial_grid">
+                            <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
+                            <div class="testimonial_content">
+                                <div class="thumb">
+                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/5.jpg') }}" alt="5.jpg">
+                                    <h4>Alex Gibson</h4>
+                                    <p>Telemarketer</p>
+                                </div>
+                                <div class="details">
+                                    <p>This is the best job-board theme that our company has come across! Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite…</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1004,4 +557,106 @@
     </div>
 </section>
 
+<!-- Divider -->
+<section class="divider2 parallax bgc-thm2" data-stellar-background-ratio="0.3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-6">
+                <div class="divider-two">
+                    <p class="color-white">Get 100 Online Courses for Free</p>
+                    <h1 class="color-white text-uppercase">REGISTER TO GET IT</h1>
+                    <div id="countdown"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <div class="divider-two">
+                    <p class="color-white">CREATE FREE ACCOUNT TO GET</p>
+                    <h3 class="color-white text-uppercase">The Complete Web Developer Course</h3>
+                </div>
+                <div class="divider-two-form">
+                    <div id="mc_embed_signup">
+                        <form method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group">
+                                    <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Your Name">
+                                </div>
+                                <div class="mc-field-group">
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                                </div>
+                                <a href="#" class="btn btn-lg mailchimp_btn">Get It Now</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Our Partners -->
+<section id="our-partners" class="our-partners">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="main-title text-center">
+                    <h3 class="mt0">Need To Train Your Team?</h3>
+                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg">
+                <div class="our_partner">
+                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/1.png') }}" alt="1.png">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg">
+                <div class="our_partner">
+                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/2.png') }}" alt="2.png">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg">
+                <div class="our_partner">
+                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/3.png') }}" alt="3.png">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg">
+                <div class="our_partner">
+                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/4.png') }}" alt="4.png">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg">
+                <div class="our_partner">
+                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/5.png') }}" alt="5.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Newslatters -->
+<section id="our-newslatters" class="our-newslatters">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="main-title text-center">
+                    <h3 class="mt0">Get Newsletter</h3>
+                    <p>Your download should start automatically, if not Click here. Should I give up, huh?.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="footer_apps_widget_home1">
+                    <form class="form-inline mailchimp_form">
+                        <input type="email" class="form-control" placeholder="Email address">
+                        <button type="submit" class="btn btn-lg btn-thm dbxshad">Get it now <span class="flaticon-right-arrow-1"></span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

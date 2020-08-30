@@ -5,19 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="academy, college, coursera, courses, education, elearning, kindergarten, lms, lynda, online course, online education, school, training, udemy, university">
+    <meta name="keywords"
+        content="academy, college, coursera, courses, education, elearning, kindergarten, lms, lynda, online course, online education, school, training, udemy, university">
     <meta name="description" content="Edumy - LMS Online Education Course & School HTML Template">
     <meta name="CreativeLayers" content="ATFN">
     <!-- css file -->
-    <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
     <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
     <!-- Title -->
     <title>Edumy - LMS Online Education Course & School HTML Template</title>
     <!-- Favicon -->
-    <link href="{{ ('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{ ('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" />
+    <link href="{{ 'public/frontend/images/favicon.ico' }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{ 'public/frontend/images/favicon.ico' }}" sizes="128x128" rel="shortcut icon" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -640,6 +641,7 @@
             </div>
         </div>
 
+
         @yield('content')
 
         <!-- Our Footer -->
@@ -719,7 +721,8 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-3 col-lg-3 col-xl-2 pb15 pt15">
                         <div class="logo-widget home2">
-                            <img class="img-fluid" src="{{ ('public/frontend/images/header-logo.png') }}" alt="header-logo.png">
+                            <img class="img-fluid" src="{{ 'public/frontend/images/header-logo.png' }}"
+                                alt="header-logo.png">
                             <span>EDUMY</span>
                         </div>
                     </div>
@@ -756,7 +759,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
                         <div class="copyright-widget text-center">
-                            <p>Copyright © 2020 - Edumy by<a href="https://tamphat.edu.vn/" target="_blank">Tâm phát</a>
+                            <p>Copyright © 2020 - Edumy by<a href="https://tamphat.edu.vn/" target="_blank">Tâm
+                                    phát</a>
                             </p>
                         </div>
                     </div>
@@ -766,25 +770,25 @@
         <a class="scrollToHome" href="#"><i class="flaticon-up-arrow-1"></i></a>
     </div>
     <!-- Wrapper End -->
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-3.3.1.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-migrate-3.0.0.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/popper.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.mmenu.all.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/ace-responsive-menu.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap-select.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/snackbar.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/simplebar.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/scrollto.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-scrolltofixed-min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.counterup.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/wow.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/progressbar.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/slider.js')}}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/timepicker.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.mmenu.all.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/ace-responsive-menu.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/snackbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/simplebar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/parallax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-scrolltofixed-min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.counterup.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/progressbar.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/slider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/timepicker.js') }}"></script>
     <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{asset('public/frontend/js/script.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('public/frontend/js/script.js') }}"></script>
 </body>
 
 </html>
