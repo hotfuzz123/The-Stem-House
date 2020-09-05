@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 //Front-end
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/shop', 'HomeController@shop');
+Route::get('/contact', 'HomeController@contact');
+
+
+//Product-category
+Route::get('/product-category/{category_id}', 'CategoryProduct@show_category_home');
+
+//Product-detail
+Route::get('/product-detail/{product_id}', 'ProductController@details_product');
 
 //Back-end
 Route::get('/admin', 'AdminController@index');

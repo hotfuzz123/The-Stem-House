@@ -38,6 +38,20 @@
                 <button type="submit"  name="add_category_product" class="btn btn-primary">Cập nhật danh mục</button>
             </form>
             @endforeach
+
+            {{-- <form action="{{URL::to('/update-category-product/ .$edit_category_product->category_id') }}" method="POST">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="simpleFormEmail">Tên danh mục</label>
+                    <input type="text" value="{{ $edit_category_product ->category_name }}" name="category_product_name" class="form-control" id="simpleFormEmail"
+                        placeholder="Tên danh mục">
+                </div>
+                <div class="form-group">
+                    <label>Mô tả danh mục</label>
+                    <textarea class="form-control" name="category_product_desc" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{$edit_category_product ->category_desc }}</textarea>
+                </div>
+                <button type="submit"  name="add_category_product" class="btn btn-primary">Cập nhật danh mục</button>
+            </form> --}}
         </div>
     </div>
 </div>

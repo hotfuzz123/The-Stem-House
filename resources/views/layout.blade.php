@@ -10,15 +10,15 @@
     <meta name="description" content="Edumy - LMS Online Education Course & School HTML Template">
     <meta name="CreativeLayers" content="ATFN">
     <!-- css file -->
-    <link rel="stylesheet" href="{{ asset('public/frontend/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/style.css') }}">
     <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css') }}">
     <!-- Title -->
     <title>Edumy - LMS Online Education Course & School HTML Template</title>
     <!-- Favicon -->
-    <link href="{{ 'public/frontend/images/favicon.ico' }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{ 'public/frontend/images/favicon.ico' }}" sizes="128x128" rel="shortcut icon" />
+    <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
                             <ul>
                                 <li class="list-inline-item">
                                     <div class="logo-widget">
-                                        <img class="img-fluid" src="{{ ('public/frontend/images/header-logo.png') }}" alt="header-logo.png">
+                                        <img class="img-fluid" src="{{asset('public/frontend/images/header-logo.png') }}" alt="header-logo.png">
                                         <span>EDUMY</span>
                                     </div>
                                 </li>
@@ -231,15 +231,13 @@
                         </div>
                         <div class="ht_right_widget float-right">
                             <ul class="text-right">
-                                <li class="list-inline-item"><a href="#">+(90) 123 456 789</a></li>
+                                <li class="list-inline-item"><a href="#">+(90) 123 456 987</a></li>
                                 <li class="list-inline-item">
                                     <div class="header_top_lang_widget">
                                         <select class="selectpicker show-tick">
                                             <option>English</option>
                                             <option>Frenc</option>
                                             <option>Italian</option>
-                                            <option>Spanish</option>
-                                            <option>Turkey</option>
                                         </select>
                                     </div>
                                 </li>
@@ -270,25 +268,18 @@
                             <a href="{{URL::to('/home') }}"><span class="title">Home</span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Courses</span></a>
+                            <a href="#"><span class="title">Khóa học</span></a>
                             <!-- Level Two-->
                             <ul>
-                                <li>
-                                    <a href="page-course-v1.html">Courses List</a>
-                                </li>
-                                <li>
-                                    <a href="page-course-single-v1.html">Courses Single</a>
-                                </li>
                                 <li><a href="page-instructors.html">Instructors</a></li>
-                                <li><a href="page-instructors-single.html">Instructor Single</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#"><span class="title">Events</span></a>
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="page-event.html">Event List</a></li>
                                 <li><a href="page-event-single.html">Event Single</a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         <li>
                             <a href="#"><span class="title">Pages</span></a>
@@ -329,16 +320,10 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Blog</span></a>
-                            <ul>
-                                <li><a href="page-blog-v1.html">Blog List 1</a></li>
-                                <li><a href="page-blog-grid.html">Blog List 2</a></li>
-                                <li><a href="page-blog-list.html">Blog List 3</a></li>
-                                <li><a href="page-blog-single.html">Single Post</a></li>
-                            </ul>
+                            <a href="#"><span class="title">Tin tức</span></a>
                         </li>
                         <li class="last">
-                            <a href="page-contact.html"><span class="title">Contact</span></a>
+                            <a href=""><span class="title">Liên hệ</span></a>
                         </li>
                     </ul>
                     <ul class="sign_up_btn pull-right dn-smd mt20">
@@ -564,82 +549,15 @@
                             <li><a href="page-ui-element.html">UI Elements</a></li>
                         </ul>
                     </li>
-                    <li><span>Blog</span>
-                        <ul>
-                            <li><a href="page-blog-v1.html">Blog List 1</a></li>
-                            <li><a href="page-blog-grid.html">Blog List 2</a></li>
-                            <li><a href="page-blog-list.html">Blog List 3</a></li>
-                            <li><a href="page-blog-single.html">Single Post</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="page-contact.html">Contact</a></li>
+                    <li><a href="">Tin tức</a></li>
+                    <li><a href="page-contact.html">Liên hệ</a></li>
                     <li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
                     <li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
                 </ul>
             </nav>
         </div>
 
-        <!-- 2nd Home Slider -->
-        <div class="home2-slider">
-            <div class="container-fluid p0">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="main-banner-wrapper">
-                            <div class="banner-style-one owl-theme owl-carousel">
-                                <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/4.jpg') }});">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12 text-center">
-                                                <h3 class="banner-title">Start Investing in You</h3>
-                                                <p>Technology is brining a massive wave of evolution on learning things
-                                                    on different ways</p>
-                                                <div class="btn-block">
-                                                    <a href="#" class="banner-btn">Ready to get Started?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/5.jpg') }});">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12 text-center">
-                                                <h3 class="banner-title">Self EducatIon Resources and Infos</h3>
-                                                <p>Technology is brining a massive wave of evolution on learning things
-                                                    on different ways</p>
-                                                <div class="btn-block">
-                                                    <a href="#" class="banner-btn">Ready to get Started?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/6.jpg') }});">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12 text-center">
-                                                <h3 class="banner-title">Start Investing in You</h3>
-                                                <p>Technology is brining a massive wave of evolution on learning things
-                                                    on different ways</p>
-                                                <div class="btn-block">
-                                                    <a href="#" class="banner-btn">Ready to get Started?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-btn-block banner-carousel-btn">
-                                <span class="carousel-btn left-btn"><i class="flaticon-left-arrow left"></i> <span
-                                        class="left">PR <br> EV</span></span>
-                                <span class="carousel-btn right-btn"><span class="right">NE <br> XT</span> <i
-                                        class="flaticon-right-arrow-1 right"></i></span>
-                            </div><!-- /.carousel-btn-block banner-carousel-btn -->
-                        </div><!-- /.main-banner-wrapper -->
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
         @yield('content')
@@ -721,7 +639,7 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-3 col-lg-3 col-xl-2 pb15 pt15">
                         <div class="logo-widget home2">
-                            <img class="img-fluid" src="{{ 'public/frontend/images/header-logo.png' }}"
+                            <img class="img-fluid" src="{{asset('public/frontend/images/header-logo.png')}}"
                                 alt="header-logo.png">
                             <span>EDUMY</span>
                         </div>
@@ -770,25 +688,26 @@
         <a class="scrollToHome" href="#"><i class="flaticon-up-arrow-1"></i></a>
     </div>
     <!-- Wrapper End -->
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-3.3.1.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.mmenu.all.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/ace-responsive-menu.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/snackbar.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/simplebar.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/parallax.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/scrollto.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery-scrolltofixed-min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/jquery.counterup.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/wow.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/progressbar.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/slider.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/frontend/js/timepicker.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.mmenu.all.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/ace-responsive-menu.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/isotop.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/snackbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/simplebar.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/parallax.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-scrolltofixed-min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.counterup.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/progressbar.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/slider.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/timepicker.js') }}"></script>
     <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{ asset('public/frontend/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{asset('public/frontend/js/script.js') }}"></script>
 </body>
 
 </html>
