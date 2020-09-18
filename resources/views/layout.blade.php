@@ -2,30 +2,26 @@
 <html dir="ltr" lang="en">
 
 <head>
+    {{-- SEO --}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="academy, college, coursera, courses, education, elearning, kindergarten, lms, lynda, online course, online education, school, training, udemy, university">
-    <meta name="description" content="Edumy - LMS Online Education Course & School HTML Template">
+    <meta name="keywords" content="{{ $meta_keywords }}">
+    {{-- <meta name="description" content="{{ $meta_desc }}"> --}}
+    <meta name="robots" content="INDEX,FOLLOW"/>
     <meta name="CreativeLayers" content="ATFN">
+    <link rel="canonical" href="{{ $url_canonical }}">
+    <!-- Title -->
+    <meta name="title" content="The Stem House - {{ $meta_title }}"/>
+    <title>The Stem House - {{ $meta_title }}</title>
     <!-- css file -->
     <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/style.css') }}">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css') }}">
-    <!-- Title -->
-    <title>Edumy - LMS Online Education Course & School HTML Template</title>
     <!-- Favicon -->
     <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
     <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" />
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
@@ -275,16 +271,9 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Events</span></a>
-                            {{-- <ul>
-                                <li><a href="page-event.html">Event List</a></li>
-                                <li><a href="page-event-single.html">Event Single</a></li>
-                            </ul> --}}
-                        </li>
-                        <li>
                             <a href="#"><span class="title">Pages</span></a>
                             <ul>
-                                <li>
+                                {{-- <li>
                                     <a href="#"><span class="title">Shop Pages</span></a>
                                     <ul>
                                         <li><a href="page-shop.html">Shop</a></li>
@@ -306,24 +295,21 @@
                                         <li><a href="page-my-listing.html">My Listing</a></li>
                                         <li><a href="page-my-setting.html">My Setting</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li><a href="page-about.html">About Us</a></li>
                                 <li><a href="page-gallery.html">Gallery</a></li>
                                 <li><a href="page-faq.html">Faq</a></li>
-                                <li><a href="page-login.html">LogIn</a></li>
-                                <li><a href="page-register.html">Register</a></li>
                                 <li><a href="page-pricing.html">Membership</a></li>
-                                <li><a href="page-error.html">404 Page</a></li>
-                                <li><a href="page-terms.html">Terms and Conditions</a></li>
-                                <li><a href="page-become-instructor.html">Become an Instructor</a></li>
-                                <li><a href="page-ui-element.html">UI Elements</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#"><span class="title">Tin tức</span></a>
                         </li>
+                        <li>
+                            <a href="{{URL::to('/shop')}}"><span class="title">Cửa hàng</span></a>
+                        </li>
                         <li class="last">
-                            <a href=""><span class="title">Liên hệ</span></a>
+                            <a href="{{URL::to('/contact')}}"><span class="title">Liên hệ</span></a>
                         </li>
                     </ul>
                     <ul class="sign_up_btn pull-right dn-smd mt20">
@@ -332,7 +318,7 @@
                         </li>
                         <li class="list-inline-item"><a href="#" class="btn btn-md" data-toggle="modal"
                                 data-target="#exampleModalCenter"><i class="flaticon-user"></i> <span
-                                    class="dn-md">Login/Register</span></a></li>
+                                    class="dn-md">Đăng nhập/Đăng ký</span></a></li>
                     </ul><!-- Button trigger modal -->
                 </nav>
                 <!-- End of Responsive Menu -->
@@ -349,11 +335,11 @@
                     <ul class="sign_up_tab nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                                aria-controls="home" aria-selected="true">Login</a>
+                                aria-controls="home" aria-selected="true">Đăng Nhập</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                                aria-controls="profile" aria-selected="false">Register</a>
+                                aria-controls="profile" aria-selected="false">Đăng Ký</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -361,24 +347,23 @@
                             <div class="login_form">
                                 <form action="#">
                                     <div class="heading">
-                                        <h3 class="text-center">Login to your account</h3>
-                                        <p class="text-center">Don't have an account? <a class="text-thm" href="#">Sign
-                                                Up!</a></p>
+                                        <h3 class="text-center">Đăng Nhập</h3>
+                                        <p class="text-center">Chưa có tài khoản? <a class="text-thm" href="#">Đăng Ký!</a></p>
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Email Address">
+                                            placeholder="Nhập Email">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="exampleInputPassword1"
-                                            placeholder="Password">
+                                            placeholder="Nhập Mật khẩu">
                                     </div>
                                     <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                                        <a class="tdu text-thm float-right" href="#">Forgot Password?</a>
+                                        <label class="form-check-label" for="exampleCheck1">Ghi nhớ đăng nhập</label>
+                                        <a class="tdu text-thm float-right" href="#">Quên mật khẩu?</a>
                                     </div>
-                                    <button type="submit" class="btn btn-log btn-block btn-thm2">Login</button>
+                                    <button type="submit" class="btn btn-log btn-block btn-thm2">Đăng Nhập</button>
                                     <hr>
                                     <div class="row mt40">
                                         <div class="col-lg">
@@ -396,32 +381,32 @@
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="sign_up_form">
                                 <div class="heading">
-                                    <h3 class="text-center">Create New Account</h3>
-                                    <p class="text-center">Have an account? <a class="text-thm" href="#">Login</a></p>
+                                    <h3 class="text-center">Tạo tài khoản</h3>
+                                    <p class="text-center">Đã có tài khoản? <a class="text-thm" href="#">Đăng Nhập</a></p>
                                 </div>
                                 <form action="#">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="exampleInputName1"
-                                            placeholder="Username">
+                                            placeholder="Nhập Họ & Tên">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" class="form-control" id="exampleInputEmail2"
-                                            placeholder="Email Address">
+                                            placeholder="Nhập Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="exampleInputPassword2"
-                                            placeholder="Password">
+                                        <input type="text" class="form-control" id="exampleInputPassword2"
+                                            placeholder="Nhập Số điện thoại">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control" id="exampleInputPassword3"
-                                            placeholder="Confirm Password">
+                                            placeholder="Nhập Mật khẩu">
                                     </div>
-                                    <div class="form-group form-check">
+                                    {{-- <div class="form-group form-check">
                                         <input type="checkbox" class="form-check-input" id="exampleCheck2">
                                         <label class="form-check-label" for="exampleCheck2">Want to become an
                                             instructor?</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-log btn-block btn-thm2">Register</button>
+                                    </div> --}}
+                                    <button type="submit" class="btn btn-log btn-block btn-thm2">Đăng Ký</button>
                                     <hr>
                                     <div class="row mt40">
                                         <div class="col-lg">
@@ -568,43 +553,42 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-4 col-md-3 col-lg-3">
                         <div class="footer_contact_widget">
-                            <h4>CONTACT</h4>
-                            <p>Số 55, ngõ 649 Kim Mã, Ngọc Khánh, Ba Đình, HN </p>
+                            <h4>VỀ THE STEM HOUSE</h4>
+                            <p>Địa chỉ: 52 An Cư 7, Đà Nẵng, Việt Nam</p>
                             <p>Thời gian: Thứ 2-thứ 7: 8h-17h30</p>
-                            <p>0989 949 123</p>
-                            <p>contact@tamphat.edu.vn</p>
+                            <p>Điện thoại: 0989 949 123</p>
+                            <p>Email: contact@tamphat.edu.vn</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
                         <div class="footer_company_widget">
-                            <h4>COMPANY</h4>
+                            <h4>THÔNG TIN</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="page-contact.html">Contact</a></li>
-                                <li><a href="#">Become a Teacher</a></li>
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
                         <div class="footer_program_widget">
-                            <h4>PROGRAMS</h4>
+                            <h4>CHÍNH SÁCH</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#">Nanodegree Plus</a></li>
-                                <li><a href="#">Veterans</a></li>
-                                <li><a href="#">Georgia</a></li>
-                                <li><a href="#">Self-Driving Car</a></li>
+                                <li><a href="#">Quy định chung</a></li>
+                                <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                                <li><a href="#">Chính sách giá</a></li>
+                                <li><a href="#">Chính sách vận chuyển</a></li>
+                                <li><a href="#">Chính sách đổi trả</a></li>
+                                <li><a href="#">Chính sách bảo hành</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
                         <div class="footer_support_widget">
-                            <h4>SUPPORT</h4>
+                            <h4>HỖ TRỢ</h4>
                             <ul class="list-unstyled">
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Language Packs</a></li>
-                                <li><a href="#">Release Status</a></li>
+                                <li><a href="#">Phân phối - Hợp tác</a></li>
+                                <li><a href="#">Hướng dẫn thanh toán</a></li>
                             </ul>
                         </div>
                     </div>
@@ -662,8 +646,6 @@
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
                             </ul>
                         </div>
                     </div>

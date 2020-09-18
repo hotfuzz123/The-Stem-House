@@ -68,14 +68,14 @@ class ProductController extends Controller
     public function unactive_product($product_id){
         $this->Authlogin();
         DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status' => 1]);
-        Session::put('message', 'Không kích hoạt sản phẩm thành công');
+        Session::put('message', 'Ẩn sản phẩm thành công');
         return Redirect::to('/all-product');
     }
 
     public function active_product($product_id){
         $this->Authlogin();
         DB::table('tbl_product')->where('product_id', $product_id)->update(['product_status' => 0]);
-        Session::put('message', 'Kích hoạt sản phẩm thành công');
+        Session::put('message', 'Hiển thị sản phẩm thành công');
         return Redirect::to('/all-product');
     }
 
@@ -135,6 +135,7 @@ class ProductController extends Controller
             $category_id = $value->category_id;
         }
 
+        // Sản phẩm liên quan
         $related_product = DB::table('tbl_product')
         ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
         ->where('tbl_category_product.category_id', $category_id)

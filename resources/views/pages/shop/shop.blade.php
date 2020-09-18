@@ -10,8 +10,8 @@
                 <div class="breadcrumb_content">
                     <h4 class="breadcrumb_title">Cửa hàng</h4>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Cửa hàng</li>
+                        <li class="breadcrumb-item"><a href="{{URL::to('/home')}}">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="{{URL::to('/shop')}}">Cửa hàng</a></li>
                     </ol>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-xl-6">
                         <div class="instructor_search_result">
-                            <p class="mt10 fz15"><span class="pr-1">Showing 1–9 of</span>15 results</p>
+                            <p class="mt10 fz15"><span class="pr-1">Hiển thị 1–9 trên</span>15 sản phẩm</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-xl-6">
@@ -36,7 +36,10 @@
                                 <li class="list-inline-item">
                                     <select class="selectpicker show-tick">
                                         <option>Mới Nhất</option>
-                                        <option>Phổ Biến</option>
+                                        <option>Giá Tăng Dần</option>
+                                        <option>Giá Giảm Dần</option>
+                                        <option>Từ A đến Z</option>
+                                        <option>Từ Z đến A</option>
                                     </select>
                                 </li>
                             </ul>
@@ -45,28 +48,28 @@
                 </div>
                 <div class="row">
                     @foreach ($all_product as $key => $product)
-                    <a href="{{URL::to('/product-detail/' .$product->product_id) }}">
                         <div class="col-sm-6 col-lg-6 col-xl-4">
-                            <div class="shop_grid">
-                                <div class="thumb text-center">
-                                    <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
+                            <a href="{{URL::to('/product-detail/' .$product->product_id) }}">
+                                <div class="shop_grid">
+                                    <div class="thumb text-center">
+                                        <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
+                                    </div>
+                                    <div class="details float-left">
+                                        <h4 class="price">{{number_format($product->product_price).' '.'VND'}}</h4>
+                                        <h4 class="item-tile">{{$product->product_name}}</h4>
+                                        <ul>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#">(6)</a></li>
+                                        </ul>
+                                    </div>
+                                    <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
                                 </div>
-                                <div class="details float-left">
-                                    <h4 class="price">{{number_format($product->product_price).' '.'VND'}}</h4>
-                                    <h4 class="item-tile">{{$product->product_name}}</h4>
-                                    <ul>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
-                            </div>
+                            </a>
                         </div>
-                    </a>
                     @endforeach
                     <div class="col-lg-12">
                         <div class="mbp_pagination mt20">

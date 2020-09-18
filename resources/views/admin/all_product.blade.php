@@ -7,7 +7,7 @@
                 <?php
                 $message = Session::get('message');
                 if($message){
-                    echo $message;
+                    echo '<span class="text-alert">'.$message. '</span>';
                     Session::put('message', null);
                 }
                 ?>
@@ -89,7 +89,7 @@
                                                     style="width: 176px;"> Giá </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Username : activate to sort column ascending"
-                                                    style="width: 225px;"> Hình sản phẩm </th>
+                                                    style="width: 225px;"> Ảnh bìa sản phẩm </th>
                                                     <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Status : activate to sort column ascending"
                                                     style="width: 176px;"> Danh mục </th>
@@ -119,11 +119,11 @@
                                                         <?php
                                                         if($pro->product_status==0) {
                                                         ?>
-                                                        <a href="{{URL::to('/unactive-product/' .$pro->product_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
+                                                        <a href="{{URL::to('/unactive-product/' .$pro->product_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php
                                                         }else {
                                                         ?>
-                                                        <a href="{{URL::to('/active-product/' .$pro->product_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
+                                                        <a href="{{URL::to('/active-product/' .$pro->product_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
                                                         <?php
                                                         }
                                                         ?>

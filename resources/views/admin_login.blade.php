@@ -12,7 +12,11 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
 	<!-- icons -->
 	<link href="{{asset('public/backend/admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="{{asset('public/backend/admin/plugins/iconic/css/material-design-iconic-font.min.css') }}">
+    <link rel="stylesheet" href="{{asset('public/backend/admin/plugins/iconic/css/material-design-iconic-font.min.css') }}">
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/91f55319c9.js" crossorigin="anonymous"></script>
+    <!-- Font-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 	<!-- bootstrap -->
 	<link href="{{asset('public/backend/admin/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 	<!-- style -->
@@ -25,7 +29,7 @@
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form action="{{URL::to('/admin-dashboard') }}" method="post" class="login100-form validate-form">
+				<form action="{{URL::to('/login') }}" method="post" class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<img alt="" src="{{asset('public/backend/admin/img/logo-2.png') }}">
 					</span>
@@ -35,23 +39,23 @@
                     <?php
                     $message = Session::get('message');
                     if($message){
-                        echo $message;
+                        echo '<span class="text-alert">'.$message. '</span>';
                         Session::put('message', null);
                     }
                     ?>
                     {{ csrf_field() }}
-					<div class="wrap-input100 validate-input" data-validate="Enter Email">
+					<div class="wrap-input100 validate-input" data-validate="Nhập Email">
 						<input class="input100" type="text" name="admin_email" placeholder="Nhập Email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="admin_password" placeholder="Nhập Mật khẩu">
+					<div class="wrap-input100 validate-input" data-validate="Nhập Mật Khẩu">
+						<input class="input100" type="password" name="admin_password" placeholder="Nhập Mật Khẩu">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					<div class="contact100-form-checkbox">
 						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 						<label class="label-checkbox100" for="ckb1">
-							Remember me
+							Ghi nhớ đăng nhập
 						</label>
 					</div>
 					<div class="container-login100-form-btn">
@@ -59,11 +63,18 @@
 							Đăng nhập
 						</button>
 					</div>
-					<div class="text-center p-t-30">
-						<a class="txt1" href="forgot_password.html">
-							Quên mật khẩu?
-						</a>
-					</div>
+					<div class="row" style="justify-content: center;">
+                        <div class="text-center p-t-30 px-2">
+                            <a class="txt1" href="forgot_password.html">
+                                Quên mật khẩu?
+                            </a>
+                        </div>
+                        <div class="text-center p-t-30 px-2">
+                            <a class="txt1" href="{{URL::to('/register-auth') }}">
+                                Chưa có tài khoản?
+                            </a>
+                        </div>
+                    </div>
 				</form>
 			</div>
 		</div>
@@ -76,6 +87,4 @@
 	<!-- end js include path -->
 </body>
 
-
-<!-- Mirrored from radixtouch.in/templates/admin/smart/source/light/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Aug 2020 08:19:45 GMT -->
 </html>

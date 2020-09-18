@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Session;
-use Log;
+use DB, Session, Log;
+use Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start();
@@ -13,7 +12,7 @@ session_start();
 class AdminController extends Controller
 {
     public function Authlogin(){
-        $admin_id = Session::get('admin_id');
+        $admin_id = Auth::id();
         if($admin_id){
             return Redirect::to('/dashboard');
         } else{
@@ -21,9 +20,9 @@ class AdminController extends Controller
         }
     }
 
-    public function index(){
-        return view('admin_login');
-    }
+    // public function index(){
+    //     return view('admin_login');
+    // }
 
     public function show_dashboard(){
         $this->Authlogin();
@@ -44,10 +43,10 @@ class AdminController extends Controller
         }
     }
 
-    public function logout(){
-        $this->Authlogin();
-        Session::put('admin_name', null);
-        Session::put('admin_id', null);
-        return Redirect::to('/admin');
-    }
+    // public function logout(){
+    //     $this->Authlogin();
+    //     Session::put('admin_name', null);
+    //     Session::put('admin_id', null);
+    //     return Redirect::to('/admin');
+    // }
 }

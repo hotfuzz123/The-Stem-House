@@ -11039,7 +11039,7 @@ body.translated{
   border-color: rgb(237, 239, 247);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  height: 385px;
+  height: 480px;
   margin-bottom: 30px;
   padding: 20px;
   -webkit-transition: all 0.3s ease 0s;
@@ -11096,6 +11096,10 @@ body.translated{
   font-family: "Nunito";
   color: #0a0a0a;
   line-height: 1.333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .shop_grid .details ul li,
 .sspd_review ul li{

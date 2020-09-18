@@ -237,24 +237,26 @@
                 <div class="shop_product_slider">
                     @foreach ($relate as $key => $relate_value)
                     <div class="item">
-                        <div class="shop_grid">
-                            <div class="thumb text-center">
-                                <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
+                        <a href="{{URL::to('/product-detail/' .$relate_value->product_id) }}">
+                            <div class="shop_grid">
+                                <div class="thumb text-center">
+                                    <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
+                                </div>
+                                <div class="details float-left">
+                                    <h4 class="price">{{number_format($relate_value->product_price).' '.'VND'}}</h4>
+                                    <h4 class="item-tile">{{ $relate_value->product_name }}</h4>
+                                    <ul>
+                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li class="list-inline-item"><a href="#">(6)</a></li>
+                                    </ul>
+                                </div>
+                                <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
                             </div>
-                            <div class="details float-left">
-                                <h4 class="price">{{number_format($relate_value->product_price).' '.'VND'}}</h4>
-                                <h4 class="item-tile">{{ $relate_value->product_name }}</h4>
-                                <ul>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li class="list-inline-item"><a href="#">(6)</a></li>
-                                </ul>
-                            </div>
-                            <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
-                        </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>

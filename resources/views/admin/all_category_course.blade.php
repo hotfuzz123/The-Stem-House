@@ -7,7 +7,7 @@
                 <?php
                 $message = Session::get('message');
                 if($message){
-                    echo $message;
+                    echo '<span class="text-alert">'.$message. '</span>';
                     Session::put('message', null);
                 }
                 ?>
@@ -107,11 +107,11 @@
                                                         <?php
                                                         if($cate_pro->category_status==0) {
                                                         ?>
-                                                        <a href="{{URL::to('/unactive-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
+                                                        <a href="{{URL::to('/unactive-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php
                                                         }else {
                                                         ?>
-                                                        <a href="{{URL::to('/active-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
+                                                        <a href="{{URL::to('/active-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
                                                         <?php
                                                         }
                                                         ?>

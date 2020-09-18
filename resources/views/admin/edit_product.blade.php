@@ -7,7 +7,7 @@
             <?php
             $message = Session::get('message');
             if($message){
-                echo $message;
+                echo '<span class="text-alert">'.$message. '</span>';
                 Session::put('message', null);
             }
             ?>
@@ -57,13 +57,6 @@
                             <option value="{{$cate -> category_id}}">{{$cate ->category_name}}</option>
                             @endif
                         @endforeach
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Hiển thị</label>
-                    <select name="product_status" class="form-control">
-                        <option value="0">Ẩn</option>
-                        <option value="1">Hiện</option>
                     </select>
                 </div>
                 <button type="submit"  name="add_product" class="btn btn-primary">Cập nhật sản phẩm</button>

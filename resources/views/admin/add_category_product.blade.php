@@ -7,7 +7,7 @@
             <?php
             $message = Session::get('message');
             if($message){
-                echo $message;
+                echo '<span class="text-alert">'.$message. '</span>';
                 Session::put('message', null);
             }
             ?>
@@ -35,10 +35,14 @@
                     <textarea class="form-control" name="category_product_desc" rows="3" placeholder="Mô tả danh mục..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
                 </div>
                 <div class="form-group">
+                    <label>Từ khóa danh mục</label>
+                    <textarea class="form-control" name="category_product_keywords" rows="3" placeholder="Từ khóa danh mục..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                </div>
+                <div class="form-group">
                     <label>Hiển thị</label>
                     <select name="category_product_status" class="form-control">
-                        <option value="0">Ẩn</option>
-                        <option value="1">Hiện</option>
+                        <option value="0">Hiển thị</option>
+                        <option value="1">Ẩn</option>
                     </select>
                 </div>
                 <button type="submit"  name="add_category_product" class="btn btn-primary">Thêm danh mục mới</button>

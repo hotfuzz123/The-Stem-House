@@ -16,6 +16,7 @@ class CreateTblCategoryCourse extends Migration
         Schema::create('tbl_category_course', function (Blueprint $table) {
             $table->increments('category_id');
             $table->string('category_name');
+            $table->text('meta_keywords');
             $table->text('category_desc');
             $table->integer('category_status');
             $table->timestamps();
