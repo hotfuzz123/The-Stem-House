@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB, Session, Log;
-use Auth;
+use DB, Session, Log, Auth;
 use App\Admin;
 use App\Roles;
 use App\Http\Requests;

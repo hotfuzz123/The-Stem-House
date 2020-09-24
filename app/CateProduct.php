@@ -8,7 +8,7 @@ class CateProduct extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'category_name', 'meta_keywords', 'category_desc', 'category_status'
+        'category_name', 'slug_category_product', 'meta_keywords', 'category_desc', 'category_status'
     ];
     protected $primaryKey = 'category_id';
     protected $table = 'tbl_category_product';

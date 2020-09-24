@@ -18,13 +18,10 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'HomeController@shop');
 Route::get('/contact', 'HomeController@contact');
+Route::get('/course', 'HomeController@course');
+Route::get('/post', 'HomeController@post');
 
 
-//Product-category
-Route::get('/product-category/{category_id}', 'CategoryProduct@show_category_home');
-
-//Product-detail
-Route::get('/product-detail/{product_id}', 'ProductController@details_product');
 
 //Back-end
 Route::get('/dashboard', 'AdminController@show_dashboard');
@@ -68,6 +65,12 @@ Route::get('/active-product/{product_id}', 'ProductController@active_product');
 Route::post('/save-product', 'ProductController@save_product');
 Route::post('/update-product/{product_id}', 'ProductController@update_product');
 
+//Product-category
+Route::get('/product-category/{slug_category_product}', 'CategoryProduct@show_category_home');
+
+//Product-detail
+Route::get('/product-detail/{product_slug}', 'ProductController@details_product');
+
 
 //Authentication roles
 Route::get('/register-auth', 'AuthController@register_auth');
@@ -76,3 +79,29 @@ Route::get('/logout-auth', 'AuthController@logout_auth');
 
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
+
+
+
+//Course
+Route::get('/add-course', 'CourseController@add_course');
+Route::get('/edit-course/{course_id}', 'CourseController@edit_course');
+Route::get('/delete-course/{course_id}', 'CourseController@delete_course');
+Route::get('/all-course', 'CourseController@all_course');
+
+Route::get('/unactive-course/{course_id}', 'CourseController@unactive_course');
+Route::get('/active-course/{course_id}', 'CourseController@active_course');
+
+Route::post('/save-course', 'CourseController@save_course');
+Route::post('/update-course/{course_id}', 'CourseController@update_course');
+
+//Product-category
+Route::get('/course-category/{slug_category_course}', 'Categorycourse@show_category_home');
+
+//course-detail
+Route::get('/course-detail', 'CourseController@details_course');
+
+
+
+//Post
+
+Route::get('/post-detail', 'PostController@details_post');

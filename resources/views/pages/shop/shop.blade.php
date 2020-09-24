@@ -49,7 +49,7 @@
                 <div class="row">
                     @foreach ($all_product as $key => $product)
                         <div class="col-sm-6 col-lg-6 col-xl-4">
-                            <a href="{{URL::to('/product-detail/' .$product->product_id) }}">
+                            <a href="{{URL::to('/product-detail/' .$product->product_slug) }}">
                                 <div class="shop_grid">
                                     <div class="thumb text-center">
                                         <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
@@ -106,7 +106,7 @@
                                     @foreach ($category as $key => $cate)
                                     <div class="category_sidebar_widget">
                                         <ul class="category_list">
-                                            <li><a href="{{ URL::to('/product-category/' .$cate->category_id) }}">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
+                                            <li><a href="{{ URL::to('/product-category/'.$cate->slug_category_product) }}">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
                                         </ul>
                                     </div>
                                     @endforeach

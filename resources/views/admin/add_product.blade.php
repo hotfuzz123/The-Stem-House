@@ -20,14 +20,18 @@
         </ol>
     </div>
 </div>
-<div class="col-md-9 col-sm-12 mx-auto">
+<div class="col-md-12 col-sm-12 mx-auto">
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
-            <form action="{{URL::to('/save-product') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{URL::to('/save-product') }}" method="POST" id="demoForm" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên sản phẩm</label>
                     <input type="text" name="product_name" class="form-control" id="simpleFormEmail">
+                </div>
+                <div class="form-group">
+                    <label for="simpleFormEmail">Slug sản phẩm</label>
+                    <input type="text" name="product_slug" class="form-control" id="simpleFormEmail">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Giá sản phẩm</label>
@@ -39,11 +43,11 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả sản phẩm</label>
-                    <textarea class="form-control" name="product_desc" rows="3" placeholder="Mô tả sản phẩm..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    <textarea class="form-control" name="product_desc" rows="3" id="editor-product-1" placeholder="Mô tả sản phẩm..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Nội dung sản phẩm</label>
-                    <textarea class="form-control" name="product_content" rows="3" placeholder="Nội dung sản phẩm..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    <textarea class="form-control" name="product_content" rows="3" id="editor-product-2" placeholder="Nội dung sản phẩm..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Danh mục sản phẩm</label>

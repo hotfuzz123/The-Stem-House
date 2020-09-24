@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB, Session, Log;
+use DB, Session, Log, Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 
@@ -41,5 +41,15 @@ class HomeController extends Controller
 
         return view('pages.contact')
         ->with(compact('meta_desc', 'meta_keywords', 'meta_title', 'url_canonical'));
+    }
+
+    public function course(){
+        $cate_course = DB::table('tbl_category_course')->where('category_status', '0')->orderby('category_id', 'desc')->get();
+        $all_course = DB::table('tbl_course')->where('course_status', '0')->orderby('course_id', 'desc')->get();
+        return view('pages.course.course')->with('category', $cate_course)->with('all_course', $all_course);
+    }
+
+    public function post(){
+        return view('pages.post.post');
     }
 }

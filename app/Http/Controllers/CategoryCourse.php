@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Session;
-use Log;
+use DB, Session, Log, Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start();
@@ -14,7 +12,7 @@ class CategoryCourse extends Controller
 {
 
     public function Authlogin(){
-        $admin_id = Session::get('admin_id');
+        $admin_id = Auth::id();
         if($admin_id){
             return Redirect::to('/dashboard');
         } else{

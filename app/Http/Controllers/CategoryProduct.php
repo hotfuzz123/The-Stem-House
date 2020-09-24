@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB, Session, Log;
+use DB, Session, Log, Auth;
 use App\CateProduct;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
@@ -12,7 +12,7 @@ session_start();
 class CategoryProduct extends Controller
 {
     public function Authlogin(){
-        $admin_id = Session::get('admin_id');
+        $admin_id = Auth::id();
         if($admin_id){
             return Redirect::to('/dashboard');
         } else{
@@ -35,20 +35,23 @@ class CategoryProduct extends Controller
 
     public function save_category_product(Request $request){
         $this->Authlogin();
-        $data = $request->all();
-        $CateProduct = new CateProduct();
-        $CateProduct->category_name = $data['category_product_name'];
-        $CateProduct->meta_keywords = $data['category_product_keywords'];
-        $CateProduct->category_desc = $data['category_product_desc'];
-        $CateProduct->category_status = $data['category_product_status'];
-        $CateProduct->save();
-        // $data = array();
-        // $data['category_name'] = $request->category_product_name;
-        // $data['category_desc'] = $request->category_product_desc;
-        // $data['category_status'] = $request->category_product_status;
-        //DB::table('tbl_category_product')->insert($data);
+        // $data = $request->all();
+        // $CateProduct = new CateProduct();
+        // $CateProduct->category_name = $data['category_product_name'];
+        // $CateProduct->slug_category_product = $data['slug_category_product'];
+        // $CateProduct->meta_keywords = $data['category_product_keywords'];
+        // $CateProduct->category_desc = $data['category_product_desc'];
+        // $CateProduct->category_status = $data['category_product_status'];
+        // $CateProduct->save();
+        $data = array();
+        $data['category_name'] = $request->category_product_name;
+        $data['slug_category_product'] = $request->slug_category_product;
+        $data['meta_keywords'] = $request->category_product_keywords;
+        $data['category_desc'] = $request->category_product_desc;
+        $data['category_status'] = $request->category_product_status;
+        DB::table('tbl_category_product')->insert($data);
         Session::put('message', 'Thêm danh mục sản phẩm thành công');
-        return Redirect::to('/add-category-product');
+        return Redirect::to('/all-category-product');
     }
 
     public function unactive_category_product($category_product_id){
@@ -86,6 +89,7 @@ class CategoryProduct extends Controller
         // $CateProduct->save();
         $data = array();
         $data['category_name'] = $request->category_product_name;
+        $data['slug_category_product'] = $request->slug_category_product;
         $data['category_desc'] = $request->category_product_desc;
         $data['meta_keywords'] = $request->category_product_keywords;
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update($data);
@@ -102,14 +106,14 @@ class CategoryProduct extends Controller
 
     //End Function Admin Page
 
-    public function show_category_home($category_id) {
+    public function show_category_home($slug_category_product) {
         $cate_product = DB::table('tbl_category_product')->where('category_status', '0')->orderby('category_id', 'desc')->get();
 
         $category_by_id = DB::table('tbl_product')
         ->join('tbl_category_product', 'tbl_product.category_id', '=', 'tbl_category_product.category_id')
-        ->where('tbl_product.category_id', $category_id)->get();
+        ->where('tbl_category_product.slug_category_product',$slug_category_product)->get();
 
-        // foreach($category_by_id as $key => $val){
+        // foreach($cate_product as $key => $val){
         //     // SEO
         //     $meta_desc = $val->$category_desc;
         //     $meta_keywords = $val->$meta_keywords;
@@ -117,9 +121,10 @@ class CategoryProduct extends Controller
         //     $url_canonical = $request->url();
         // }
 
-        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.category_id', $category_id )->limit(1)->get();
+        $category_name = DB::table('tbl_category_product')->where('tbl_category_product.slug_category_product', $slug_category_product )->limit(1)->get();
         return view('pages.category.show_category')
         ->with('category', $cate_product)->with('category_by_id', $category_by_id)->with('category_name', $category_name);
+        // ->with(compact('meta_desc', 'meta_keywords', 'meta_title', 'url_canonical'));
         // ->with('meta_desc', $meta_desc)->with('meta_keywords', $meta_keywords)->with('meta_title', $meta_title)->with('url_canonical', $url_canonical);
 
     }

@@ -2,18 +2,23 @@
 <html dir="ltr" lang="en">
 
 <head>
-    {{-- SEO --}}
+    {{-- SEO
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="{{ $meta_keywords }}">
-    {{-- <meta name="description" content="{{ $meta_desc }}"> --}}
+    <meta name="description" content="{{ $meta_desc }}">
     <meta name="robots" content="INDEX,FOLLOW"/>
     <meta name="CreativeLayers" content="ATFN">
     <link rel="canonical" href="{{ $url_canonical }}">
     <!-- Title -->
     <meta name="title" content="The Stem House - {{ $meta_title }}"/>
-    <title>The Stem House - {{ $meta_title }}</title>
+    <title>The Stem House - {{ $meta_title }}</title> --}}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Stem House - StemHouse Education</title>
     <!-- css file -->
     <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset('public/frontend/css/style.css') }}">
@@ -261,14 +266,13 @@
                     <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
                     <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
                         <li>
-                            <a href="{{URL::to('/home') }}"><span class="title">Home</span></a>
+                            <a href="{{URL::to('/home') }}"><span class="title">Trang Chủ</span></a>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Khóa học</span></a>
-                            <!-- Level Two-->
-                            <ul>
-                                <li><a href="page-instructors.html">Instructors</a></li>
-                            </ul>
+                            <a href="{{URL::to('/') }}"><span class="title">Về Chúng Tôi</span></a>
+                        </li>
+                        <li>
+                            <a href="{{URL::to('/course') }}"><span class="title">Khóa Học</span></a>
                         </li>
                         <li>
                             <a href="#"><span class="title">Pages</span></a>
@@ -296,20 +300,19 @@
                                         <li><a href="page-my-setting.html">My Setting</a></li>
                                     </ul>
                                 </li> --}}
-                                <li><a href="page-about.html">About Us</a></li>
                                 <li><a href="page-gallery.html">Gallery</a></li>
                                 <li><a href="page-faq.html">Faq</a></li>
                                 <li><a href="page-pricing.html">Membership</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><span class="title">Tin tức</span></a>
+                            <a href="{{URL::to('/post')}}"><span class="title">Tin Tức</span></a>
                         </li>
                         <li>
-                            <a href="{{URL::to('/shop')}}"><span class="title">Cửa hàng</span></a>
+                            <a href="{{URL::to('/shop')}}"><span class="title">Cửa Hàng</span></a>
                         </li>
                         <li class="last">
-                            <a href="{{URL::to('/contact')}}"><span class="title">Liên hệ</span></a>
+                            <a href="{{URL::to('/contact')}}"><span class="title">Liên Hệ</span></a>
                         </li>
                     </ul>
                     <ul class="sign_up_btn pull-right dn-smd mt20">
@@ -431,7 +434,7 @@
             <div class="mobile-menu">
                 <div class="header stylehome1">
                     <div class="main_logo_home2">
-                        <img class="nav_logo_img img-fluid float-left mt20" src="{{ ('public/frontend/images/header-logo.png') }}"
+                        <img class="nav_logo_img img-fluid float-left mt20" src="{{asset('public/frontend/images/header-logo.png') }}"
                             alt="header-logo.png">
                         <span>edumy</span>
                     </div>
@@ -461,83 +464,23 @@
             </div><!-- /.mobile-menu -->
             <nav id="menu" class="stylehome1">
                 <ul>
-                    <li><span>Home</span>
-                        <ul>
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                            <li><a href="index3.html">Home 3</a></li>
-                            <li><a href="index4.html">Home 4</a></li>
-                            <li><a href="index5.html">Home 5</a></li>
-                            <li><a href="index6.html">Home - University</a></li>
-                            <li><a href="index7.html">Home College</a></li>
-                            <li><a href="index8.html">Home Kindergarten</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Courses</span>
-                        <ul>
-                            <li><span>Courses List</span>
-                                <ul>
-                                    <li><a href="page-course-v1.html">Courses v1</a></li>
-                                    <li><a href="page-course-v2.html">Courses v2</a></li>
-                                    <li><a href="page-course-v3.html">Courses v3</a></li>
-                                </ul>
-                            </li>
-                            <li><span>Courses Single</span>
-                                <ul>
-                                    <li><a href="page-course-single-v1.html">Single V1</a></li>
-                                    <li><a href="page-course-single-v2.html">Single V2</a></li>
-                                    <li><a href="page-course-single-v3.html">Single V3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="page-instructors.html">Instructors</a></li>
-                            <li><a href="page-instructors-single.html">Instructor Single</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Events</span>
-                        <ul>
-                            <li><a href="page-event.html">Event List</a></li>
-                            <li><a href="page-event-single.html">Event Single</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Pages</span>
+                    <li><a href="{{URL::to('/home')}}"><span class="title">Trang Chủ</span></a></li>
+                    <li><a href="{{URL::to('/course')}}"><span class="title">Khóa Học</span></a></li>
+                    <li><a href="{{URL::to('/shop')}}"><span class="title">Cửa Hàng</span></a></li>
+                    <li><a href="{{URL::to('/post')}}"><span class="title">Tin Tức</span></a></li>
+                    <li><a href="{{URL::to('/contact')}}"><span class="title">Liên Hệ</span></a></li>
+                    {{-- <li><span>Pages</span>
                         <ul>
                             <li><span>Shop Pages</span>
                                 <ul>
                                     <li><a href="page-shop.html">Shop</a></li>
-                                    <li><a href="page-shop-single.html">Shop Single</a></li>
-                                    <li><a href="page-shop-cart.html">Cart</a></li>
-                                    <li><a href="page-shop-checkout.html">Checkout</a></li>
-                                    <li><a href="page-shop-order.html">Order</a></li>
-                                </ul>
-                            </li>
-                            <li><span>User Admin</span>
-                                <ul>
-                                    <li><a href="page-dashboard.html">Dashboard</a></li>
-                                    <li><a href="page-my-courses.html">My Courses</a></li>
-                                    <li><a href="page-my-order.html">My Order</a></li>
-                                    <li><a href="page-my-message.html">My Message</a></li>
-                                    <li><a href="page-my-review.html">My Review</a></li>
-                                    <li><a href="page-my-bookmarks.html">My Bookmarks</a></li>
-                                    <li><a href="page-my-listing.html">My Listing</a></li>
-                                    <li><a href="page-my-setting.html">My Setting</a></li>
                                 </ul>
                             </li>
                             <li><a href="page-about.html">About Us</a></li>
-                            <li><a href="page-gallery.html">Gallery</a></li>
-                            <li><a href="page-faq.html">Faq</a></li>
-                            <li><a href="page-login.html">LogIn</a></li>
-                            <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-pricing.html">Membership</a></li>
-                            <li><a href="page-error.html">404 Page</a></li>
-                            <li><a href="page-terms.html">Terms and Conditions</a></li>
-                            <li><a href="page-become-instructor.html">Become an Instructor</a></li>
-                            <li><a href="page-ui-element.html">UI Elements</a></li>
                         </ul>
-                    </li>
-                    <li><a href="">Tin tức</a></li>
-                    <li><a href="page-contact.html">Liên hệ</a></li>
-                    <li><a href="page-login.html"><span class="flaticon-user"></span> Login</a></li>
-                    <li><a href="page-register.html"><span class="flaticon-edit"></span> Register</a></li>
+                    </li> --}}
+                    <li><a href="page-login.html"><span class="flaticon-user"></span> Đăng Nhập</a></li>
+                    <li><a href="page-register.html"><span class="flaticon-edit"></span> Đăng Ký</a></li>
                 </ul>
             </nav>
         </div>
@@ -565,7 +508,9 @@
                             <h4>THÔNG TIN</h4>
                             <ul class="list-unstyled">
                                 <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Khóa học</a></li>
                                 <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Cửa hàng</a></li>
                                 <li><a href="#">Liên hệ</a></li>
                             </ul>
                         </div>

@@ -3538,6 +3538,10 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 .top_courses .details .tc_content h5{
   font-size: 18px;
   font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 .top_courses.home2 .details .tc_content h5{
   color: #0a0a0a;
@@ -3930,6 +3934,12 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .courses_list_content .top_courses.list .details .tc_footer{
   border: none;
+}
+
+.img-course {
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 /*== Popular Job Categories => Icon Hover Image Box ==*/
 .hvr_img_box_container{

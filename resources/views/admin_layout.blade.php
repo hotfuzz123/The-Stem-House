@@ -78,24 +78,15 @@
 						<!-- start language menu -->
 						<li class="dropdown language-switch">
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img
-									src="{{asset('public/backend/admin/img/flags/gb.png') }}" class="position-left" alt=""> English <span
+									src="{{asset('public/backend/admin/img/flags/us.png') }}" class="position-left" alt=""> English <span
 									class="fa fa-angle-down"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="deutsch"><img src="{{asset('public/backend/admin/img/flags/de.png') }}" alt=""> Deutsch</a>
+									<a class="vietnam"><img src="{{asset('public/backend/admin/img/flags/vn.png') }}" alt=""> Việt Nam</a>
 								</li>
 								<li>
-									<a class="ukrainian"><img src="{{asset('public/backend/admin/img/flags/ua.png') }}" alt=""> Українська</a>
-								</li>
-								<li>
-									<a class="english"><img src="{{asset('public/backend/admin/img/flags/gb.png') }}" alt=""> English</a>
-								</li>
-								<li>
-									<a class="espana"><img src="{{asset('public/backend/admin/img/flags/es.png') }}" alt=""> España</a>
-								</li>
-								<li>
-									<a class="russian"><img src="{{asset('public/backend/admin/img/flags/ru.png') }}" alt=""> Русский</a>
+									<a class="english"><img src="{{asset('public/backend/admin/img/flags/us.png') }}" alt=""> English</a>
 								</li>
 							</ul>
 						</li>
@@ -460,11 +451,11 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
-                                        <a href="{{URL::to('/all-teacher') }}" class="nav-link "> <span class="title">Danh sách giáo viên</span>
+                                        <a href="{{URL::to('/') }}" class="nav-link "> <span class="title">Danh sách giáo viên</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{URL::to('/add-teacher') }}" class="nav-link "> <span class="title">Add
+                                        <a href="{{URL::to('/') }}" class="nav-link "> <span class="title">Add
                                                 Professor</span>
                                         </a>
                                     </li>
@@ -523,28 +514,11 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
-                                        <a href="all_courses.html" class="nav-link "> <span class="title">All
-                                                Courses</span>
+                                        <a href="{{URL::to('/all-course') }}" class="nav-link "> <span class="title">Danh sách khóa học</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="add_course.html" class="nav-link "> <span class="title">Add
-                                                Course</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="add_course_bootstrap.html" class="nav-link "> <span class="title">Add
-                                                Course Bootstrap</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="edit_course.html" class="nav-link "> <span class="title">Edit
-                                                Course</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="course_details.html" class="nav-link "> <span class="title">About
-                                                Course</span>
+                                        <a href="{{URL::to('/add-course') }}" class="nav-link "> <span class="title">Thêm khóa học</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -704,7 +678,9 @@
 	<script src="{{asset('public/backend/admin/plugins/popper/popper.js') }}"></script>
 	<script src="{{asset('public/backend/admin/plugins/jquery-blockui/jquery.blockui.min.js') }}"></script>
 	<script src="{{asset('public/backend/admin/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-	<!-- bootstrap -->
+    <script src="{{asset('public/backend/admin/plugins/jquery-validation/js/jquery.validate.min.js') }}"></script>
+	<script src="{{asset('public/backend/admin/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
+    <!-- bootstrap -->
 	<script src="{{asset('public/backend/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 	<script src="{{asset('public/backend/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{asset('public/backend/admin/plugins/sparkline/jquery.sparkline.js') }}"></script>
@@ -721,7 +697,24 @@
 	<script src="{{asset('public/backend/admin/plugins/material/material.min.js') }}"></script>
 	<!--apex chart-->
 	<script src="{{asset('public/backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
+    <script src="{{asset('public/backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
+    <!-- Ckeditor 4 -->
+    <script src="//cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
+    <!-- Ckeditor 5 -->
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/decoupled-document/ckeditor.js"></script> --}}
+    {{-- <script src="{{asset('public/backend/admin/plugins/ckeditor5/build/ckeditor.js') }}"></script>
+    <script src="{{asset('public/backend/admin/plugins/ckeditor5/build/ckeditor.js.map') }}"></script>
+    <script src="{{asset('public/backend/admin/plugins/ckeditor5/src/ckeditor.js') }}"></script> --}}
+
+    <!-- Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script src="{{asset('public/backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
+    <!-- Custom js -->
+    <script src="{{asset('public/backend/admin/js/custom.js') }}"></script>
+
+
 	<!-- summernote -->
 	<script src="{{asset('public/backend/admin/plugins/summernote/summernote.js') }}"></script>
 	<script src="{{asset('public/backend/admin/js/pages/summernote/summernote-data.js') }}"></script>

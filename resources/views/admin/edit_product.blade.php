@@ -20,7 +20,7 @@
         </ol>
     </div>
 </div>
-<div class="col-md-9 col-sm-12 mx-auto">
+<div class="col-md-12 col-sm-12 mx-auto">
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_product as $key => $pro)
@@ -29,6 +29,10 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên sản phẩm</label>
                     <input type="text" name="product_name" class="form-control" id="simpleFormEmail" value="{{ $pro ->product_name }}">
+                </div>
+                <div class="form-group">
+                    <label for="simpleFormEmail">Slug sản phẩm</label>
+                    <input type="text" name="product_slug" class="form-control" id="simpleFormEmail" value="{{ $pro ->product_slug }}">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Giá sản phẩm</label>
@@ -41,11 +45,11 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả sản phẩm</label>
-                    <textarea class="form-control" name="product_desc" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->product_desc }}</textarea>
+                    <textarea class="form-control" name="product_desc" rows="3" id="editor-product-1" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->product_desc }}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Nội dung sản phẩm</label>
-                    <textarea class="form-control" name="product_content" rows="3" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->product_content }}</textarea>
+                    <textarea class="form-control" name="product_content" rows="3" id="editor-product-2" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->product_content }}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Danh mục sản phẩm</label>

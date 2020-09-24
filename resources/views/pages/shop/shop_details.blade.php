@@ -237,7 +237,7 @@
                 <div class="shop_product_slider">
                     @foreach ($relate as $key => $relate_value)
                     <div class="item">
-                        <a href="{{URL::to('/product-detail/' .$relate_value->product_id) }}">
+                        <a href="{{URL::to('/product-detail/' .$relate_value->product_slug) }}">
                             <div class="shop_grid">
                                 <div class="thumb text-center">
                                     <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
