@@ -37,7 +37,6 @@
                             <div class="btn-group">
                                 <button id="addRow1" class="btn btn-info">
                                     <a style="color:white; font-weight:700;" href="{{URL::to('/add-product') }}">Thêm sản phẩm <i class="fa fa-plus"></i></a>
-
                                 </button>
                             </div>
                         </div>
@@ -111,7 +110,7 @@
                                                     </label>
                                                 </td>
                                                 <td> {{ $pro ->product_name }} </td>
-                                                <td> {{number_format($pro ->product_price).' '.'VND'}} </td>
+                                                <td> {{number_format($pro ->product_price).' '.'đ'}} </td>
                                                 <td><img src="public/uploads/product/{{ $pro ->product_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
                                                 <td> {{ $pro ->category_name }} </td>
                                                 <td>
@@ -137,6 +136,10 @@
                                                             <i class="fa fa-angle-down"></i>
                                                         </button>
                                                         <ul class="dropdown-menu pull-left" role="menu">
+                                                            <li>
+                                                                <a href="{{URL::to('/add-gallery/' .$pro->product_id)}}">
+                                                                    <i class="far fa-edit"></i> Thêm hình ảnh sản phẩm </a>
+                                                            </li>
                                                             <li>
                                                                 <a href="{{URL::to('/edit-product/' .$pro->product_id)}}">
                                                                     <i class="far fa-edit"></i> Cập nhật </a>

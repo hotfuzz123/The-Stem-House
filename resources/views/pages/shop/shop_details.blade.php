@@ -67,7 +67,7 @@
                         </ul>
                     </div>
                     <p class="mb20"><p>{!!$value->product_desc!!}</p></p>
-                    <div class="sspd_price mb25">{{number_format($value->product_price).' '.'VND'}}</div>
+                    <div class="sspd_price mb25">{{number_format($value->product_price).' '.'đ'}}</div>
                     <ul class="cart_btns ui_kit_button mb30">
                         <li class="list-inline-item"><input placeholder="4" min="1" type="number"></li>
                         <li class="list-inline-item"><button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span>Thêm giỏ hàng</button></li>
@@ -243,7 +243,7 @@
                                     <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
                                 </div>
                                 <div class="details float-left">
-                                    <h4 class="price">{{number_format($relate_value->product_price).' '.'VND'}}</h4>
+                                    <h4 class="price">{{number_format($relate_value->product_price).' '.'đ'}}</h4>
                                     <h4 class="item-tile">{{ $relate_value->product_name }}</h4>
                                     <ul>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>

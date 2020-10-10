@@ -13,7 +13,7 @@
                 ?>
             </div>
             <ol class="breadcrumb page-breadcrumb pull-right">
-                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i
+                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Trang Chủ</a>&nbsp;<i
                         class="fa fa-angle-right"></i>
                 </li>
                 <li class="active">Danh sách khóa học</li>
@@ -111,7 +111,7 @@
                                                     </label>
                                                 </td>
                                                 <td> {{ $pro ->course_name }} </td>
-                                                <td> {{number_format($pro ->course_price).' '.'VND'}} </td>
+                                                <td> {{number_format($pro ->course_price).' '.'đ'}} </td>
                                                 <td><img src="public/uploads/course/{{ $pro ->course_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
                                                 <td> {{ $pro ->category_name }} </td>
                                                 <td>
@@ -137,6 +137,10 @@
                                                             <i class="fa fa-angle-down"></i>
                                                         </button>
                                                         <ul class="dropdown-menu pull-left" role="menu">
+                                                            <li>
+                                                                <a href="{{URL::to('/')}}">
+                                                                    <i class="fas fa-list"></i> Thêm Chương</a>
+                                                            </li>
                                                             <li>
                                                                 <a href="{{URL::to('/edit-course/' .$pro->course_id)}}">
                                                                     <i class="far fa-edit"></i> Cập nhật </a>

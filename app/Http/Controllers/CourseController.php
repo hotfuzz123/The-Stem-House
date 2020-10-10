@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB, Session, Log, Auth;
+use App\Course;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start();
@@ -91,40 +92,54 @@ class CourseController extends Controller
 
     public function update_course(Request $request, $course_id) {
         $this->Authlogin();
-        $data = array();
-        $data['course_name'] = $request->course_name;
-        $data['course_slug'] = $request->course_slug;
-        $data['course_price'] = $request->course_price;
-        $data['course_desc'] = $request->course_desc;
-        $data['course_content'] = $request->course_content;
-        $data['category_id'] = $request->course_cate;
+        $data = $request->all();
+        $course = Course::find($course_id);
+        $course->course_name = $data['course_name'];
+        $course->course_slug = $data['course_slug'];
+        $course->course_price = $data['course_price'];
+        $course->course_desc = $data['course_desc'];
+        $course->course_content = $data['course_content'];
+        $course->category_id = $data['course_cate'];
         $get_image = $request->file('course_image');
+        $path = 'public/uploads/course/';
 
         if($get_image){
+            unlink($path.$course->course_image);
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/uploads/course', $new_image);
-            $data['course_image'] = $new_image;
-            DB::table('tbl_course')->where('course_id', $course_id)->update($data);
-            Session::put('message', 'cập nhật khóa học thành công');
-            return Redirect::to('all-course');
+            $get_image->move($path, $new_image);
+            $course->course_image = $new_image;
         }
-
-        DB::table('tbl_course')->where('course_id', $course_id)->update($data);
-        Session::put('message', 'cập nhật khóa học thành công');
-        return Redirect::to('/all-course');
+        $course->save();
+        return Redirect::to('/all-course')->with('message', 'Cập nhật khóa học thành công');
     }
 
     public function delete_course($course_id) {
         $this->Authlogin();
-        DB::table('tbl_course')->where('course_id', $course_id)->delete();
-        Session::put('message', 'Xóa khóa học thành công');
-        return Redirect::to('/all-course');
+        $course = Course::find($course_id);
+        unlink('public/uploads/course/'.$course->course_image);
+        $course->delete();
+        return Redirect::to('/all-course')->with('message', 'Xóa khóa học thành công');
     }
 
     //End Admin Page
-    public function details_course(){
-        return view('pages.course.course_details');
+    public function details_course($course_slug){
+
+        $details_course = DB::table('tbl_course')
+        ->join('tbl_category_course', 'tbl_category_course.category_id', '=', 'tbl_course.category_id')
+        ->where('tbl_course.course_slug',$course_slug)->get();
+
+        foreach($details_course as $key => $value){
+            $category_id = $value->category_id;
+        }
+
+        // Sản phẩm liên quan
+        $related_course = DB::table('tbl_course')
+        ->join('tbl_category_course', 'tbl_category_course.category_id', '=', 'tbl_course.category_id')
+        ->where('tbl_category_course.category_id', $category_id)
+        ->whereNotIn('tbl_course.course_slug',[$course_slug])->limit(3)->get();
+
+        return view('pages.course.course_details')->with('course_details', $details_course)->with('relate', $related_course);
     }
 }

@@ -4,15 +4,22 @@
 <div class="page-bar">
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
-            <div class="page-title">Danh sách giáo viên</div>
+            <div class="page-title">Danh sách người dùng</div>
+            <?php
+                $message = Session::get('message');
+                if($message){
+                    echo '<span class="text-alert">'.$message. '</span>';
+                    Session::put('message', null);
+                }
+            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                     href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
             </li>
-            <li><a class="parent-item" href="#">Professors</a>&nbsp;<i class="fa fa-angle-right"></i>
+            <li><a class="parent-item" href="#">Người dùng</a>&nbsp;<i class="fa fa-angle-right"></i>
             </li>
-            <li class="active">Danh sách giáo viên</li>
+            <li class="active">Danh sách người dùng</li>
         </ol>
     </div>
 </div>
@@ -39,13 +46,11 @@
                         <div class="col-md-12">
                             <div class="card card-box">
                                 <div class="card-head">
-                                    <header>All Professors</header>
+                                    <header>Bảng danh sách người dùng</header>
                                     <div class="tools">
                                         <a class="fa fa-repeat btn-color box-refresh"
                                             href="javascript:;"></a>
                                         <a class="t-collapse btn-color fa fa-chevron-down"
-                                            href="javascript:;"></a>
-                                        <a class="t-close btn-color fa fa-times"
                                             href="javascript:;"></a>
                                     </div>
                                 </div>
@@ -53,9 +58,9 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-6">
                                             <div class="btn-group">
-                                                <a href="add_professor.html" id="addRow"
+                                                <a style="" href="{{URL::to('/add-auth') }}" id="addRow"
                                                     class="btn btn-info">
-                                                    Thêm giáo viên <i class="fa fa-plus"></i>
+                                                    Thêm người dùng <i class="fa fa-plus"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -91,353 +96,46 @@
                                             <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th> Name </th>
-                                                    <th> Department </th>
-                                                    <th> Gender </th>
-                                                    <th> Degree </th>
-                                                    <th> Mobile </th>
+                                                    <th> Họ & Tên </th>
+                                                    <th> Chức Vụ </th>
+                                                    <th> Số Điện Thoại </th>
                                                     <th> Email </th>
-                                                    <th>Joining Date</th>
+                                                    <th> Ngày Thêm (D/M/Y)</th>
                                                     <th> Action </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($all_auth as $key => $auth)
                                                 <tr class="odd gradeX">
                                                     <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof1.jpg"
-                                                            alt="">
+                                                        <img src="public/uploads/admin/{{ $auth ->admin_image }}">
                                                     </td>
-                                                    <td>Rajesh</td>
-                                                    <td class="left">Computer</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">M.Com, B.Ed</td>
-                                                    <td><a href="tel:4444565756">
-                                                            4444565756 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            rajesh@gmail.com </a></td>
-                                                    <td class="left">22 Feb 2000</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof10.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Pooja Patel</td>
-                                                    <td class="left">Mechanical</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">M.E.</td>
-                                                    <td><a href="tel:444786876">
-                                                            444786876 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            pooja@gmail.com </a></td>
-                                                    <td class="left">27 Aug 2005</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
+                                                    <td>{{ $auth ->admin_name }}</td>
+                                                    <td>{{ $auth ->admin_type }}</td>
+                                                    <td><a href="tel:{{ $auth ->admin_phone }}">{{ $auth ->admin_phone }} </a></td>
+                                                    <td><a href="mailto:{{ $auth ->admin_email }}">{{ $auth ->admin_email }} </a></td>
+                                                    <td class="left">{{ $auth ->created_at }}</td>
+                                                    <td class="valigntop">
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"
+                                                                type="button" data-toggle="dropdown" aria-expanded="false">
+                                                                Actions
+                                                                <i class="fa fa-angle-down"></i>
+                                                            </button>
+                                                            <ul class="dropdown-menu pull-left" role="menu">
+                                                                <li>
+                                                                    <a href="{{URL::to('/edit-auth/' .$auth->admin_id)}}">
+                                                                        <i class="far fa-edit"></i> Cập nhật </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a onclick="return confirm('Bạn có chắc muốn xóa người dùng này không?')" href="{{URL::to('/delete-auth/' .$auth->admin_id)}}">
+                                                                        <i class="far fa-trash-alt"></i> Xóa </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </td>
                                                 </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof2.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Sarah Smith</td>
-                                                    <td class="left">Science</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">B.Sc., M.Sc.</td>
-                                                    <td><a href="tel:44455546456">
-                                                            44455546456 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            sarah@gmail.com </a></td>
-                                                    <td class="left">05 Jun 2011</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof3.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>John Deo</td>
-                                                    <td class="left">Music</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">B.A.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            john@gmail.com </a></td>
-                                                    <td class="left">15 Feb 2012</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof4.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Jay Soni</td>
-                                                    <td class="left">Mathematics</td>
-                                                    <td class="left">10</td>
-                                                    <td class="left">B.B.A., P.H.D.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            kenh@gmail.com </a></td>
-                                                    <td class="left">12 Nov 2012</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof5.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Jacob Ryan</td>
-                                                    <td class="left">Computer</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">B.E., M.E.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            johnson@gmail.com </a></td>
-                                                    <td class="left">03 Dec 2001</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof6.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Megha Trivedi</td>
-                                                    <td class="left">Mathematics</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">M.COM, M.Ed.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            megha@gmail.com </a></td>
-                                                    <td class="left">17 Mar 2013</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof1.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Rajesh</td>
-                                                    <td class="left">Computer</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">M.Com, B.Ed</td>
-                                                    <td><a href="tel:4444565756">
-                                                            4444565756 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            rajesh@gmail.com </a></td>
-                                                    <td class="left">22 Feb 2000</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof10.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Pooja Patel</td>
-                                                    <td class="left">Mechanical</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">M.E.</td>
-                                                    <td><a href="tel:444786876">
-                                                            444786876 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            pooja@gmail.com </a></td>
-                                                    <td class="left">27 Aug 2005</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof2.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Sarah Smith</td>
-                                                    <td class="left">Science</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">B.Sc., M.Sc.</td>
-                                                    <td><a href="tel:44455546456">
-                                                            44455546456 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            sarah@gmail.com </a></td>
-                                                    <td class="left">05 Jun 2011</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof3.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>John Deo</td>
-                                                    <td class="left">Music</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">B.A.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            john@gmail.com </a></td>
-                                                    <td class="left">15 Feb 2012</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof4.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Jay Soni</td>
-                                                    <td class="left">Mathematics</td>
-                                                    <td class="left">10</td>
-                                                    <td class="left">B.B.A., P.H.D.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            kenh@gmail.com </a></td>
-                                                    <td class="left">12 Nov 2012</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof5.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Jacob Ryan</td>
-                                                    <td class="left">Computer</td>
-                                                    <td class="left">Male</td>
-                                                    <td class="left">B.E., M.E.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            johnson@gmail.com </a></td>
-                                                    <td class="left">03 Dec 2001</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr class="odd gradeX">
-                                                    <td class="patient-img">
-                                                        <img src="../assets/img/prof/prof6.jpg"
-                                                            alt="">
-                                                    </td>
-                                                    <td>Megha Trivedi</td>
-                                                    <td class="left">Mathematics</td>
-                                                    <td class="left">Female</td>
-                                                    <td class="left">M.COM, M.Ed.</td>
-                                                    <td><a href="tel:444543564">
-                                                            444543564 </a></td>
-                                                    <td><a href="mailto:shuxer@gmail.com">
-                                                            megha@gmail.com </a></td>
-                                                    <td class="left">17 Mar 2013</td>
-                                                    <td>
-                                                        <a href="edit_professor.html"
-                                                            class="btn btn-primary btn-xs">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger btn-xs">
-                                                            <i class="fa fa-trash-o "></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -448,304 +146,30 @@
                 </div>
                 <div class="tab-pane" id="tab2">
                     <div class="row">
+                        @foreach ($all_auth as $key => $auth)
                         <div class="col-md-4">
                             <div class="card card-box">
                                 <div class="card-body no-padding ">
                                     <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof10.jpg" class="doctor-pic"
-                                            alt="">
+                                        <img src="public/uploads/admin/{{ $auth ->admin_image }}" class="doctor-pic" alt="Ảnh đại diện">
                                         <div class="profile-usertitle">
-                                            <div class="doctor-name">Pooja Patel </div>
-                                            <div class="name-center"> Mathematics </div>
+                                            <div class="doctor-name">{{ $auth ->admin_name }}</div>
+                                            <div class="name-center"> {{ $auth ->admin_type }} </div>
                                         </div>
-                                        <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
+                                        {{-- <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p> --}}
+                                        <div class="" style="padding: 15px 0;">
+                                            <p><i class="fas fa-phone-alt"></i><a href="tel:{{ $auth ->admin_phone }}"> {{ $auth ->admin_phone }}</a></p>
+                                            <p><i class="fas fa-envelope"></i><a href="mailto:{{ $auth ->admin_email }}"> {{ $auth ->admin_email }}</a></p>
                                         </div>
-                                        <div class="profile-userbuttons">
+                                        {{-- <div class="profile-userbuttons">
                                             <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
+                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read More</a>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof1.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Rajesh </div>
-                                            <div class="name-center"> Science </div>
-                                        </div>
-                                        <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                        </p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof2.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Sarah Smith </div>
-                                            <div class="name-center"> Computer </div>
-                                        </div>
-                                        <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof3.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">John Deo </div>
-                                            <div class="name-center"> Engineering </div>
-                                        </div>
-                                        <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof4.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Jay Soni </div>
-                                            <div class="name-center"> Music </div>
-                                        </div>
-                                        <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                        </p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof5.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Jacob Ryan </div>
-                                            <div class="name-center"> Commerce </div>
-                                        </div>
-                                        <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof6.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Megha Trivedi </div>
-                                            <div class="name-center"> Mechanical </div>
-                                        </div>
-                                        <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof1.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Rajesh </div>
-                                            <div class="name-center"> Science </div>
-                                        </div>
-                                        <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                        </p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof2.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Sarah Smith </div>
-                                            <div class="name-center"> Computer </div>
-                                        </div>
-                                        <p>456, Estern evenue, Courtage area, <br />New York</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof10.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Pooja Patel </div>
-                                            <div class="name-center"> Mathematics </div>
-                                        </div>
-                                        <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof1.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">Rajesh </div>
-                                            <div class="name-center"> Science </div>
-                                        </div>
-                                        <p>45, Krishna Tower, Near Bus Stop, Satellite, <br />Mumbai
-                                        </p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card card-box">
-                                <div class="card-body no-padding ">
-                                    <div class="doctor-profile">
-                                        <img src="../assets/img/prof/prof3.jpg" class="doctor-pic"
-                                            alt="">
-                                        <div class="profile-usertitle">
-                                            <div class="doctor-name">John Deo </div>
-                                            <div class="name-center"> Engineering </div>
-                                        </div>
-                                        <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p>
-                                        <div>
-                                            <p><i class="fa fa-phone"></i><a
-                                                    href="tel:(123)456-7890"> (123)456-7890</a></p>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <a href="professor_profile.html"
-                                                class="btn btn-circle deepPink-bgcolor btn-sm">Read
-                                                More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

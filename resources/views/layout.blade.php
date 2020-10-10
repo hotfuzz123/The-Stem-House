@@ -237,8 +237,7 @@
                                     <div class="header_top_lang_widget">
                                         <select class="selectpicker show-tick">
                                             <option>English</option>
-                                            <option>Frenc</option>
-                                            <option>Italian</option>
+                                            <option>Tiếng Việt</option>
                                         </select>
                                     </div>
                                 </li>
@@ -465,6 +464,7 @@
             <nav id="menu" class="stylehome1">
                 <ul>
                     <li><a href="{{URL::to('/home')}}"><span class="title">Trang Chủ</span></a></li>
+                    <li><a href="{{URL::to('/')}}"><span class="title">Về Chúng Tôi</span></a></li>
                     <li><a href="{{URL::to('/course')}}"><span class="title">Khóa Học</span></a></li>
                     <li><a href="{{URL::to('/shop')}}"><span class="title">Cửa Hàng</span></a></li>
                     <li><a href="{{URL::to('/post')}}"><span class="title">Tin Tức</span></a></li>

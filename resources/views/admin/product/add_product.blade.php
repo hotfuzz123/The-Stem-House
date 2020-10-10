@@ -27,11 +27,11 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên sản phẩm</label>
-                    <input type="text" name="product_name" class="form-control" id="simpleFormEmail">
+                    <input type="text" name="product_name" class="form-control" onkeyup="ChangeToSlug();" id="slug">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Slug sản phẩm</label>
-                    <input type="text" name="product_slug" class="form-control" id="simpleFormEmail">
+                    <input type="text" name="product_slug" class="form-control" id="convert_slug">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Giá sản phẩm</label>

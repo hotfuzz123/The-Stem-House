@@ -9,7 +9,7 @@
                 <div class="main-banner-wrapper">
                     <div class="banner-style-one owl-theme owl-carousel">
                         <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/4.jpg') }});">
-                            <div class="container">
+                            {{-- <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
                                         <h3 class="banner-title">Start Investing in You</h3>
@@ -20,35 +20,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/5.jpg') }});">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 text-center">
-                                        <h3 class="banner-title">Self EducatIon Resources and Infos</h3>
-                                        <p>Technology is brining a massive wave of evolution on learning things
-                                            on different ways</p>
-                                        <div class="btn-block">
-                                            <a href="#" class="banner-btn">Ready to get Started?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/6.jpg') }});">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 text-center">
-                                        <h3 class="banner-title">Start Investing in You</h3>
-                                        <p>Technology is brining a massive wave of evolution on learning things
-                                            on different ways</p>
-                                        <div class="btn-block">
-                                            <a href="#" class="banner-btn">Ready to get Started?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="carousel-btn-block banner-carousel-btn">
@@ -112,7 +88,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="top_courses">
                     <div class="thumb">
@@ -187,7 +162,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="top_courses">
                     <div class="thumb">
@@ -375,7 +349,7 @@
             </div>
             <div class="col-lg-6 offset-lg-3">
                 <div class="courses_all_btn text-center">
-                    <a class="btn btn-transparent" href="#">View All Courses</a>
+                    <a class="btn btn-transparent" href="{{URL::to('/course') }}">Hiển Thị Toàn Bộ Khóa Học</a>
                 </div>
             </div>
         </div>

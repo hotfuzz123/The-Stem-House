@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-xl-6">
                         <div class="instructor_search_result">
-                            <p class="mt10 fz15"><span class="pr-1">Hiển thị 1–9 trên</span>15 sản phẩm</p>
+                            <p class="mt10 fz15"><span class="pr-1">Hiển thị 1–{!! $all_product->count() !!} trên</span>{!! $all_product->total() !!} sản phẩm</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-xl-6">
@@ -55,7 +55,7 @@
                                         <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
                                     </div>
                                     <div class="details float-left">
-                                        <h4 class="price">{{number_format($product->product_price).' '.'VND'}}</h4>
+                                        <h4 class="price">{{number_format($product->product_price).' '.'đ'}}</h4>
                                         <h4 class="item-tile">{{$product->product_name}}</h4>
                                         <ul>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
@@ -71,24 +71,10 @@
                             </a>
                         </div>
                     @endforeach
+
                     <div class="col-lg-12">
-                        <div class="mbp_pagination mt20">
-                            <ul class="page_navigation">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-                                </li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">14</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next <span class="flaticon-right-arrow-1"></span></a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{-- {!! $all_product->links() !!} --}}
+                        {{ $all_product->render("pagination::theme") }}
                     </div>
                 </div>
             </div>

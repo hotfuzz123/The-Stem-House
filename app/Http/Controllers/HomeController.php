@@ -26,7 +26,7 @@ class HomeController extends Controller
         $url_canonical = $request->url();
 
         $cate_product = DB::table('tbl_category_product')->where('category_status', '0')->orderby('category_id', 'desc')->get();
-        $all_product = DB::table('tbl_product')->where('product_status', '0')->orderby('product_id', 'desc')->get();
+        $all_product = DB::table('tbl_product')->where('product_status', '0')->orderby('product_id', 'desc')->paginate(9);
 
         return view('pages.shop.shop')->with('category', $cate_product)->with('all_product', $all_product)
         ->with(compact('meta_desc', 'meta_keywords', 'meta_title', 'url_canonical'));
@@ -45,7 +45,7 @@ class HomeController extends Controller
 
     public function course(){
         $cate_course = DB::table('tbl_category_course')->where('category_status', '0')->orderby('category_id', 'desc')->get();
-        $all_course = DB::table('tbl_course')->where('course_status', '0')->orderby('course_id', 'desc')->get();
+        $all_course = DB::table('tbl_course')->where('course_status', '0')->orderby('course_id', 'desc')->paginate(9);
         return view('pages.course.course')->with('category', $cate_course)->with('all_course', $all_course);
     }
 

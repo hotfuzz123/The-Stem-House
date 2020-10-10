@@ -73,8 +73,8 @@ class CategoryProduct extends Controller
     public function edit_category_product($category_product_id){
         $this->Authlogin();
         // $edit_category_product = CateProduct::find($category_product_id);
-        $edit_category_product = CateProduct::where('category_id', $category_product_id)->get();
-        // $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
+        // $edit_category_product = CateProduct::where('category_id', $category_product_id)->get();
+        $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
         $manager_category_product = view('admin.edit_category_product')->with('edit_category_product', $edit_category_product);
         return view('admin_layout')->with('admin.edit_category_product', $manager_category_product);
 
@@ -111,7 +111,7 @@ class CategoryProduct extends Controller
 
         $category_by_id = DB::table('tbl_product')
         ->join('tbl_category_product', 'tbl_product.category_id', '=', 'tbl_category_product.category_id')
-        ->where('tbl_category_product.slug_category_product',$slug_category_product)->get();
+        ->where('tbl_category_product.slug_category_product',$slug_category_product)->paginate(9);
 
         // foreach($cate_product as $key => $val){
         //     // SEO
@@ -122,7 +122,7 @@ class CategoryProduct extends Controller
         // }
 
         $category_name = DB::table('tbl_category_product')->where('tbl_category_product.slug_category_product', $slug_category_product )->limit(1)->get();
-        return view('pages.category.show_category')
+        return view('pages.category.show_category_shop')
         ->with('category', $cate_product)->with('category_by_id', $category_by_id)->with('category_name', $category_name);
         // ->with(compact('meta_desc', 'meta_keywords', 'meta_title', 'url_canonical'));
         // ->with('meta_desc', $meta_desc)->with('meta_keywords', $meta_keywords)->with('meta_title', $meta_title)->with('url_canonical', $url_canonical);

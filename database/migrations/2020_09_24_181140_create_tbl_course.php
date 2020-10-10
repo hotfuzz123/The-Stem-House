@@ -15,9 +15,9 @@ class CreateTblCourse extends Migration
     {
         Schema::create('tbl_course', function (Blueprint $table) {
             $table->increments('course_id');
-            $table->integer('category_id');
             $table->string('course_name');
             $table->text('course_slug');
+            $table->integer('category_id');
             $table->text('course_desc');
             $table->text('course_content');
             $table->string('course_price');

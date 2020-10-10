@@ -5,6 +5,7 @@
 <!-- Inner Page Breadcrumb -->
 <section class="inner_page_breadcrumb csv2">
     <div class="container">
+        @foreach ($course_details as $key => $value)
         <div class="row">
             <div class="col-xl-9">
                 <div class="breadcrumb_content">
@@ -22,9 +23,9 @@
                                     <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-share"> Share</span></a></li>
                                 </ul>
                             </div>
-                            <h3 class="cs_title color-white">Designing a Responsive Mobile Website with Muse</h3>
+                            <h3 class="cs_title color-white">{{$value->course_name}}</h3>
                             <ul class="cs_review_seller">
-                                <li class="list-inline-item"><a class="color-white" href="#"><span>Best Seller</span></a></li>
+                                <li class="list-inline-item"><a class="color-white" href="#"><span>{{$value->category_name}}</span></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
@@ -41,6 +42,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 
@@ -50,13 +52,15 @@
         <div class="row">
             <div class="col-md-12 col-lg-8 col-xl-9">
                 <div class="row">
+                    @foreach ($course_details as $key => $value)
                     <div class="col-lg-12">
                         <div class="courses_single_container">
                             <div class="cs_row_one">
                                 <div class="cs_ins_container">
                                     <div class="courses_big_thumb">
                                         <div class="thumb">
-                                            <iframe class="iframe_video" src="http://www.youtube.com/embed/57LQI8DKwec" frameborder="0" allowfullscreen></iframe>
+                                            <img src="{{URL::to('public/uploads/course/' .$value->course_image) }}" height="540" width="960" alt="">
+                                            {{-- <iframe class="iframe_video" src="http://www.youtube.com/embed/57LQI8DKwec" frameborder="0" allowfullscreen></iframe> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +84,8 @@
                                     <div class="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="Overview-tab">
                                         <div class="cs_row_two csv2">
                                             <div class="cs_overview">
-                                                <h4 class="title">Overview</h4>
+                                                {!! $value->course_content !!}
+                                                {{-- <h4 class="title">Overview</h4>
                                                 <h4 class="subtitle">Course Description</h4>
                                                 <p class="mb30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
                                                 <p class="mb20">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -104,7 +109,7 @@
                                                     <li><i class="fa fa-circle"></i><p>You will need a copy of Adobe XD 2019 or above. A free trial can be downloaded from Adobe.</p></li>
                                                     <li><i class="fa fa-circle"></i><p>No previous design experience is needed.</p></li>
                                                     <li><i class="fa fa-circle"></i><p>No previous Adobe XD skills are needed.</p></li>
-                                                </ul>
+                                                </ul> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -403,25 +408,28 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <h3 class="r_course_title">Khóa Học Liên Quan</h3>
                     </div>
+                    {{-- Tối đa 3 khóa --}}
+                    @foreach ($relate as $key => $relate_value)
                     <div class="col-lg-6 col-xl-4">
                         <div class="top_courses">
                             <div class="thumb">
-                                <img class="img-whp" src="{{asset('public/frontend/images/courses/t1.jpg') }}" alt="t1.jpg">
+                                <img class="img-whp" src="{{asset('public/uploads/course/' .$relate_value->course_image ) }}" alt="t1.jpg">
                                 <div class="overlay">
-                                    <div class="tag">Best Seller</div>
+                                    <div class="tag">{{ $relate_value->category_name }}</div>
                                     <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
+                                    <a class="tc_preview_course" href="#">Xem Trước Khóa Học</a>
                                 </div>
                             </div>
                             <div class="details">
                                 <div class="tc_content">
                                     <p>Ali TUFAN</p>
-                                    <h5>Introduction Web Design with HTML</h5>
+                                    <h5><a href="{{URL::to('/course-detail/' .$relate_value->course_slug) }}">{{$relate_value->course_name}}</a></h5>
                                     <ul class="tc_review">
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
@@ -438,86 +446,18 @@
                                         <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
                                         <li class="list-inline-item"><a href="#">25</a></li>
                                     </ul>
-                                    <div class="tc_price float-right">$69.95</div>
+                                    <div class="tc_price float-right">{{number_format($relate_value->course_price).' '.'đ'}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="top_courses">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{asset('public/frontend/images/courses/t2.jpg') }}" alt="t2.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Designing a Responsive Mobile Website with Muse</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="top_courses">
-                            <div class="thumb">
-                                <img class="img-whp" src="{{asset('public/frontend/images/courses/t3.jpg') }}" alt="t3.jpg">
-                                <div class="overlay">
-                                    <div class="tag">Top Seller</div>
-                                    <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Preview Course</a>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <div class="tc_content">
-                                    <p>Ali TUFAN</p>
-                                    <h5>Adobe XD: Prototyping Tips and Tricks</h5>
-                                    <ul class="tc_review">
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="tc_footer">
-                                    <ul class="tc_meta float-left">
-                                        <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">1548</a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
-                                        <li class="list-inline-item"><a href="#">25</a></li>
-                                    </ul>
-                                    <div class="tc_price float-right">$69.95</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-4 col-xl-3">
                 <div class="instructor_pricing_widget csv2">
-                    <div class="price"><span>Giá</span> $49.00 <small>$69.00</small></div>
+                    <div class="price"><span>Giá</span> {{number_format($relate_value->course_price).' '.'đ'}} </div>
+                    {{-- <small style="text-decoration: line-through;">1,200,000 đ</small> --}}
                     <a href="#" class="cart_btnss">Thêm Giỏ Hàng</a>
                     <a href="#" class="cart_btnss_white">Mua Ngay</a>
                     <h5 class="subtitle text-left">Bao gồm</h5>
@@ -529,6 +469,8 @@
                         {{-- <li><a href="#"><span class="flaticon-flash"></span> Assignments</a></li> --}}
                         <li><a href="#"><span class="flaticon-award"></span> Cấp chứng chỉ hoàn thành</a></li>
                     </ul>
+
+
                 </div>
                 <div class="feature_course_widget csv1">
                     <ul class="list-group">

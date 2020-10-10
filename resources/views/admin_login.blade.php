@@ -29,7 +29,7 @@
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form action="{{URL::to('/login') }}" method="post" class="login100-form validate-form">
+				<form action="{{URL::to('/login-auth') }}" method="post" class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<img alt="" src="{{asset('public/backend/admin/img/logo-2.png') }}">
 					</span>
@@ -62,18 +62,11 @@
 						<button class="login100-form-btn">
 							Đăng nhập
 						</button>
-					</div>
-					<div class="row" style="justify-content: center;">
-                        <div class="text-center p-t-30 px-2">
-                            <a class="txt1" href="forgot_password.html">
-                                Quên mật khẩu?
-                            </a>
-                        </div>
-                        <div class="text-center p-t-30 px-2">
-                            <a class="txt1" href="{{URL::to('/register-auth') }}">
-                                Chưa có tài khoản?
-                            </a>
-                        </div>
+                    </div>
+                    <div class="text-center p-t-30 px-2">
+                        <a class="txt1" href="forgot_password.html">
+                            Quên mật khẩu?
+                        </a>
                     </div>
 				</form>
 			</div>

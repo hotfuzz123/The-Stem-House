@@ -2238,7 +2238,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .banner-style-one .slide:before,
 .banner-style-two .slide:before{
-  background-color: rgba(0,0,0,.7);
+  /* background-color: rgba(0,0,0,.7); */
   bottom: 0;
   content: "";
   left: 0;
@@ -11810,7 +11810,7 @@ body.translated{
 
 
 .sh2{
-  height: 550px;
+  height: 750px;
 }
 
 

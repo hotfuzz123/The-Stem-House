@@ -78,7 +78,7 @@
 						<!-- start language menu -->
 						<li class="dropdown language-switch">
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img
-									src="{{asset('public/backend/admin/img/flags/us.png') }}" class="position-left" alt=""> English <span
+									src="{{asset('public/backend/admin/img/flags/vn.png') }}" class="position-left" alt=""> Việt Nam <span
 									class="fa fa-angle-down"></span>
 							</a>
 							<ul class="dropdown-menu">
@@ -100,7 +100,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li class="external">
-									<h3><span class="bold">Notifications</span></h3>
+									<h3><span class="bold">Thông báo</span></h3>
 									<span class="notification-label purple-bgcolor">New 6</span>
 								</li>
 								<li>
@@ -252,7 +252,15 @@
 						<li class="dropdown dropdown-user">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
 								data-close-others="true">
-								<img alt="" class="img-circle " src="{{asset('public/backend/admin/img/dp.jpg') }}" />
+                                <img alt="" class="img-circle " src="
+                                    <?php
+                                    $image = Auth::user()->admin_image;
+                                    if($image){
+                                        echo ('public/uploads/admin/'.$image);
+                                    }
+                                    ?>
+
+                                " />
 								<span class="username username-hide-on-mobile">
 									<?php
                                     $name = Auth::user()->admin_name;
@@ -397,8 +405,14 @@
                             <li class="sidebar-user-panel">
                                 <div class="user-panel">
                                     <div class="pull-left image">
-                                        <img src="{{asset('public/backend/admin/img/dp.jpg') }}" class="img-circle user-img-circle"
-                                            alt="User Image" />
+                                        <img src="
+                                            <?php
+                                            $image = Auth::user()->admin_image;
+                                            if($image){
+                                                echo ('public/uploads/admin/'.$image);
+                                            }
+                                            ?>
+                                        " class="img-circle user-img-circle" alt="Ảnh đại diện" />
                                     </div>
                                     <div class="pull-left info">
                                         <p>
@@ -409,8 +423,7 @@
                                             }
                                             ?>
                                         </p>
-                                        <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
-                                                Online</span></a>
+                                        <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">Online</span></a>
                                     </div>
                                 </div>
                             </li>
@@ -423,58 +436,37 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item active">
-                                        <a href="index.html" class="nav-link ">
-                                            <span class="title">Dashboard 1</span>
+                                        <a href="" class="nav-link ">
+                                            <span class="title">Thống kê truy cập</span>
                                             <span class="selected"></span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="dashboard2.html" class="nav-link ">
-                                            <span class="title">Dashboard 2</span>
+                                        <a href="" class="nav-link ">
+                                            <span class="title">Báo cáo khóa học</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="dashboard3.html" class="nav-link ">
-                                            <span class="title">Dashboard 3</span>
+                                        <a href="" class="nav-link ">
+                                            <span class="title">Báo cáo sản phẩm</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link ">
+                                            <span class="title">Báo cáo tin tức</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link ">
+                                            <span class="title">Báo cáo tài chính</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
-                                    <span class="title">Event Management</span>
+                                <a href="{{URL::to('/all-auth') }}" class="nav-link nav-toggle"> <i class="fas fa-user-tie"></i>
+                                    <span class="title">Admin</span>
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                                    <span class="title">Giáo viên</span> <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{URL::to('/') }}" class="nav-link "> <span class="title">Danh sách giáo viên</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{URL::to('/') }}" class="nav-link "> <span class="title">Add
-                                                Professor</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="add_professor_bootstrap.html" class="nav-link "> <span
-                                                class="title">Add Professor Bootstrap</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="edit_professor.html" class="nav-link "> <span class="title">Edit
-                                                Professor</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="professor_profile.html" class="nav-link "> <span class="title">About
-                                                Professor</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
@@ -508,7 +500,12 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
+                                <a href="{{URL::to('/all-course') }}" class="nav-link nav-toggle"> <i class="material-icons">school</i>
+                                    <span class="title">Khóa học</span>
+                                </a>
+                            </li>
+                            {{-- <li class="nav-item">
+                                <a href="{{URL::to('/all-course') }}" class="nav-link nav-toggle"> <i class="material-icons">school</i>
                                     <span class="title">Khóa học</span> <span class="arrow"></span>
                                     <span class="label label-rouded label-menu label-success">new</span>
                                 </a>
@@ -522,7 +519,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"> <i class="far fa-list-alt"></i>
                                     <span class="title">Danh mục</span> <span class="arrow"></span>
@@ -547,32 +544,7 @@
                                     <span class="title">Cửa hàng</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle">
-                                    <i class="material-icons">email</i>
-                                    <span class="title">Email</span>
-                                    <span class="arrow"></span>
-                                    <span class="label label-rouded label-menu label-danger">new</span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="email_inbox.html" class="nav-link ">
-                                            <span class="title">Inbox</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="email_view.html" class="nav-link ">
-                                            <span class="title">View Mail</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="email_compose.html" class="nav-link ">
-                                            <span class="title">Compose Mail</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"> <i class="material-icons">monetization_on</i>
                                     <span class="title">Fees</span> <span class="arrow"></span>
                                 </a>
@@ -597,7 +569,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle"> <i
                                         class="material-icons">description</i>
@@ -713,7 +685,47 @@
     <script src="{{asset('public/backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
     <!-- Custom js -->
     <script src="{{asset('public/backend/admin/js/custom.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            load_gallery();
 
+            function load_gallery(){
+                var pro_id = $('.pro_id').val();
+                var _token = $('input[name="_token"]').val();
+                //alert(pro_id);
+                $.ajax({
+                    url : "{{url('/select-gallery')}}",
+                    method: "POST",
+                    data:{pro_id:pro_id,_token:_token},
+                    success:function(data){
+                        $('#gallery_load').html(data);
+                    }
+                });
+            }
+
+            $('#file').change(function(){
+                var error = '';
+                var files = $('#file')[0].files;
+
+                if(files.length = 5){
+                    error += "<p>Bạn chỉ được chọn tối đa 5 ảnh</p>";
+                }else if(files.length = ''){
+                    error += "<p>Bạn không được bỏ trống ảnh</p>";
+                }else if(files.length > 2000000){
+                    error += "<p>File ảnh không được lớn hơn 2 MB</p>";
+                }
+
+                if(error == ''){
+
+                }else {
+                    $('#file').val('');
+                    $('#error_gallery').html('<span class="text-danger">'+error+'</span>'); // Hiện tại ko in lỗi ra được
+                    return false;
+                }
+            });
+        });
+
+    </script>
 
 	<!-- summernote -->
 	<script src="{{asset('public/backend/admin/plugins/summernote/summernote.js') }}"></script>

@@ -36,12 +36,14 @@ class CategoryCourse extends Controller
         $this->Authlogin();
         $data = array();
         $data['category_name'] = $request->category_course_name;
+        $data['slug_category_course'] = $request->slug_category_course;
+        $data['meta_keywords'] = $request->category_course_keywords;
         $data['category_desc'] = $request->category_course_desc;
         $data['category_status'] = $request->category_course_status;
 
         DB::table('tbl_category_course')->insert($data);
         Session::put('message', 'Thêm danh mục khóa học thành công');
-        return Redirect::to('/add-category-course');
+        return Redirect::to('/all-category-course');
     }
 
     public function unactive_category_course($category_course_id){
@@ -70,6 +72,8 @@ class CategoryCourse extends Controller
         $this->Authlogin();
         $data = array();
         $data['category_name'] = $request->category_course_name;
+        $data['slug_category_course'] = $request->slug_category_course;
+        $data['meta_keywords'] = $request->category_course_keywords;
         $data['category_desc'] = $request->category_course_desc;
         DB::table('tbl_category_course')->where('category_id', $category_course_id)->update($data);
         Session::put('message', 'Cập nhật danh mục khóa học thành công');
@@ -81,5 +85,28 @@ class CategoryCourse extends Controller
         DB::table('tbl_category_course')->where('category_id', $category_course_id)->delete();
         Session::put('message', 'Xóa danh mục khóa học thành công');
         return Redirect::to('/all-category-course');
+    }
+
+    public function show_category_home($slug_category_course) {
+        $cate_course = DB::table('tbl_category_course')->where('category_status', '0')->orderby('category_id', 'desc')->get();
+
+        $category_by_id = DB::table('tbl_course')
+        ->join('tbl_category_course', 'tbl_course.category_id', '=', 'tbl_category_course.category_id')
+        ->where('tbl_category_course.slug_category_course',$slug_category_course)->get();
+
+        // foreach($cate_course as $key => $val){
+        //     // SEO
+        //     $meta_desc = $val->$category_desc;
+        //     $meta_keywords = $val->$meta_keywords;
+        //     $meta_title = $val->$category_name;
+        //     $url_canonical = $request->url();
+        // }
+
+        $category_name = DB::table('tbl_category_course')->where('tbl_category_course.slug_category_course', $slug_category_course )->limit(1)->get();
+        return view('pages.category.show_category_course')
+        ->with('category', $cate_course)->with('category_by_id', $category_by_id)->with('category_name', $category_name);
+        // ->with(compact('meta_desc', 'meta_keywords', 'meta_title', 'url_canonical'));
+        // ->with('meta_desc', $meta_desc)->with('meta_keywords', $meta_keywords)->with('meta_title', $meta_title)->with('url_canonical', $url_canonical);
+
     }
 }

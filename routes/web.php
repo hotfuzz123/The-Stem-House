@@ -73,12 +73,20 @@ Route::get('/product-detail/{product_slug}', 'ProductController@details_product'
 
 
 //Authentication roles
-Route::get('/register-auth', 'AuthController@register_auth');
+
 Route::get('/admin', 'AuthController@admin');
 Route::get('/logout-auth', 'AuthController@logout_auth');
 
+Route::get('/add-auth', 'AuthController@add_auth');
+Route::get('/edit-auth/{admin_id}', 'AuthController@edit_auth');
+Route::get('/delete-auth/{admin_id}', 'AuthController@delete_auth');
+Route::get('/all-auth', 'AuthController@all_auth');
+
+Route::post('/save-auth', 'AuthController@save_auth');
+Route::post('/update-auth/{admin_id}', 'AuthController@update_auth');
+
 Route::post('/register', 'AuthController@register');
-Route::post('/login', 'AuthController@login');
+Route::post('/login-auth', 'AuthController@login_auth');
 
 
 
@@ -98,10 +106,18 @@ Route::post('/update-course/{course_id}', 'CourseController@update_course');
 Route::get('/course-category/{slug_category_course}', 'Categorycourse@show_category_home');
 
 //course-detail
-Route::get('/course-detail', 'CourseController@details_course');
+Route::get('/course-detail/{course_slug}', 'CourseController@details_course');
+
+//Chapter
+Route::get('/add-chapter', 'ChapterController@add_chapter');
 
 
 
 //Post
-
 Route::get('/post-detail', 'PostController@details_post');
+
+
+//Gallery
+Route::get('/add-gallery/{product_id}', 'GalleryController@add_gallery');
+Route::post('/select-gallery', 'GalleryController@select_gallery');
+Route::get('/insert-gallery/{product_id}', 'GalleryController@insert_gallery');

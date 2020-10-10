@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="instructor_search_result style2">
-                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">1,236 khóa học</span></p>
+                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">{!! $all_course->total() !!} khóa học</span></p>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -60,7 +60,7 @@
                                 <div class="thumb">
                                     <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="t1.jpg">
                                     <div class="overlay">
-                                        <div class="tag">Best Seller</div>
+                                        <div class="tag">Design</div>
                                         <div class="icon"><span class="flaticon-like"></span></div>
                                         <a class="tc_preview_course" href="#">Xem Trước Khóa Học</a>
                                     </div>
@@ -68,7 +68,7 @@
                                 <div class="details">
                                     <div class="tc_content">
                                         <p>Ali TUFAN</p>
-                                        <h5>{{$course->course_name}}</h5>
+                                        <h5><a href="{{URL::to('/course-detail/' .$course->course_slug) }}">{{$course->course_name}}</a></h5>
                                         <ul class="tc_review">
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
@@ -85,30 +85,14 @@
                                             <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
                                             <li class="list-inline-item"><a href="#">25</a></li>
                                         </ul>
-                                        <div class="tc_price float-right">{{number_format($course->course_price).' '.'VND'}}</div>
+                                        <div class="tc_price float-right">{{number_format($course->course_price).' '.'đ'}}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                     <div class="col-lg-12">
-                        <div class="mbp_pagination">
-                            <ul class="page_navigation">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">14</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next <span class="flaticon-right-arrow-1"></span></a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{ $all_course->render("pagination::theme") }}
                     </div>
                 </div>
             </div>
@@ -126,7 +110,7 @@
                                     @foreach ($category as $key => $cate)
                                     <div class="category_sidebar_widget">
                                         <ul class="category_list">
-                                            <li><a href="">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
+                                            <li><a href="{{ URL::to('/course-category/'.$cate->slug_category_course) }}">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
                                         </ul>
                                     </div>
                                     @endforeach

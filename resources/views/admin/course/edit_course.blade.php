@@ -28,11 +28,11 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên khóa học</label>
-                    <input type="text" name="course_name" class="form-control" id="simpleFormEmail" value="{{ $pro ->course_name }}">
+                    <input type="text" name="course_name" class="form-control" onkeyup="ChangeToSlug();" id="slug" value="{{ $pro ->course_name }}">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Slug khóa học</label>
-                    <input type="text" name="course_slug" class="form-control" id="simpleFormEmail" value="{{ $pro ->course_slug }}">
+                    <input type="text" name="course_slug" class="form-control" id="convert_slug" value="{{ $pro ->course_slug }}">
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Giá khóa học</label>
@@ -45,11 +45,11 @@
                 </div>
                 <div class="form-group">
                     <label>Mô tả khóa học</label>
-                    <textarea class="form-control" name="course_desc" rows="3" id="editor-course-1" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->course_desc }}</textarea>
+                    <textarea class="form-control" name="course_desc" rows="3" id="editor-product-1" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->course_desc }}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Nội dung khóa học</label>
-                    <textarea class="form-control" name="course_content" rows="3" id="editor-course-2" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->course_content }}</textarea>
+                    <textarea class="form-control" name="course_content" rows="3" id="editor-product-2" style="margin-top: 0px; margin-bottom: 0px; height: 163px;">{{ $pro ->course_content }}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Danh mục khóa học</label>
