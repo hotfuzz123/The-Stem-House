@@ -57,7 +57,7 @@ class CategoryProduct extends Controller
     public function unactive_category_product($category_product_id){
         // Ẩn danh mục
         $this->Authlogin();
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 1]);
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 0]);
         Session::put('message', 'Ẩn danh mục sản phẩm thành công');
         return Redirect::to('/all-category-product');
     }
@@ -65,7 +65,7 @@ class CategoryProduct extends Controller
     public function active_category_product($category_product_id){
         // Hiển thị danh mục
         $this->Authlogin();
-        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 0]);
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status' => 1]);
         Session::put('message', 'Hiển thị danh mục sản phẩm thành công');
         return Redirect::to('/all-category-product');
     }

@@ -3,7 +3,7 @@
     <div class="page-bar">
         <div class="page-title-breadcrumb">
             <div class=" pull-left">
-                <div class="page-title">Danh sách sản phẩm</div>
+                <div class="page-title">Danh sách slider</div>
                 <?php
                 $message = Session::get('message');
                 if($message){
@@ -13,10 +13,10 @@
                 ?>
             </div>
             <ol class="breadcrumb page-breadcrumb pull-right">
-                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i
+                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Trang chủ</a>&nbsp;<i
                         class="fa fa-angle-right"></i>
                 </li>
-                <li class="active">Danh sách sản phẩm</li>
+                <li class="active">Danh sách slider</li>
             </ol>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <div class="col-md-12">
             <div class="card card-topline-red">
                 <div class="card-head">
-                    <header>Bảng danh sách sản phẩm</header>
+                    <header>Bảng danh sách slider</header>
                     <div class="tools">
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -36,7 +36,7 @@
                         <div class="col-md-6 col-sm-6 col-6">
                             <div class="btn-group">
                                 <button id="addRow1" class="btn btn-info">
-                                    <a style="color:white; font-weight:700;" href="{{URL::to('/add-product') }}">Thêm sản phẩm <i class="fa fa-plus"></i></a>
+                                    <a style="color:white; font-weight:700;" href="{{URL::to('/add-slider') }}">Thêm slider <i class="fa fa-plus"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -82,16 +82,13 @@
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Username : activate to sort column ascending"
-                                                    style="width: 225px;"> Tên sản phẩm </th>
-                                                <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
-                                                    colspan="1" aria-label=" Status : activate to sort column ascending"
-                                                    style="width: 176px;"> Giá </th>
+                                                    style="width: 225px;"> Tên slider </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Username : activate to sort column ascending"
-                                                    style="width: 225px;"> Ảnh bìa sản phẩm </th>
+                                                    style="width: 225px;"> Ảnh slider </th>
                                                     <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Status : activate to sort column ascending"
-                                                    style="width: 176px;"> Danh mục </th>
+                                                    style="width: 176px;"> Mô tả </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1" aria-label=" Status : activate to sort column ascending"
                                                     style="width: 176px;"> Hiển thị </th>
@@ -101,7 +98,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($all_product as $key => $pro)
+                                            @foreach ($all_slider as $key => $pro)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="sorting_1">
                                                     <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
@@ -109,20 +106,19 @@
                                                         <span></span>
                                                     </label>
                                                 </td>
-                                                <td> {{ $pro ->product_name }} </td>
-                                                <td> {{number_format($pro ->product_price).' '.'đ'}} </td>
-                                                <td><img src="public/uploads/product/{{ $pro ->product_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
-                                                <td> {{ $pro ->category_name }} </td>
+                                                <td> {{ $pro ->slider_name }} </td>
+                                                <td><img src="public/uploads/slider/{{ $pro ->slider_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
+                                                <td> {{ $pro ->slider_desc }} </td>
                                                 <td>
                                                     <span class="">
                                                         <?php
-                                                        if($pro->product_status==1) {
+                                                        if($pro->slider_status==1) {
                                                         ?>
-                                                        <a href="{{URL::to('/unactive-product/' .$pro->product_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
+                                                        <a href="{{URL::to('/unactive-slider/' .$pro->slider_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php
                                                         }else {
                                                         ?>
-                                                        <a href="{{URL::to('/active-product/' .$pro->product_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
+                                                        <a href="{{URL::to('/active-slider/' .$pro->slider_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
                                                         <?php
                                                         }
                                                         ?>
@@ -137,15 +133,11 @@
                                                         </button>
                                                         <ul class="dropdown-menu pull-left" role="menu">
                                                             <li>
-                                                                <a href="{{URL::to('/add-gallery/' .$pro->product_id)}}">
-                                                                    <i class="far fa-edit"></i> Thêm hình ảnh sản phẩm </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="{{URL::to('/edit-product/' .$pro->product_id)}}">
+                                                                <a href="{{URL::to('/edit-slider/' .$pro->slider_id)}}">
                                                                     <i class="far fa-edit"></i> Cập nhật </a>
                                                             </li>
                                                             <li>
-                                                                <a onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')" href="{{URL::to('/delete-product/' .$pro->product_id)}}">
+                                                                <a onclick="return confirm('Bạn có chắc muốn xóa slider này không?')" href="{{URL::to('/delete-slider/' .$pro->slider_id)}}">
                                                                     <i class="far fa-trash-alt"></i> Xóa </a>
                                                             </li>
                                                         </ul>

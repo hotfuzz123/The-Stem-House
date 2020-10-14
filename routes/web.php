@@ -121,3 +121,16 @@ Route::get('/post-detail', 'PostController@details_post');
 Route::get('/add-gallery/{product_id}', 'GalleryController@add_gallery');
 Route::post('/select-gallery', 'GalleryController@select_gallery');
 Route::get('/insert-gallery/{product_id}', 'GalleryController@insert_gallery');
+
+
+//Slider
+Route::get('/add-slider', 'SliderController@add_slider');
+Route::get('/edit-slider/{slider_id}', 'SliderController@edit_slider');
+Route::get('/delete-slider/{slider_id}', 'SliderController@delete_slider');
+Route::get('/all-slider', 'SliderController@all_slider');
+
+Route::get('/unactive-slider/{slider_id}', 'SliderController@unactive_slider');
+Route::get('/active-slider/{slider_id}', 'SliderController@active_slider');
+
+Route::post('/save-slider', 'SliderController@save_slider');
+Route::post('/update-slider/{slider_id}', 'SliderController@update_slider');

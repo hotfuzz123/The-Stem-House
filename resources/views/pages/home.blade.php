@@ -8,7 +8,9 @@
             <div class="col-lg-12">
                 <div class="main-banner-wrapper">
                     <div class="banner-style-one owl-theme owl-carousel">
-                        <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/4.jpg') }});">
+                        {{-- Hiển thị slider --}}
+                        @foreach ($all_slider as $key => $slider)
+                        <div class="slide slide-one sh2" style="background-image: url({{URL::to('public/uploads/slider/' .$slider->slider_image) }});" alt="{{$slider->slider_desc}}">
                             {{-- <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
@@ -22,16 +24,15 @@
                                 </div>
                             </div> --}}
                         </div>
-                        <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/5.jpg') }});">
-                        </div>
-                        <div class="slide slide-one sh2" style="background-image: url({{ ('public/frontend/images/home/6.jpg') }});">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="carousel-btn-block banner-carousel-btn">
-                        <span class="carousel-btn left-btn"><i class="flaticon-left-arrow left"></i> <span
-                                class="left">PR <br> EV</span></span>
-                        <span class="carousel-btn right-btn"><span class="right">NE <br> XT</span> <i
-                                class="flaticon-right-arrow-1 right"></i></span>
+                        <span class="carousel-btn left-btn"><i class="flaticon-left-arrow left"></i>
+                            <span class="left">TRƯỚC</span>
+                        </span>
+                        <span class="carousel-btn right-btn"><span class="right">TIẾP</span>
+                            <i class="flaticon-right-arrow-1 right"></i>
+                        </span>
                     </div><!-- /.carousel-btn-block banner-carousel-btn -->
                 </div><!-- /.main-banner-wrapper -->
             </div>
@@ -45,26 +46,28 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="main-title text-center">
-                    <h3 class="mt0">Browse Our Top Courses</h3>
-                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                    <h3 class="mt0">Những Khóa Học Mới Nhất</h3>
+                    <p>Chúng tôi ưu tiên chất lượng dạy học lên hàng đầu.</p>
                 </div>
             </div>
         </div>
         <div class="row">
+            {{-- Hiển thị khóa học mới nhất --}}
+            @foreach ($all_course as $key => $course)
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="top_courses">
                     <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t1.jpg') }}" alt="t1.jpg">
+                        <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="Ảnh khóa học {{$course->course_name}}">
                         <div class="overlay">
-                            <div class="tag">Best Seller</div>
+                            <div class="tag">{{$course->category_name}}</div>
                             <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
+                            <a class="tc_preview_course" href="{{URL::to('/course-detail/' .$course->course_slug) }}">Xem Trước Khóa Học</a>
                         </div>
                     </div>
                     <div class="details">
                         <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Introduction Web Design with HTML</h5>
+                            <p>Admin</p>
+                            <h5><a href="{{URL::to('/course-detail/' .$course->course_slug) }}">{{$course->course_name}}</a></h5>
                             <ul class="tc_review">
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                 <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
@@ -83,270 +86,12 @@
                                 </li>
                                 <li class="list-inline-item"><a href="#">25</a></li>
                             </ul>
-                            <div class="tc_price float-right">$69.95</div>
+                            <div class="tc_price float-right">{{number_format($course->course_price).' '.'đ'}}</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t2.jpg') }}" alt="t2.jpg">
-                        <div class="overlay">
-                            <div class="tag">Top Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Designing a Responsive Mobile Website with Muse</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t3.jpg') }}" alt="t3.jpg">
-                        <div class="overlay">
-                            <div class="tag">Top Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Adobe XD: Prototyping Tips and Tricks</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t4.jpg') }}" alt="t4.jpg">
-                        <div class="overlay">
-                            <div class="tag">Best Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Sketch: Creating Responsive SVG</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t5.jpg') }}" alt="t5.jpg">
-                        <div class="overlay">
-                            <div class="tag">Best Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Design Instruments for Communication</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t6.jpg') }}" alt="t6.jpg">
-                        <div class="overlay">
-                            <div class="tag">Top Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>How to be a DJ? Make Electronic Music</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t7.jpg') }}" alt="t7.jpg">
-                        <div class="overlay">
-                            <div class="tag">Top Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>How to Make Beautiful Landscape Photos?</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <div class="top_courses">
-                    <div class="thumb">
-                        <img class="img-whp" src="{{ ('public/frontend/images/courses/t8.jpg') }}" alt="t8.jpg">
-                        <div class="overlay">
-                            <div class="tag">Best Seller</div>
-                            <div class="icon"><span class="flaticon-like"></span></div>
-                            <a class="tc_preview_course" href="#">Preview Course</a>
-                        </div>
-                    </div>
-                    <div class="details">
-                        <div class="tc_content">
-                            <p>Ali TUFAN</p>
-                            <h5>Fashion Photography From Professional</h5>
-                            <ul class="tc_review">
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="list-inline-item"><a href="#">(6)</a></li>
-                            </ul>
-                        </div>
-                        <div class="tc_footer">
-                            <ul class="tc_meta float-left">
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">1548</a></li>
-                                <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#">25</a></li>
-                            </ul>
-                            <div class="tc_price float-right">$69.95</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
             <div class="col-lg-6 offset-lg-3">
                 <div class="courses_all_btn text-center">
                     <a class="btn btn-transparent" href="{{URL::to('/course') }}">Hiển Thị Toàn Bộ Khóa Học</a>

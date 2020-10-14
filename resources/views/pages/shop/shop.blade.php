@@ -25,13 +25,13 @@
         <div class="row">
             <div class="col-md-12 col-lg-8 col-xl-9">
                 <div class="row">
-                    <div class="col-sm-6 col-lg-6 col-xl-6">
-                        <div class="instructor_search_result">
-                            <p class="mt10 fz15"><span class="pr-1">Hiển thị 1–{!! $all_product->count() !!} trên</span>{!! $all_product->total() !!} sản phẩm</p>
+                    <div class="col-xl-4">
+                        <div class="instructor_search_result style2">
+                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">100 khóa học</span></p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-6 col-xl-6">
-                        <div class="candidate_revew_select text-right tac-xsd mb25">
+                    <div class="col-xl-8">
+                        <div class="candidate_revew_select style2 text-right mb25">
                             <ul>
                                 <li class="list-inline-item">
                                     <select class="selectpicker show-tick">
@@ -41,6 +41,14 @@
                                         <option>Từ A đến Z</option>
                                         <option>Từ Z đến A</option>
                                     </select>
+                                </li>
+                                <li class="list-inline-item">
+                                    <div class="candidate_revew_search_box course mb30 fn-520">
+                                        <form class="form-inline my-2 my-lg-0">
+                                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm sản phẩm" aria-label="Search">
+                                            <button class="btn my-2 my-sm-0" type="submit"><span class="flaticon-magnifying-glass"></span></button>
+                                        </form>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

@@ -117,7 +117,7 @@
                                                 <td>
                                                     <span class="">
                                                         <?php
-                                                        if($pro->course_status==0) {
+                                                        if($pro->course_status==1) {
                                                         ?>
                                                         <a href="{{URL::to('/unactive-course/' .$pro->course_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php

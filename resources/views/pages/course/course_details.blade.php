@@ -14,13 +14,13 @@
                             <div class="cs_instructor">
                                 <ul class="cs_instrct_list float-left mb0">
                                     <li class="list-inline-item"><img class="thumb" src="{{asset('public/frontend/images/team/4.png') }}" alt="4.png"></li>
-                                    <li class="list-inline-item"><a class="color-white" href="#">Ali TUFAN</a></li>
-                                    <li class="list-inline-item"><a class="color-white" href="#">Last updated 11/2019</a></li>
+                                    <li class="list-inline-item"><a class="color-white" href="#">Admin</a></li>
+                                    <li class="list-inline-item"><a class="color-white" href="#">Cập nhật lần cuối: {{ $value ->created_at }}</a></li>
                                 </ul>
                                 <ul class="cs_watch_list float-right mb0">
                                     <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-like"></span></a></li>
-                                    <li class="list-inline-item"><a class="color-white" href="#">Add to Wishlist</a></li>
-                                    <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-share"> Share</span></a></li>
+                                    <li class="list-inline-item"><a class="color-white" href="#">Thêm vào yêu thích</a></li>
+                                    <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-share"> Chia sẻ</span></a></li>
                                 </ul>
                             </div>
                             <h3 class="cs_title color-white">{{$value->course_name}}</h3>
@@ -34,8 +34,8 @@
                                 <li class="list-inline-item"><a class="color-white" href="#">4.5 (11,382 Ratings)</a></li>
                             </ul>
                             <ul class="cs_review_enroll">
-                                <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-profile"></span> 57,869 students enrolled</a></li>
-                                <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-comment"></span> 25 Review</a></li>
+                                <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-profile"></span> 57,869 học sinh đã tham gia</a></li>
+                                <li class="list-inline-item"><a class="color-white" href="#"><span class="flaticon-comment"></span> 25 Đánh giá</a></li>
                             </ul>
                         </div>
                     </div>
@@ -423,7 +423,7 @@
                                 <div class="overlay">
                                     <div class="tag">{{ $relate_value->category_name }}</div>
                                     <div class="icon"><span class="flaticon-like"></span></div>
-                                    <a class="tc_preview_course" href="#">Xem Trước Khóa Học</a>
+                                    <a class="tc_preview_course" href="{{URL::to('/course-detail/' .$relate_value->course_slug) }}">Xem Trước Khóa Học</a>
                                 </div>
                             </div>
                             <div class="details">
@@ -454,10 +454,13 @@
                     @endforeach
                 </div>
             </div>
+
             <div class="col-lg-4 col-xl-3">
                 <div class="instructor_pricing_widget csv2">
-                    <div class="price"><span>Giá</span> {{number_format($relate_value->course_price).' '.'đ'}} </div>
+                    @foreach ($course_details as $key => $value)
+                    <div class="price"><span>Giá</span> {{number_format($value->course_price).' '.'đ'}} </div>
                     {{-- <small style="text-decoration: line-through;">1,200,000 đ</small> --}}
+                    @endforeach
                     <a href="#" class="cart_btnss">Thêm Giỏ Hàng</a>
                     <a href="#" class="cart_btnss_white">Mua Ngay</a>
                     <h5 class="subtitle text-left">Bao gồm</h5>
@@ -469,7 +472,6 @@
                         {{-- <li><a href="#"><span class="flaticon-flash"></span> Assignments</a></li> --}}
                         <li><a href="#"><span class="flaticon-award"></span> Cấp chứng chỉ hoàn thành</a></li>
                     </ul>
-
 
                 </div>
                 <div class="feature_course_widget csv1">
@@ -488,7 +490,7 @@
                             Trình độ <span class="float-right">Cơ Bản</span>
                         </li>
                         <li class="d-flex justify-content-between align-items-center">
-                            Ngôn ngữ <span class="float-right">English</span>
+                            Ngôn ngữ <span class="float-right">Tiếng Việt</span>
                         </li>
                         <li class="d-flex justify-content-between align-items-center">
                             Đánh giá <span class="float-right">Có</span>

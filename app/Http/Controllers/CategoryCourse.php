@@ -48,14 +48,14 @@ class CategoryCourse extends Controller
 
     public function unactive_category_course($category_course_id){
         $this->Authlogin();
-        DB::table('tbl_category_course')->where('category_id', $category_course_id)->update(['category_status' => 1]);
+        DB::table('tbl_category_course')->where('category_id', $category_course_id)->update(['category_status' => 0]);
         Session::put('message', 'Ẩn danh mục khóa học thành công');
         return Redirect::to('/all-category-course');
     }
 
     public function active_category_course($category_course_id){
         $this->Authlogin();
-        DB::table('tbl_category_course')->where('category_id', $category_course_id)->update(['category_status' => 0]);
+        DB::table('tbl_category_course')->where('category_id', $category_course_id)->update(['category_status' => 1]);
         Session::put('message', 'Hiển thị danh mục khóa học thành công');
         return Redirect::to('/all-category-course');
     }

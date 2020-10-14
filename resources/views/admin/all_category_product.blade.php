@@ -105,7 +105,7 @@
                                                 <td>
                                                     <span class="">
                                                         <?php
-                                                        if($cate_pro->category_status==0) {
+                                                        if($cate_pro->category_status==1) {
                                                         ?>
                                                         <a href="{{URL::to('/unactive-category-product/' .$cate_pro->category_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php

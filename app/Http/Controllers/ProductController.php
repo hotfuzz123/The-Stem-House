@@ -71,7 +71,7 @@ class ProductController extends Controller
         // Session::put('message', 'Ẩn sản phẩm thành công');
         // return Redirect::to('/all-product');
 
-        $product = Product::where('product_id', $product_id)->update(['product_status' => 1]);
+        $product = Product::where('product_id', $product_id)->update(['product_status' => 0]);
         return Redirect::to('/all-product')->with('message', 'Ẩn sản phẩm thành công');
     }
 
@@ -81,7 +81,7 @@ class ProductController extends Controller
         // Session::put('message', 'Hiển thị sản phẩm thành công');
         // return Redirect::to('/all-product');
 
-        $product = Product::where('product_id', $product_id)->update(['product_status' => 0]);
+        $product = Product::where('product_id', $product_id)->update(['product_status' => 1]);
         return Redirect::to('/all-product')->with('message', 'Hiển thị sản phẩm thành công');
     }
 

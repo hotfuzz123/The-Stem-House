@@ -464,13 +464,14 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="{{URL::to('/all-auth') }}" class="nav-link nav-toggle"> <i class="fas fa-user-tie"></i>
+                                <a href="{{URL::to('/all-auth') }}" class="nav-link nav-toggle"> <i class="material-icons">account_box</i>
                                     <span class="title">Admin</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"><i class="material-icons">group</i>
-                                    <span class="title">Học sinh</span><span class="arrow"></span></a>
+                                    <span class="title">Học sinh</span><span class="arrow"></span>
+                                </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
                                         <a href="all_students.html" class="nav-link "> <span class="title">All
@@ -521,8 +522,8 @@
                                 </ul>
                             </li> --}}
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="far fa-list-alt"></i>
-                                    <span class="title">Danh mục</span> <span class="arrow"></span>
+                                <a href="#" class="nav-link nav-toggle"><i class="material-icons">list</i>
+                                    <span class="title">Danh mục</span><span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
@@ -540,7 +541,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="{{URL::to('/all-product') }}" class="nav-link nav-toggle"> <i class="fas fa-store"></i>
+                                <a href="{{URL::to('/all-product') }}" class="nav-link nav-toggle"> <i class="material-icons">store</i>
                                     <span class="title">Cửa hàng</span>
                                 </a>
                             </li>
@@ -569,6 +570,16 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li> --}}
+                            <li class="nav-item">
+                                <a href="{{URL::to('/all-slider') }}" class="nav-link nav-toggle"> <i class="material-icons">slideshow</i>
+                                    <span class="title">Slider</span>
+                                </a>
+                            </li>
+                            {{-- <li class="nav-item">
+                                <a href="{{URL::to('/') }}" class="nav-link nav-toggle"> <i class="material-icons">slideshow</i>
+                                    <span class="title">Logo</span>
+                                </a>
                             </li> --}}
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle"> <i

@@ -3028,6 +3028,7 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .cs_row_one .courses_big_thumb .thumb img{
   border-radius: 5px;
+  object-fit: cover;
 }
 .cs_row_one .courses_big_thumb .thumb .overlay_icon:before{
   bottom: 0;

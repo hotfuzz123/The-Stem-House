@@ -56,27 +56,27 @@ class AuthController extends Controller
     }
 
     public function save_auth(Request $request){
-            $this->Authlogin();
-            $data = $request->all();
-            $admin = new Admin();
-            $admin->admin_name = $data['admin_name'];
-            $admin->admin_email = $data['admin_email'];
-            $admin->admin_phone = $data['admin_phone'];
-            $admin->admin_type = $data['admin_type'];
-            $admin->admin_password = md5($data['admin_password']);
-            $get_image = $request->file('admin_image');
-            $path = 'public/uploads/admin/';
+        $this->Authlogin();
+        $data = $request->all();
+        $admin = new Admin();
+        $admin->admin_name = $data['admin_name'];
+        $admin->admin_email = $data['admin_email'];
+        $admin->admin_phone = $data['admin_phone'];
+        $admin->admin_type = $data['admin_type'];
+        $admin->admin_password = md5($data['admin_password']);
+        $get_image = $request->file('admin_image');
+        $path = 'public/uploads/admin/';
 
-            if($get_image){
-                $get_name_image = $get_image->getClientOriginalName();
-                $name_image = current(explode('.', $get_name_image));
-                $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-                $get_image->move($path, $new_image);
-                $admin->admin_image = $new_image;
-            }
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move($path, $new_image);
+            $admin->admin_image = $new_image;
+        }
 
-            $admin->save();
-            return redirect('/all-auth')->with('message', 'Đăng ký thành công');
+        $admin->save();
+        return redirect('/all-auth')->with('message', 'Đăng ký thành công');
 
     }
 

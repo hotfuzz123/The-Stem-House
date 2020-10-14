@@ -60,14 +60,14 @@
                                 <div class="thumb">
                                     <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="t1.jpg">
                                     <div class="overlay">
-                                        <div class="tag">Design</div>
+                                        <div class="tag">{{$course->category_name}}</div>
                                         <div class="icon"><span class="flaticon-like"></span></div>
-                                        <a class="tc_preview_course" href="#">Xem Trước Khóa Học</a>
+                                        <a class="tc_preview_course" href="{{URL::to('/course-detail/' .$course->course_slug) }}">Xem Trước Khóa Học</a>
                                     </div>
                                 </div>
                                 <div class="details">
                                     <div class="tc_content">
-                                        <p>Ali TUFAN</p>
+                                        <p>Admin</p>
                                         <h5><a href="{{URL::to('/course-detail/' .$course->course_slug) }}">{{$course->course_name}}</a></h5>
                                         <ul class="tc_review">
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>

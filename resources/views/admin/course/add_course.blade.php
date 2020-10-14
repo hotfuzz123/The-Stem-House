@@ -60,8 +60,8 @@
                 <div class="form-group">
                     <label>Hiển thị</label>
                     <select name="course_status" class="form-control">
-                        <option value="0">Hiển thị</option>
-                        <option value="1">Ẩn</option>
+                        <option value="1">Hiển thị</option>
+                        <option value="0">Ẩn</option>
                     </select>
                 </div>
                 <button type="submit"  name="add_course" class="btn btn-primary">Thêm khóa học mới</button>
