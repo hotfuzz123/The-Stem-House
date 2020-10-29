@@ -545,6 +545,11 @@
                                     <span class="title">Cửa hàng</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{URL::to('/all-coupon') }}" class="nav-link nav-toggle"> <i class="material-icons">redeem</i>
+                                    <span class="title">Coupon</span>
+                                </a>
+                            </li>
                             {{-- <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"> <i class="material-icons">monetization_on</i>
                                     <span class="title">Fees</span> <span class="arrow"></span>
@@ -582,50 +587,19 @@
                                 </a>
                             </li> --}}
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle"> <i
-                                        class="material-icons">description</i>
-                                    <span class="title">Extra pages</span>
+                                <a href="javascript:;" class="nav-link nav-toggle"> <i class="material-icons">settings</i>
+                                    <span class="title">Cài đặt</span>
                                     <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item  ">
-                                        <a href="login.html" class="nav-link "> <span class="title">Login</span>
-                                        </a>
+                                        <a href="" class="nav-link "> <span class="title">Tài khoản</span></a>
                                     </li>
                                     <li class="nav-item  ">
-                                        <a href="sign_up.html" class="nav-link "> <span class="title">Sign Up</span>
-                                        </a>
+                                        <a href="" class="nav-link "> <span class="title">Đổi mật khẩu</span></a>
                                     </li>
                                     <li class="nav-item  ">
-                                        <a href="forgot_password.html" class="nav-link "> <span class="title">Forgot
-                                                Password</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item"><a href="user_profile.html" class="nav-link "><span
-                                                class="title">Profile</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="contact.html" class="nav-link "> <span class="title">Contact Us</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="lock_screen.html" class="nav-link "> <span class="title">Lock
-                                                Screen</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="page-404.html" class="nav-link "> <span class="title">404 Page</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="page-500.html" class="nav-link "> <span class="title">500 Page</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="blank_page.html" class="nav-link "> <span class="title">Blank
-                                                Page</span>
-                                        </a>
+                                        <a href="" class="nav-link "> <span class="title">Đăng xuất</span></a>
                                     </li>
                                 </ul>
                             </li>
@@ -677,7 +651,9 @@
 	<script src="{{asset('public/backend/admin/js/layout.js') }}"></script>
 	<script src="{{asset('public/backend/admin/js/theme-color.js') }}"></script>
 	<!-- material -->
-	<script src="{{asset('public/backend/admin/plugins/material/material.min.js') }}"></script>
+    <script src="{{asset('public/backend/admin/plugins/material/material.min.js') }}"></script>
+    <script src="{{asset('public/backend/admin/plugins/flatpicker/js/flatpicker.min.js') }}"></script>
+	<script src="{{asset('public/backend/admin/js/pages/date-time/date-time.init.js') }}"></script>
 	<!--apex chart-->
 	<script src="{{asset('public/backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{asset('public/backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>

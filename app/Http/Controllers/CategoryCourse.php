@@ -88,11 +88,12 @@ class CategoryCourse extends Controller
     }
 
     public function show_category_home($slug_category_course) {
-        $cate_course = DB::table('tbl_category_course')->where('category_status', '0')->orderby('category_id', 'desc')->get();
+        $cate_course = DB::table('tbl_category_course')->where('category_status', '1')->orderby('category_id', 'desc')->get();
 
         $category_by_id = DB::table('tbl_course')
         ->join('tbl_category_course', 'tbl_course.category_id', '=', 'tbl_category_course.category_id')
-        ->where('tbl_category_course.slug_category_course',$slug_category_course)->get();
+        ->where('tbl_category_course.slug_category_course',$slug_category_course)
+        ->orderby('course_id', 'desc')->paginate(9);
 
         // foreach($cate_course as $key => $val){
         //     // SEO

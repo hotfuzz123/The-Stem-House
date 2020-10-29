@@ -44,6 +44,14 @@
                     <label for="simpleFormEmail">Nhập Số Điện Thoại</label>
                     <input type="text" name="admin_phone" class="form-control" value="{{ $auth ->admin_phone }}">
                 </div>
+                <div class="form-group">
+                    <label>Chức vụ</label>
+                    <select name="admin_type" class="form-control">
+                        <option>Admin</option>
+                        <option>Giáo viên</option>
+                        <option>Viết báo</option>
+                    </select>
+                </div>
                 {{-- <div class="form-group">
                     <label for="simpleFormEmail">Nhập Mật Khẩu</label>
                     <input type="password" name="admin_password" class="form-control" value="{{ $auth ->admin_password }}">

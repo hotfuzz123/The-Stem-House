@@ -39,7 +39,7 @@ class AuthController extends Controller
     public function logout_auth(){
         $this->Authlogin();
         Auth::logout();
-        return redirect('/admin')->with('message', 'Đăng nhập authentication thành công');
+        return redirect('/admin')->with('message', 'Đăng xuất authentication thành công');
     }
 
     public function login_auth(Request $request){
@@ -103,6 +103,7 @@ class AuthController extends Controller
         $admin->admin_name = $data['admin_name'];
         $admin->admin_email = $data['admin_email'];
         $admin->admin_phone = $data['admin_phone'];
+        $admin->admin_type = $data['admin_type'];
         $get_image = $request->file('admin_image');
         $path = 'public/uploads/admin/';
 

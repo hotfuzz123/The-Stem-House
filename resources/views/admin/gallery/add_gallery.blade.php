@@ -33,11 +33,16 @@
                 </div>
                 <div class="card-body ">
                     <div class="row">
-                        <form action="{{URL::to('/insert-gallery/ .$pro_id') }}" class="col-md-6 col-sm-6 col-6" method="POST" id="" enctype="multipart/form-data">
+                        <form action="{{URL::to('/insert-gallery/' .$pro_id)}}" class="col-md-6 col-sm-6 col-6" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="btn-group">
-                                <input style="padding: 10px 0;border: 1px solid #e7ecf1;" id="file" type="file" name="file[]" accept="image/*" multiple>
-                                <button id="addRow1" class="btn btn-info" type="submit" name="upload">
+                                {{-- <input type="file" id="file" name="filename2" accept="image/*" multiple>
+                                {{-- <input type="file" style="padding: 10px 0;border: 1px solid #e7ecf1;" id="file" name="file[]" accept="image/*" multiple>
+                                <button id="addRow1" class="btn btn-info" type="submit" name="upload" name="taianh" value="Tải ảnh">
+                                    Tải ảnh
+                                </button> --}}
+                                <input type="file" id="myFile" name="filename2" accept="image/*" multiple>
+                                <button id="addRow1" class="btn btn-info" type="submit" name="upload" name="taianh" value="Tải ảnh">
                                     Tải ảnh
                                 </button>
                             </div>
@@ -77,7 +82,6 @@
 
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>

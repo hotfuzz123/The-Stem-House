@@ -39,6 +39,7 @@ class CourseController extends Controller
 
     public function save_course(Request $request){
         $this->Authlogin();
+        $this->validation($request);
         $data = $request->all();
         $course = new Course();
         $course->course_name = $data['course_name'];
@@ -114,6 +115,28 @@ class CourseController extends Controller
         return Redirect::to('/all-course')->with('message', 'Cập nhật khóa học thành công');
     }
 
+    
+    public function validation($request){
+        return $this->validate($request,[
+            'course_name' => 'required|max:255',
+            'course_price' => 'required|max:255',
+            'course_desc' => 'required|max:255',
+            'course_content' => 'required|max:255',
+            'course_cate' => 'required|max:255',
+            'course_status' => 'required|max:255',
+            'course_image' => 'required|max:255',
+        ],
+        [
+            'course_name.required' => 'Vui lòng nhập tên khoá học',
+            'course_price.required' => 'Vui lòng nhập giá khoá học',
+            'course_desc.required' => 'Vui lòng nhập mô tả khoá học',
+            'course_content.required' => 'Vui lòng nhập nội dung khoá học',
+            'course_cate.required' => 'Vui lòng chọn danh mục khoá học',
+            'course_image.required' => 'Vui lòng thêm ảnh khoá học',
+            'course_status.required' => 'Vui lòng chọn hiển thị khoá học',
+        ]);
+    }
+
     public function delete_course($course_id) {
         $this->Authlogin();
         $course = Course::find($course_id);
@@ -137,7 +160,7 @@ class CourseController extends Controller
         $related_course = DB::table('tbl_course')
         ->join('tbl_category_course', 'tbl_category_course.category_id', '=', 'tbl_course.category_id')
         ->where('tbl_category_course.category_id', $category_id)
-        ->whereNotIn('tbl_course.course_slug',[$course_slug])->limit(3)->get();
+        ->whereNotIn('tbl_course.course_slug',[$course_slug])->take(3)->get();
 
         return view('pages.course.course_details')->with('course_details', $details_course)->with('relate', $related_course);
     }

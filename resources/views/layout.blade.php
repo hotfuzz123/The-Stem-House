@@ -314,13 +314,52 @@
                             <a href="{{URL::to('/contact')}}"><span class="title">Liên Hệ</span></a>
                         </li>
                     </ul>
-                    <ul class="sign_up_btn pull-right dn-smd mt20">
-                        <li class="list-inline-item"><a href="#" class="btn btn-md"><i
-                                    class="flaticon-megaphone"></i><span class="dn-md">Become an Instructor</span></a>
+                    <ul class="sign_up_btn pull-right dn-smd mt20" style="margin: 12px 0;">
+                        <li class="list-inline-item">
+                            <div class="cart_btn">
+                                <ul class="cart">
+                                    <li>
+                                        <a href="#" class="btn cart_btn flaticon-shopping-bag"><span>5</span></a>
+                                        <ul class="dropdown_content">
+                                            <li class="list_content">
+                                                <a href="#">
+                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <p>Dolar Sit Amet</p>
+                                                    <small>1 × $7.90</small>
+                                                    <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="list_content">
+                                                <a href="#">
+                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <p>Lorem Ipsum</p>
+                                                    <small>1 × $7.90</small>
+                                                    <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="list_content">
+                                                <a href="#">
+                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <p>Is simply</p>
+                                                    <small>1 × $7.90</small>
+                                                    <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="list_content">
+                                                <h5>Subtotal: $57.70</h5>
+                                                <a href="#" class="btn btn-thm cart_btns">View cart</a>
+                                                <a href="#" class="btn btn-thm3 checkout_btns">Checkout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="list-inline-item"><a href="#" class="btn btn-md" data-toggle="modal"
-                                data-target="#exampleModalCenter"><i class="flaticon-user"></i> <span
-                                    class="dn-md">Đăng nhập/Đăng ký</span></a></li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="flaticon-user"></i> <span class="dn-md">Đăng nhập/Đăng ký</span>
+                            </a>
+                        </li>
                     </ul><!-- Button trigger modal -->
                 </nav>
                 <!-- End of Responsive Menu -->

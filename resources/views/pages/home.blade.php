@@ -28,9 +28,9 @@
                     </div>
                     <div class="carousel-btn-block banner-carousel-btn">
                         <span class="carousel-btn left-btn"><i class="flaticon-left-arrow left"></i>
-                            <span class="left">TRƯỚC</span>
+                            <span class="left">TIẾP</span>
                         </span>
-                        <span class="carousel-btn right-btn"><span class="right">TIẾP</span>
+                        <span class="carousel-btn right-btn"><span class="right">TRƯỚC</span>
                             <i class="flaticon-right-arrow-1 right"></i>
                         </span>
                     </div><!-- /.carousel-btn-block banner-carousel-btn -->

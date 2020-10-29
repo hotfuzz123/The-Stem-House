@@ -2354,11 +2354,12 @@ header.header-nav.menu_style_home_seven .ace-responsive-menu > li.last{
 }
 .banner-style-one .owl-dots,
 .banner-style-two .owl-dots{
-  display: none !important;
+  /* display: none !important; */
   margin: 0;
   position: absolute;
   bottom: 110px;
   left: 50%;
+  bottom: 0%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 100%;
@@ -11050,7 +11051,7 @@ body.translated{
   border-color: rgb(237, 239, 247);
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
-  height: 480px;
+  height: 460px;
   margin-bottom: 30px;
   padding: 20px;
   -webkit-transition: all 0.3s ease 0s;
@@ -11069,13 +11070,13 @@ body.translated{
   margin-bottom: 40px;
 }
 .shop_grid .cart_bag{
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background-color: rgb(255, 16, 83);
   height: 50px;
   margin-top: 25px;
   opacity: 0;
   text-align: center;
-  width: 50px;
+  width: 150px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -11109,7 +11110,7 @@ body.translated{
   line-height: 1.333;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   overflow: hidden;
 }
 .shop_grid .details ul li,

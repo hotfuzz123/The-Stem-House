@@ -56,66 +56,43 @@
                 <div class="row">
                     @foreach ($category_by_id as $key => $course)
                         <div class="col-lg-6 col-xl-4">
-                            <a href="{{URL::to('/course-detail') }}">
-                                <div class="top_courses">
-                                    <a href="{{URL::to('/course-detail') }}">
-                                        <div class="thumb">
-                                            <a href="{{URL::to('/course-detail') }}">
-                                                <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="t1.jpg">
-                                            </a>
-                                            <div class="overlay">
-                                                <div class="tag">Design</div>
-                                                <div class="icon"><span class="flaticon-like"></span></div>
-                                                <a class="tc_preview_course" href="#">Xem Trước Khóa Học</a>
-                                            </div>
-                                        </div>
-                                        <div class="details">
-                                            <div class="tc_content">
-                                                <p>Ali TUFAN</p>
-                                                <h5><a href="{{URL::to('/course-detail') }}">{{$course->course_name}}</a></h5>
-                                                <ul class="tc_review">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#">(6)</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tc_footer">
-                                                <ul class="tc_meta float-left">
-                                                    <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#">1548</a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#">25</a></li>
-                                                </ul>
-                                                <div class="tc_price float-right">{{number_format($course->course_price).' '.'đ'}}</div>
-                                            </div>
-                                        </div>
-                                    </a>
+                            <div class="top_courses">
+                                <div class="thumb">
+                                    <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="t1.jpg">
+                                    <div class="overlay">
+                                        <div class="tag">{{$course->category_name}}</div>
+                                        <div class="icon"><span class="flaticon-like"></span></div>
+                                        <a class="tc_preview_course" href="{{URL::to('/course-detail/' .$course->course_slug) }}">Xem Trước Khóa Học</a>
+                                    </div>
                                 </div>
-                            </a>
+                                <div class="details">
+                                    <div class="tc_content">
+                                        <p>Ali TUFAN</p>
+                                        <h5><a href="{{URL::to('/course-detail/' .$course->course_slug) }}">{{$course->course_name}}</a></h5>
+                                        <ul class="tc_review">
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="list-inline-item"><a href="#">(6)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tc_footer">
+                                        <ul class="tc_meta float-left">
+                                            <li class="list-inline-item"><a href="#"><i class="flaticon-profile"></i></a></li>
+                                            <li class="list-inline-item"><a href="#">1548</a></li>
+                                            <li class="list-inline-item"><a href="#"><i class="flaticon-comment"></i></a></li>
+                                            <li class="list-inline-item"><a href="#">25</a></li>
+                                        </ul>
+                                        <div class="tc_price float-right">{{number_format($course->course_price).' '.'đ'}}</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                     <div class="col-lg-12">
-                        {{-- {{ $category_by_id->render("pagination::theme") }} --}}
-                        <div class="mbp_pagination">
-                            <ul class="page_navigation">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#">14</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next <span class="flaticon-right-arrow-1"></span></a>
-                                </li>
-                            </ul>
-                        </div>
+                        {{ $category_by_id->render("pagination::theme") }}
                     </div>
                 </div>
             </div>

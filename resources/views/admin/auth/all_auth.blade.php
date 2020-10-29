@@ -114,7 +114,7 @@
                                                     <td>{{ $auth ->admin_type }}</td>
                                                     <td><a href="tel:{{ $auth ->admin_phone }}">{{ $auth ->admin_phone }} </a></td>
                                                     <td><a href="mailto:{{ $auth ->admin_email }}">{{ $auth ->admin_email }} </a></td>
-                                                    <td class="left">{{ $auth ->created_at }}</td>
+                                                    <td class="left">{{ $auth ->created_at->format('d/m/Y H:i:s') }}</td>
                                                     <td class="valigntop">
                                                         <div class="btn-group">
                                                             <button class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"

@@ -1,5 +1,5 @@
 (function($) {
-    
+
     "use strict";
 
     /* ----- Preloader ----- */
@@ -64,7 +64,7 @@
     $('.tags-bar > span i').on('click', function(){
         $(this).parent().fadeOut();
     });
-    
+
     $(function() {
         $('.btns').on('click', function() {
             $('.content_details').toggleClass('is-full-width');
@@ -93,14 +93,14 @@
             }
         };
     });
-    
+
     $(".mouse_scroll").on('click', function() {
         $('html, body').animate({
             scrollTop: $("#our-courses").offset().top
         }, 1000);
     });
     /** Main Menu Custom Script End **/
-    
+
     /* ----- Blog innerpage sidebar according ----- */
     $(document).on('ready', function() {
         $('.collapse').on('show.bs.collapse', function () {
@@ -110,7 +110,7 @@
         $('.collapse').on('hide.bs.collapse', function () {
             $(this).siblings('.card-header').removeClass('active');
         });
-        
+
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()
         })
@@ -156,7 +156,7 @@
     $('#countdown').countdown({
         year: cd
     });
-    
+
     /* ----- fact-counter ----- */
     function counterNumber() {
         $('div.timer').counterUp({
@@ -166,7 +166,7 @@
     }
     $('.circlechart').circlechart(); // Initialization
 
-    /* ----- Mobile Nav ----- */    
+    /* ----- Mobile Nav ----- */
     $(function() {
         $('nav#menu').mmenu();
     });
@@ -273,13 +273,13 @@
     };
 
     jQuery(document).on('ready',function(){
-        jQuery(window).stellar({ 
+        jQuery(window).stellar({
             horizontalScrolling: false,
             hideDistantElements: true,
             verticalScrolling: !isMobile.any(),
             scrollProperty: 'scroll',
             responsive: true
-        });          
+        });
     });
 
     /* ----- MagnificPopup ----- */
@@ -326,7 +326,7 @@
         });
         wow.init();
     }
-    
+
     /* ----- Date & time Picker ----- */
     if($('.datepicker').length){
         $('.datepicker').datetimepicker();
@@ -346,10 +346,10 @@
                 jQuery('#cycle-loader').hide();
                 jQuery('#maximage').fadeIn('fast');
             }
-        });        
+        });
         // Helper function to Fill and Center the HTML5 Video
         jQuery('#html5video').maximage('maxcover');
-            
+
         // To show it is dynamic html text
         jQuery('.in-slide-content').delay(2000).fadeIn();
     }
@@ -1121,7 +1121,7 @@
                 $('.scrollToHome').fadeOut();
             }
         });
-        
+
         //Click event to scroll to top
         $('.scrollToHome').on('click',function(){
             $('html, body').animate({scrollTop : 0},800);
@@ -1141,7 +1141,7 @@
         mobileNavToggle();
 
     });
-    
+
 /* ======
    When document is loading, do
    ====== */
@@ -1150,7 +1150,7 @@
         // add your functions
         counterNumber();
         preloaderLoad();
-        
+
     });
     // window on Scroll function
     $(window).on('scroll', function() {

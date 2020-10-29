@@ -28,26 +28,44 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên khóa học</label>
                     <input type="text" name="course_name" class="form-control" onkeyup="ChangeToSlug();" id="slug">
+                    @if ($errors->has('course_name'))
+                    <span class="text-danger">{{ $errors->first('course_name') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Slug khóa học</label>
                     <input type="text" name="course_slug" class="form-control" id="convert_slug">
+                    @if ($errors->has('course_slug'))
+                    <span class="text-danger">{{ $errors->first('course_slug') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Giá khóa học</label>
                     <input type="text" name="course_price" class="form-control" id="simpleFormEmail">
+                    @if ($errors->has('course_price'))
+                    <span class="text-danger">{{ $errors->first('course_price') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh bìa khóa học</label>
                     <input type="file" name="course_image" class="form-control" id="simpleFormEmail">
+                    @if ($errors->has('course_image'))
+                    <span class="text-danger">{{ $errors->first('course_image') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Mô tả khóa học</label>
-                    <textarea class="form-control" name="course_desc" rows="3" id="editor-product-1" placeholder="Mô tả khóa học..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    <textarea class="form-control" name="course_desc" rows="3" id="editor-course-1" placeholder="Mô tả khóa học..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    @if ($errors->has('course_desc'))
+                    <span class="text-danger">{{ $errors->first('course_desc') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Nội dung khóa học</label>
-                    <textarea class="form-control" name="course_content" rows="3" id="editor-product-2" placeholder="Nội dung khóa học..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    <textarea class="form-control" name="course_content" rows="3" id="editor-course-2" placeholder="Nội dung khóa học..." style="margin-top: 0px; margin-bottom: 0px; height: 163px;"></textarea>
+                    @if ($errors->has('course_content'))
+                    <span class="text-danger">{{ $errors->first('course_content') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Danh mục khóa học</label>
@@ -56,6 +74,9 @@
                             <option value="{{$cate -> category_id}}">{{$cate -> category_name}}</option>
                         @endforeach
                     </select>
+                    @if ($errors->has('course_cate'))
+                    <span class="text-danger">{{ $errors->first('course_cate') }}</span>
+                    @endif
                 </div>
                 <div class="form-group">
                     <label>Hiển thị</label>
@@ -63,6 +84,9 @@
                         <option value="1">Hiển thị</option>
                         <option value="0">Ẩn</option>
                     </select>
+                    @if ($errors->has('course_status'))
+                    <span class="text-danger">{{ $errors->first('course_status') }}</span>
+                    @endif
                 </div>
                 <button type="submit"  name="add_course" class="btn btn-primary">Thêm khóa học mới</button>
             </form>

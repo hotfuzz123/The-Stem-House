@@ -17,10 +17,11 @@ class CreateTblProduct extends Migration
             $table->increments('product_id');
             $table->string('product_name');
             $table->text('product_slug');
-            $table->integer('category_id');
+            $table->string('product_price');
+            $table->integer('product_quantity');
             $table->text('product_desc');
             $table->text('product_content');
-            $table->string('product_price');
+            $table->integer('category_id');
             $table->string('product_image');
             $table->integer('product_status');
             $table->timestamps();

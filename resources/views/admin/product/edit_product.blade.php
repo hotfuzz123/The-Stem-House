@@ -39,6 +39,13 @@
                     <input type="text" name="product_price" class="form-control" id="simpleFormEmail" value="{{ $pro ->product_price }}">
                 </div>
                 <div class="form-group">
+                    <label for="simpleFormEmail">Kho</label>
+                    <input type="text" name="product_quantity" class="form-control" id="simpleFormEmail" value="{{ $pro ->product_quantity }}">
+                    @if ($errors->has('product_quantity'))
+                    <span class="text-danger">{{ $errors->first('product_quantity') }}</span>
+                    @endif
+                </div>
+                <div class="form-group">
                     <label for="simpleFormEmail">Ảnh bìa sản phẩm</label>
                     <input type="file" name="product_image" class="form-control" id="simpleFormEmail">
                     <img src="{{URL::to('public/uploads/product/' .$pro->product_image)}}" height="100" width="100">

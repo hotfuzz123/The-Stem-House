@@ -73,8 +73,7 @@
                         <li class="list-inline-item"><button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span>Thêm giỏ hàng</button></li>
                     </ul>
                     <ul class="sspd_sku mb30">
-                        <li><a href="#">Mã ID: {{$value->product_id}}</a></li>
-                        <li><a href="#">Kho: 10</a></li>
+                        <li><a href="#">Kho: {{$value->product_quantity}}</a></li>
                         <li><a href="#">Tình trạng: Còn hàng</a></li>
                         <li><a href="#">Danh mục: {{$value->category_name}}</a></li>
                     </ul>
@@ -242,19 +241,19 @@
                                 <div class="thumb text-center">
                                     <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
                                 </div>
-                                <div class="details float-left">
-                                    <h4 class="price">{{number_format($relate_value->product_price).' '.'đ'}}</h4>
+                                <div class="details">
                                     <h4 class="item-tile">{{ $relate_value->product_name }}</h4>
-                                    <ul>
+                                    <h4 class="price">{{number_format($relate_value->product_price).' '.'đ'}}</h4>
+                                    {{-- <ul>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                         <li class="list-inline-item"><a href="#">(6)</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </div>
-                                <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
+                                <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"> MUA NGAY</span></a>
                             </div>
                         </a>
                     </div>

@@ -36,13 +36,18 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						Đăng nhập Admin
                     </span>
-                    <?php
-                    $message = Session::get('message');
-                    if($message){
-                        echo '<span class="text-alert">'.$message. '</span>';
-                        Session::put('message', null);
-                    }
-                    ?>
+
+                    @if(Session::has('message'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>
+                            {{ Session::get('message') }}
+                        </strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
+                    
                     {{ csrf_field() }}
 					<div class="wrap-input100 validate-input" data-validate="Nhập Email">
 						<input class="input100" type="text" name="admin_email" placeholder="Nhập Email">

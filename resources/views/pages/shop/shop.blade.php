@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="instructor_search_result style2">
-                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">100 khóa học</span></p>
+                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">100 sản phẩm</span></p>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -62,19 +62,19 @@
                                     <div class="thumb text-center">
                                         <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
                                     </div>
-                                    <div class="details float-left">
-                                        <h4 class="price">{{number_format($product->product_price).' '.'đ'}}</h4>
+                                    <div class="details">
                                         <h4 class="item-tile">{{$product->product_name}}</h4>
-                                        <ul>
+                                        <h4 class="price">{{number_format($product->product_price).' '.'đ'}}</h4>
+                                        {{-- <ul>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#"><i class="fa fa-star"></i></a></li>
                                             <li class="list-inline-item"><a href="#">(6)</a></li>
-                                        </ul>
+                                        </ul> --}}
                                     </div>
-                                    <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"></span></a>
+                                    <a class="cart_bag float-right" href="#"><span class="flaticon-shopping-bag"> MUA NGAY</span></a>
                                 </div>
                             </a>
                         </div>

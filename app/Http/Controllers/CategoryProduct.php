@@ -107,11 +107,12 @@ class CategoryProduct extends Controller
     //End Function Admin Page
 
     public function show_category_home($slug_category_product) {
-        $cate_product = DB::table('tbl_category_product')->where('category_status', '0')->orderby('category_id', 'desc')->get();
+        $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id', 'desc')->get();
 
         $category_by_id = DB::table('tbl_product')
         ->join('tbl_category_product', 'tbl_product.category_id', '=', 'tbl_category_product.category_id')
-        ->where('tbl_category_product.slug_category_product',$slug_category_product)->paginate(9);
+        ->where('tbl_category_product.slug_category_product',$slug_category_product)
+        ->orderby('product_id', 'desc')->paginate(9);
 
         // foreach($cate_product as $key => $val){
         //     // SEO

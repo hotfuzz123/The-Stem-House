@@ -21,7 +21,7 @@ class HomeController extends Controller
         $meta_title = "Stemhouse Education";
         $url_canonical = $request->url();
 
-        $all_slider = Slider::where('slider_status', '1')->orderby('slider_id', 'desc')->get();
+        $all_slider = Slider::where('slider_status', '1')->orderby('slider_id', 'desc')->take(6)->get();
         $all_course = DB::table('tbl_course')->where('course_status', '1')->orderby('course_id', 'desc')
         ->join('tbl_category_course', 'tbl_category_course.category_id', '=', 'tbl_course.category_id')
         ->take(4)->get();

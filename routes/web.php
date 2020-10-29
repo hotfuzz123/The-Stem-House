@@ -39,7 +39,17 @@ Route::get('/active-category-product/{category_product_id}', 'CategoryProduct@ac
 Route::post('/save-category-product', 'CategoryProduct@save_category_product');
 Route::post('/update-category-product/{category_product_id}', 'CategoryProduct@update_category_product');
 
-//Category News
+//Category Post
+Route::get('/add-category-post', 'CategoryPost@add_category_post');
+Route::get('/edit-category-post/{category_post_id}', 'CategoryPost@edit_category_post');
+Route::get('/delete-category-post/{category_post_id}', 'CategoryPost@delete_category_post');
+Route::get('/all-category-post', 'CategoryPost@all_category_post');
+
+Route::get('/unactive-category-post/{category_post_id}', 'CategoryPost@unactive_category_post');
+Route::get('/active-category-post/{category_post_id}', 'CategoryPost@active_category_post');
+
+Route::post('/save-category-post', 'CategoryPost@save_category_post');
+Route::post('/update-category-post/{category_post_id}', 'CategoryPost@update_category_post');
 
 //Category Course
 Route::get('/add-category-course', 'Categorycourse@add_category_course');
@@ -120,7 +130,7 @@ Route::get('/post-detail', 'PostController@details_post');
 //Gallery
 Route::get('/add-gallery/{product_id}', 'GalleryController@add_gallery');
 Route::post('/select-gallery', 'GalleryController@select_gallery');
-Route::get('/insert-gallery/{product_id}', 'GalleryController@insert_gallery');
+Route::post('/insert-gallery/{pro_id}', 'GalleryController@insert_gallery');
 
 
 //Slider
@@ -134,3 +144,16 @@ Route::get('/active-slider/{slider_id}', 'SliderController@active_slider');
 
 Route::post('/save-slider', 'SliderController@save_slider');
 Route::post('/update-slider/{slider_id}', 'SliderController@update_slider');
+
+
+//Coupon
+Route::get('/add-coupon', 'CouponController@add_coupon');
+Route::get('/edit-coupon/{coupon_id}', 'CouponController@edit_coupon');
+Route::get('/delete-coupon/{coupon_id}', 'CouponController@delete_coupon');
+Route::get('/all-coupon', 'CouponController@all_coupon');
+
+Route::get('/unactive-coupon/{coupon_id}', 'CouponController@unactive_coupon');
+Route::get('/active-coupon/{coupon_id}', 'CouponController@active_coupon');
+
+Route::post('/save-coupon', 'CouponController@save_coupon');
+Route::post('/update-coupon/{coupon_id}', 'CouponController@update_coupon');

@@ -27,6 +27,26 @@ class GalleryController extends Controller
         return view('admin.gallery.add_gallery')->with(compact('pro_id'));
     }
 
+    public function insert_gallery(Request $request, $pro_id){
+        $get_image = $request->file('file');
+        if($get_image){
+            foreach($get_image as $image){
+                $get_name_image = $get_image->getClientOriginalName();
+                $name_image = current(explode('.', $get_name_image));
+                $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+                $get_image->move('public/uploads/gallery/', $new_image);
+                $gallery = new Gallery();
+                $gallery->gallery_name = $new_image;
+                $gallery->gallery_image = $new_image;
+                $gallery->product_id = $pro_id;
+                $gallery->save();
+            }
+        }
+        Session::put('message', 'Thêm thư viện ảnh thành công');
+        return redirect()->back();
+    }
+
+
     public function select_gallery(Request $request){
         //$this->Authlogin();
         $product_id = $request->pro_id;
