@@ -37,7 +37,7 @@ class HomeController extends Controller
         $meta_title = "Shop";
         $url_canonical = $request->url();
 
-        $cate_product = DB::table('tbl_category_product')->where('category_status', '1')->orderby('category_id', 'desc')->get();
+        $cate_product = CateProduct::withCount(['product'])->where('category_status', '1')->orderby('category_id', 'desc')->get();
         $all_product = DB::table('tbl_product')->where('product_status', '1')->orderby('product_id', 'desc')->paginate(9);
 
         return view('pages.shop.shop')->with('category', $cate_product)->with('all_product', $all_product)
@@ -64,5 +64,18 @@ class HomeController extends Controller
 
     public function post(){
         return view('pages.post.post');
+    }
+
+    public function cart(){
+        // $total = DB::table('tbl_category_product')
+        // ->leftJoin('tbl_product','tbl_product.category_id','=','tbl_category_product.category_id')
+        // ->where('category_status', '1')
+        // ->where('product_status', '1')
+        // ->select('tbl_category_product.category_id',DB::raw('COUNT(tbl_product.product_id)'))
+        // ->groupBy('tbl_category_product.category_id')
+        // ->get();
+        // dd($total);
+
+        return view('pages.cart.show_cart');
     }
 }

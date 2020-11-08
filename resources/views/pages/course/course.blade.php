@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="instructor_search_result style2">
-                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">{!! $all_course->total() !!} khóa học</span></p>
+                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị {{ $all_course->firstItem() }} - {{ $all_course->lastItem() }}</span>trên <span class="color-dark pr10">{{ $all_course->total() }} khóa học</span></p>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -58,7 +58,7 @@
                         <div class="col-lg-6 col-xl-4">
                             <div class="top_courses">
                                 <div class="thumb">
-                                    <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="t1.jpg">
+                                    <img class="img-whp img-course" src="{{URL::to('uploads/course/' .$course->course_image) }}" alt="t1.jpg">
                                     <div class="overlay">
                                         <div class="tag">{{$course->category_name}}</div>
                                         <div class="icon"><span class="flaticon-like"></span></div>
@@ -92,7 +92,7 @@
                         </div>
                     @endforeach
                     <div class="col-lg-12">
-                        {{ $all_course->render("pagination::theme") }}
+                        {{ $all_course->links("pagination::theme") }}
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="selected_filter_widget style2">
-                    <span class="float-left"><img class="mr20" src="{{asset('public/frontend/images/resource/2.png') }}" alt="2.png"></span>
+                    <span class="float-left"><img class="mr20" src="{{asset('frontend/images/resource/2.png') }}" alt="2.png"></span>
                     <h4 class="mt15 fz20 fw500">Không chắc?</h4>
                     <br>
                     <p>Mỗi khóa học đều đảm bảo sẽ được hoàn tiền sau 30 ngày</p>

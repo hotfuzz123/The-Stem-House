@@ -112,7 +112,7 @@
                                                 </td>
                                                 <td> {{ $pro ->course_name }} </td>
                                                 <td> {{number_format($pro ->course_price).' '.'đ'}} </td>
-                                                <td><img src="public/uploads/course/{{ $pro ->course_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
+                                                <td><img src="uploads/course/{{ $pro ->course_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
                                                 <td> {{ $pro ->category_name }} </td>
                                                 <td>
                                                     <span class="">

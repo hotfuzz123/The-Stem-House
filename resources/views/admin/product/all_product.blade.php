@@ -114,7 +114,7 @@
                                                 </td>
                                                 <td> {{ $pro ->product_name }} </td>
                                                 <td> {{number_format($pro ->product_price).' '.'đ'}} </td>
-                                                <td><img src="public/uploads/product/{{ $pro ->product_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
+                                                <td><img src="uploads/product/{{ $pro ->product_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
                                                 <td> {{ $pro ->product_quantity }}</td>
                                                 <td> {{ $pro ->category_name }} </td>
                                                 <td>

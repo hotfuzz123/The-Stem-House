@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="instructor_search_result style2">
-                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị 1-9</span>trên <span class="color-dark pr10">100 sản phẩm</span></p>
+                            <p class="mt10 fz15"><span class="color-dark pr10">Hiển thị {{ $all_product->firstItem() }} - {{ $all_product->lastItem() }}</span>trên <span class="color-dark pr10">{{$all_product->total()}} sản phẩm</span></p>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -60,7 +60,7 @@
                             <a href="{{URL::to('/product-detail/' .$product->product_slug) }}">
                                 <div class="shop_grid">
                                     <div class="thumb text-center">
-                                        <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
+                                        <img class="img-shop" src="{{URL::to('uploads/product/' .$product->product_image) }}" alt="1.png">
                                     </div>
                                     <div class="details">
                                         <h4 class="item-tile">{{$product->product_name}}</h4>
@@ -81,8 +81,7 @@
                     @endforeach
 
                     <div class="col-lg-12">
-                        {{-- {!! $all_product->links() !!} --}}
-                        {{ $all_product->render("pagination::theme") }}
+                        {{ $all_product->links("pagination::theme") }}
                     </div>
                 </div>
             </div>
@@ -100,7 +99,7 @@
                                     @foreach ($category as $key => $cate)
                                     <div class="category_sidebar_widget">
                                         <ul class="category_list">
-                                            <li><a href="{{ URL::to('/product-category/'.$cate->slug_category_product) }}">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
+                                            <li><a href="{{ URL::to('/product-category/'.$cate->slug_category_product) }}">{{$cate->category_name}}<span class="float-right">({{ $cate->product_count }})</span></a></li>
                                         </ul>
                                     </div>
                                     @endforeach

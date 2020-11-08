@@ -12,7 +12,7 @@
                     <h4 class="breadcrumb_title">{{ $name->category_name }}</h4>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ $name->category_name }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
                     </ol>
                     @endforeach
                 </div>
@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-lg-6 col-xl-6">
                         <div class="instructor_search_result">
-                            <p class="mt10 fz15"><span class="pr-1">Hiển thị 1–{!! $category_by_id->count() !!} trên</span>{!! $category_by_id->total() !!} sản phẩm</p>
+                            <p class="mt10 fz15"><span class="pr-1">Hiển thị {{ $category_by_id->firstItem() }} - {{ $category_by_id->lastItem() }} trên</span>{{  $category_by_id->total()  }} sản phẩm</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-6 col-xl-6">
@@ -57,7 +57,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-4">
                             <div class="shop_grid">
                                 <div class="thumb text-center">
-                                    <img class="img-shop" src="{{URL::to('public/uploads/product/' .$product->product_image) }}" alt="1.png">
+                                    <img class="img-shop" src="{{URL::to('uploads/product/' .$product->product_image) }}" alt="1.png">
                                 </div>
                                 <div class="details">
                                     <h4 class="item-tile">{{$product->product_name}}</h4>
@@ -77,7 +77,7 @@
                     </a>
                     @endforeach
                     <div class="col-lg-12">
-                        {{ $category_by_id->render("pagination::theme") }}
+                        {{ $category_by_id->links("pagination::theme") }}
                     </div>
                 </div>
             </div>

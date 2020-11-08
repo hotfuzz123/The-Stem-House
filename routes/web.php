@@ -15,17 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 //Front-end
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'HomeController@shop');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/course', 'HomeController@course');
 Route::get('/post', 'HomeController@post');
 
 
-
 //Back-end
-Route::get('/dashboard', 'AdminController@show_dashboard');
-Route::post('/admin-dashboard', 'AdminController@dashboard');
+// Route::get('/dashboard', 'AdminController@show_dashboard');
+// Route::post('/admin-dashboard', 'AdminController@dashboard');
 
 //Category Product
 Route::get('/add-category-product', 'CategoryProduct@add_category_product');
@@ -83,7 +81,7 @@ Route::get('/product-detail/{product_slug}', 'ProductController@details_product'
 
 
 //Authentication roles
-
+Route::get('/dashboard', 'AuthController@show_dashboard');
 Route::get('/admin', 'AuthController@admin');
 Route::get('/logout-auth', 'AuthController@logout_auth');
 
@@ -157,3 +155,7 @@ Route::get('/active-coupon/{coupon_id}', 'CouponController@active_coupon');
 
 Route::post('/save-coupon', 'CouponController@save_coupon');
 Route::post('/update-coupon/{coupon_id}', 'CouponController@update_coupon');
+
+
+//Cart
+Route::get('/cart', 'HomeController@cart');

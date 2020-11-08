@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB, Session, Log, Auth;
 use App\Admin;
 use App\Roles;
+use App\Product;
+use App\Course;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Redirect;
 session_start();
@@ -23,6 +25,13 @@ class AuthController extends Controller
 
     public function admin(){
         return view('admin_login');
+    }
+
+    public function show_dashboard(){
+        $this->Authlogin();
+        $total_product = Product::count();
+        $total_course = Course::count();
+        return view('admin.dashboard')->with('total_product', $total_product)->with('total_course', $total_course);
     }
 
     public function all_auth(){

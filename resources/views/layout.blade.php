@@ -20,13 +20,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Stem House - StemHouse Education</title>
     <!-- css file -->
-    <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{asset('public/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/style.css') }}">
     <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{asset('public/frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{asset('frontend/css/responsive.css') }}">
     <!-- Favicon -->
-    <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
-    <link href="{{asset('public/frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" />
+    <link href="{{asset('frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+    <link href="{{asset('frontend/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" />
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                             <ul>
                                 <li class="list-inline-item">
                                     <div class="logo-widget">
-                                        <img class="img-fluid" src="{{asset('public/frontend/images/header-logo.png') }}" alt="header-logo.png">
+                                        <img class="img-fluid" src="{{asset('frontend/images/header-logo.png') }}" alt="header-logo.png">
                                         <span>EDUMY</span>
                                     </div>
                                 </li>
@@ -265,7 +265,7 @@
                     <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
                     <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
                         <li>
-                            <a href="{{URL::to('/home') }}"><span class="title">Trang Chủ</span></a>
+                            <a href="{{URL::to('/') }}"><span class="title">Trang Chủ</span></a>
                         </li>
                         <li>
                             <a href="{{URL::to('/') }}"><span class="title">Về Chúng Tôi</span></a>
@@ -316,6 +316,11 @@
                     </ul>
                     <ul class="sign_up_btn pull-right dn-smd mt20" style="margin: 12px 0;">
                         <li class="list-inline-item">
+                            <a href="#" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="flaticon-user"></i> <span class="dn-md">Đăng nhập/Đăng ký</span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
                             <div class="cart_btn">
                                 <ul class="cart">
                                     <li>
@@ -323,7 +328,7 @@
                                         <ul class="dropdown_content">
                                             <li class="list_content">
                                                 <a href="#">
-                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <img class="float-left" src="{{asset('frontend/images/50x50.png') }}" alt="50x50">
                                                     <p>Dolar Sit Amet</p>
                                                     <small>1 × $7.90</small>
                                                     <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
@@ -331,7 +336,7 @@
                                             </li>
                                             <li class="list_content">
                                                 <a href="#">
-                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <img class="float-left" src="{{asset('frontend/images/50x50.png') }}" alt="50x50">
                                                     <p>Lorem Ipsum</p>
                                                     <small>1 × $7.90</small>
                                                     <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
@@ -339,7 +344,7 @@
                                             </li>
                                             <li class="list_content">
                                                 <a href="#">
-                                                    <img class="float-left" src="{{asset('public/frontend/images/50x50.png') }}" alt="50x50">
+                                                    <img class="float-left" src="{{asset('frontend/images/50x50.png') }}" alt="50x50">
                                                     <p>Is simply</p>
                                                     <small>1 × $7.90</small>
                                                     <span class="close_icon float-right"><i class="fa fa-plus"></i></span>
@@ -354,11 +359,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="#" class="btn btn-md" data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="flaticon-user"></i> <span class="dn-md">Đăng nhập/Đăng ký</span>
-                            </a>
                         </li>
                     </ul><!-- Button trigger modal -->
                 </nav>
@@ -472,7 +472,7 @@
             <div class="mobile-menu">
                 <div class="header stylehome1">
                     <div class="main_logo_home2">
-                        <img class="nav_logo_img img-fluid float-left mt20" src="{{asset('public/frontend/images/header-logo.png') }}"
+                        <img class="nav_logo_img img-fluid float-left mt20" src="{{asset('frontend/images/header-logo.png') }}"
                             alt="header-logo.png">
                         <span>edumy</span>
                     </div>
@@ -607,7 +607,7 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-3 col-lg-3 col-xl-2 pb15 pt15">
                         <div class="logo-widget home2">
-                            <img class="img-fluid" src="{{asset('public/frontend/images/header-logo.png')}}"
+                            <img class="img-fluid" src="{{asset('frontend/images/header-logo.png')}}"
                                 alt="header-logo.png">
                             <span>EDUMY</span>
                         </div>
@@ -654,26 +654,26 @@
         <a class="scrollToHome" href="#"><i class="flaticon-up-arrow-1"></i></a>
     </div>
     <!-- Wrapper End -->
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-3.3.1.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.mmenu.all.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/ace-responsive-menu.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/bootstrap-select.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/isotop.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/snackbar.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/simplebar.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/parallax.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/scrollto.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery-scrolltofixed-min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/jquery.counterup.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/wow.min.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/progressbar.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/slider.js') }}"></script>
-    <script type="text/javascript" src="{{asset('public/frontend/js/timepicker.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/jquery-3.3.1.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/jquery-migrate-3.0.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/jquery.mmenu.all.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/ace-responsive-menu.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/bootstrap-select.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/isotop.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/snackbar.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/simplebar.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/parallax.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/scrollto.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/jquery-scrolltofixed-min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/jquery.counterup.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/progressbar.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/slider.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/timepicker.js') }}"></script>
     <!-- Custom script for all pages -->
-    <script type="text/javascript" src="{{asset('public/frontend/js/script.js') }}"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/script.js') }}"></script>
 </body>
 
 </html>

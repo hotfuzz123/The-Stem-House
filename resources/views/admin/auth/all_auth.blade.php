@@ -108,7 +108,7 @@
                                                 @foreach ($all_auth as $key => $auth)
                                                 <tr class="odd gradeX">
                                                     <td class="patient-img">
-                                                        <img src="public/uploads/admin/{{ $auth ->admin_image }}">
+                                                        <img src="uploads/admin/{{ $auth ->admin_image }}">
                                                     </td>
                                                     <td>{{ $auth ->admin_name }}</td>
                                                     <td>{{ $auth ->admin_type }}</td>
@@ -151,7 +151,7 @@
                             <div class="card card-box">
                                 <div class="card-body no-padding ">
                                     <div class="doctor-profile">
-                                        <img src="public/uploads/admin/{{ $auth ->admin_image }}" class="doctor-pic" alt="Ảnh đại diện">
+                                        <img src="uploads/admin/{{ $auth ->admin_image }}" class="doctor-pic" alt="Ảnh đại diện">
                                         <div class="profile-usertitle">
                                             <div class="doctor-name">{{ $auth ->admin_name }}</div>
                                             <div class="name-center"> {{ $auth ->admin_type }} </div>

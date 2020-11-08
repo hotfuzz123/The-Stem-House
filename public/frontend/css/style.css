@@ -11382,7 +11382,7 @@ body.translated{
 }
 .cart_page_form .table_body td,
 .cart_page_form .table_body th{
-  padding: 30px 31px;
+  padding: 30px 22px;
   vertical-align: middle;
 }
 .cart_page_form.style2 .table_body td,
@@ -11432,6 +11432,10 @@ body.translated{
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.333;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .cart_page_form tbody.table_body th .cart_list li {
   margin-right: 0;

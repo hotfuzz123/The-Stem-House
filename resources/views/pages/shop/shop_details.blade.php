@@ -13,41 +13,41 @@
                         <div class="item">
                             <div class="single_product">
                                 <div class="single_item">
-                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('public/uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
+                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
                                 </div>
-                                <a class="product_popup popup-img" href="{{URL::to('public/uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
+                                <a class="product_popup popup-img" href="{{URL::to('uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="single_product">
                                 <div class="single_item">
-                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('public/uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
+                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
                                 </div>
-                                <a class="product_popup popup-img" href="{{URL::to('public/uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
+                                <a class="product_popup popup-img" href="{{URL::to('uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="single_product">
                                 <div class="single_item">
-                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('public/uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
+                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
                                 </div>
-                                <a class="product_popup popup-img" href="{{URL::to('public/uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
+                                <a class="product_popup popup-img" href="{{URL::to('uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="single_product">
                                 <div class="single_item">
-                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('public/uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
+                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
                                 </div>
-                                <a class="product_popup popup-img" href="{{URL::to('public/uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
+                                <a class="product_popup popup-img" href="{{URL::to('uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="single_product">
                                 <div class="single_item">
-                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('public/uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
+                                    <div class="thumb"><img class="img-fluid" src="{{URL::to('uploads/product/' .$value->product_image) }}" alt="ss1.png"></div>
                                 </div>
-                                <a class="product_popup popup-img" href="{{URL::to('public/uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
+                                <a class="product_popup popup-img" href="{{URL::to('uploads/product/' .$value->product_image) }}"><span class="flaticon-zoom-in"></span></a>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             <div class="product_single_content">
                                 <div class="mbp_pagination_comments">
                                     <div class="mbp_first media">
-                                        <img src="{{asset('public/frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png">
+                                        <img src="{{asset('frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png">
                                         <div class="media-body">
                                             <h4 class="sub_title mt-0">Warren Bethell
                                                 <span class="sspd_review float-right">
@@ -132,7 +132,7 @@
                                             <div class="sspd_review_liked"><a href="#"><i class="flaticon-like-1"></i> <span class="text-thm6 pl5 pr5 fz15">15</span> Thank Waren</a></div>
                                             <div class="custom_hr style2"></div>
                                             <div class="mbp_sub media">
-                                                <a href="#"><img src="{{asset('public/frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png"></a>
+                                                <a href="#"><img src="{{asset('frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png"></a>
                                                 <div class="media-body">
                                                     <h4 class="sub_title mt-0">Anton Hilton
                                                         <span class="sspd_review float-right">
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="custom_hr"></div>
                                     <div class="mbp_second media">
-                                        <img src="{{asset('public/frontend/images/resource/review1.png') }}" class="align-self-start mr-3" alt="review1.png">
+                                        <img src="{{asset('frontend/images/resource/review1.png') }}" class="align-self-start mr-3" alt="review1.png">
                                         <div class="media-body">
                                             <h4 class="sub_title mt-0">Warren Bethell
                                                 <span class="sspd_review float-right">
@@ -239,7 +239,7 @@
                         <a href="{{URL::to('/product-detail/' .$relate_value->product_slug) }}">
                             <div class="shop_grid">
                                 <div class="thumb text-center">
-                                    <img class="img-shop" src="{{asset('public/uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
+                                    <img class="img-shop" src="{{asset('uploads/product/' .$relate_value->product_image ) }}" alt="1.png">
                                 </div>
                                 <div class="details">
                                     <h4 class="item-tile">{{ $relate_value->product_name }}</h4>

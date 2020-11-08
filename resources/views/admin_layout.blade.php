@@ -12,30 +12,30 @@
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<!-- icons -->
-	<link href="{{asset('public/backend/admin/fonts/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/fonts/material-design-icons/material-icon.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/fonts/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/fonts/material-design-icons/material-icon.css') }}" rel="stylesheet" type="text/css" />
 	<!--bootstrap -->
-	<link href="{{asset('public/backend/admin/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/plugins/summernote/summernote.css') }}" rel="stylesheet">
+	<link href="{{asset('backend/admin/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/plugins/summernote/summernote.css') }}" rel="stylesheet">
     <!-- data tables -->
-    <link href="{{asset('public/backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome 5 -->
     <script src="https://kit.fontawesome.com/91f55319c9.js" crossorigin="anonymous"></script>
     <!-- Material Design Lite CSS -->
-	<link rel="stylesheet" href="{{asset('public/backend/admin/plugins/material/material.min.css') }}">
-	<link rel="stylesheet" href="{{asset('public/backend/admin/css/material_style.css') }}">
+	<link rel="stylesheet" href="{{asset('backend/admin/plugins/material/material.min.css') }}">
+	<link rel="stylesheet" href="{{asset('backend/admin/css/material_style.css') }}">
 	<!-- inbox style -->
-	<link href="{{asset('public/backend/admin/css/pages/inbox.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/css/pages/inbox.min.css') }}" rel="stylesheet" type="text/css" />
 	<!-- Theme Styles -->
-	<link href="{{asset('public/backend/admin/css/theme/light/theme_style.css') }}" rel="stylesheet" id="rt_style_components" type="text/css" />
-	<link href="{{asset('public/backend/admin/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/css/theme/light/style.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/css/responsive.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('public/backend/admin/css/theme/light/theme-color.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/backend/admin/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet">
+	<link href="{{asset('backend/admin/css/theme/light/theme_style.css') }}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{{asset('backend/admin/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/css/theme/light/style.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{asset('backend/admin/css/theme/light/theme-color.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('backend/admin/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet">
     <!-- favicon -->
-	<link rel="shortcut icon" href="{{asset('public/backend/admin/img/favicon.ico') }}" />
+	<link rel="shortcut icon" href="{{asset('backend/admin/img/favicon.ico') }}" />
 </head>
 <!-- END HEAD -->
 
@@ -78,15 +78,15 @@
 						<!-- start language menu -->
 						<li class="dropdown language-switch">
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img
-									src="{{asset('public/backend/admin/img/flags/vn.png') }}" class="position-left" alt=""> Việt Nam <span
+									src="{{asset('backend/admin/img/flags/vn.png') }}" class="position-left" alt=""> Việt Nam <span
 									class="fa fa-angle-down"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li>
-									<a class="vietnam"><img src="{{asset('public/backend/admin/img/flags/vn.png') }}" alt=""> Việt Nam</a>
+									<a class="vietnam"><img src="{{asset('backend/admin/img/flags/vn.png') }}" alt=""> Việt Nam</a>
 								</li>
 								<li>
-									<a class="english"><img src="{{asset('public/backend/admin/img/flags/us.png') }}" alt=""> English</a>
+									<a class="english"><img src="{{asset('backend/admin/img/flags/us.png') }}" alt=""> English</a>
 								</li>
 							</ul>
 						</li>
@@ -182,7 +182,7 @@
 										<li>
 											<a href="#">
 												<span class="photo">
-													<img src="{{asset('public/backend/admin/img/prof/prof2.jpg') }}" class="img-circle" alt="">
+													<img src="{{asset('backend/admin/img/prof/prof2.jpg') }}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> Sarah Smith </span>
@@ -194,7 +194,7 @@
 										<li>
 											<a href="#">
 												<span class="photo">
-													<img src="{{asset('public/backend/admin/img/prof/prof3.jpg') }}" class="img-circle" alt="">
+													<img src="{{asset('backend/admin/img/prof/prof3.jpg') }}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> John Deo </span>
@@ -207,7 +207,7 @@
 										<li>
 											<a href="#">
 												<span class="photo">
-													<img src="{{asset('public/backend/admin/img/prof/prof1.jpg') }}" class="img-circle" alt="">
+													<img src="{{asset('backend/admin/img/prof/prof1.jpg') }}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> Rajesh </span>
@@ -219,7 +219,7 @@
 										<li>
 											<a href="#">
 												<span class="photo">
-													<img src="{{asset('public/backend/admin/img/prof/prof8.jpg') }}" class="img-circle" alt="">
+													<img src="{{asset('backend/admin/img/prof/prof8.jpg') }}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> Lina Smith </span>
@@ -231,7 +231,7 @@
 										<li>
 											<a href="#">
 												<span class="photo">
-													<img src="{{asset('public/backend/admin/img/prof/prof5.jpg') }}" class="img-circle" alt="">
+													<img src="{{asset('backend/admin/img/prof/prof5.jpg') }}" class="img-circle" alt="">
 												</span>
 												<span class="subject">
 													<span class="from"> Jacob Ryan </span>
@@ -256,7 +256,7 @@
                                     <?php
                                     $image = Auth::user()->admin_image;
                                     if($image){
-                                        echo ('public/uploads/admin/'.$image);
+                                        echo ('uploads/admin/'.$image);
                                     }
                                     ?>
 
@@ -409,7 +409,7 @@
                                             <?php
                                             $image = Auth::user()->admin_image;
                                             if($image){
-                                                echo ('public/uploads/admin/'.$image);
+                                                echo ('uploads/admin/'.$image);
                                             }
                                             ?>
                                         " class="img-circle user-img-circle" alt="Ảnh đại diện" />
@@ -631,47 +631,47 @@
 		<!-- end footer -->
 	</div>
 	<!-- start js include path -->
-	<script src="{{asset('public/backend/admin/plugins/jquery/jquery.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/popper/popper.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/jquery-blockui/jquery.blockui.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-    <script src="{{asset('public/backend/admin/plugins/jquery-validation/js/jquery.validate.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/jquery/jquery.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/popper/popper.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/jquery-blockui/jquery.blockui.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/jquery-validation/js/jquery.validate.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
     <!-- bootstrap -->
-	<script src="{{asset('public/backend/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/plugins/sparkline/jquery.sparkline.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/pages/sparkline/sparkline-data.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/sparkline/jquery.sparkline.js') }}"></script>
+	<script src="{{asset('backend/admin/js/pages/sparkline/sparkline-data.js') }}"></script>
     <!-- data tables -->
-    <script src="{{asset('public/backend/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{asset('public/backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{asset('public/backend/admin/js/pages/table/table_data.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{asset('backend/admin/js/pages/table/table_data.js') }}"></script>
     <!-- Common js-->
-	<script src="{{asset('public/backend/admin/js/app.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/layout.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/theme-color.js') }}"></script>
+	<script src="{{asset('backend/admin/js/app.js') }}"></script>
+	<script src="{{asset('backend/admin/js/layout.js') }}"></script>
+	<script src="{{asset('backend/admin/js/theme-color.js') }}"></script>
 	<!-- material -->
-    <script src="{{asset('public/backend/admin/plugins/material/material.min.js') }}"></script>
-    <script src="{{asset('public/backend/admin/plugins/flatpicker/js/flatpicker.min.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/pages/date-time/date-time.init.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/material/material.min.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/flatpicker/js/flatpicker.min.js') }}"></script>
+	<script src="{{asset('backend/admin/js/pages/date-time/date-time.init.js') }}"></script>
 	<!--apex chart-->
-	<script src="{{asset('public/backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{asset('public/backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{asset('backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
     <!-- Ckeditor 4 -->
     <script src="//cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
     <!-- Ckeditor 5 -->
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/decoupled-document/ckeditor.js"></script> --}}
-    {{-- <script src="{{asset('public/backend/admin/plugins/ckeditor5/build/ckeditor.js') }}"></script>
-    <script src="{{asset('public/backend/admin/plugins/ckeditor5/build/ckeditor.js.map') }}"></script>
-    <script src="{{asset('public/backend/admin/plugins/ckeditor5/src/ckeditor.js') }}"></script> --}}
+    {{-- <script src="{{asset('backend/admin/plugins/ckeditor5/build/ckeditor.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/ckeditor5/build/ckeditor.js.map') }}"></script>
+    <script src="{{asset('backend/admin/plugins/ckeditor5/src/ckeditor.js') }}"></script> --}}
 
     <!-- Validator -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script src="{{asset('public/backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
+    <script src="{{asset('backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
     <!-- Custom js -->
-    <script src="{{asset('public/backend/admin/js/custom.js') }}"></script>
+    <script src="{{asset('backend/admin/js/custom.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             load_gallery();
@@ -715,8 +715,8 @@
     </script>
 
 	<!-- summernote -->
-	<script src="{{asset('public/backend/admin/plugins/summernote/summernote.js') }}"></script>
-	<script src="{{asset('public/backend/admin/js/pages/summernote/summernote-data.js') }}"></script>
+	<script src="{{asset('backend/admin/plugins/summernote/summernote.js') }}"></script>
+	<script src="{{asset('backend/admin/js/pages/summernote/summernote-data.js') }}"></script>
 	<!-- end js include path -->
 </body>
 

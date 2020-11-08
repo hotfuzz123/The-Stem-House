@@ -13,7 +13,7 @@
                         <div class="cs_ins_container">
                             <div class="cs_instructor">
                                 <ul class="cs_instrct_list float-left mb0">
-                                    <li class="list-inline-item"><img class="thumb" src="{{asset('public/frontend/images/team/4.png') }}" alt="4.png"></li>
+                                    <li class="list-inline-item"><img class="thumb" src="{{asset('frontend/images/team/4.png') }}" alt="4.png"></li>
                                     <li class="list-inline-item"><a class="color-white" href="#">Admin</a></li>
                                     <li class="list-inline-item"><a class="color-white" href="#">Cập nhật lần cuối: {{ $value ->created_at }}</a></li>
                                 </ul>
@@ -59,7 +59,7 @@
                                 <div class="cs_ins_container">
                                     <div class="courses_big_thumb">
                                         <div class="thumb">
-                                            <img src="{{URL::to('public/uploads/course/' .$value->course_image) }}" height="540" width="960" alt="">
+                                            <img src="{{URL::to('uploads/course/' .$value->course_image) }}" height="540" width="960" alt="">
                                             {{-- <iframe class="iframe_video" src="http://www.youtube.com/embed/57LQI8DKwec" frameborder="0" allowfullscreen></iframe> --}}
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@
                                             <div class="about_ins_container">
                                                 <h4 class="aii_title">About the instructor</h4>
                                                 <div class="about_ins_info">
-                                                    <div class="thumb"><img src="{{asset('public/frontend/images/team/6.png') }}" alt="6.png"></div>
+                                                    <div class="thumb"><img src="{{asset('frontend/images/team/6.png') }}" alt="6.png"></div>
                                                 </div>
                                                 <div class="details">
                                                     <ul class="review_list">
@@ -297,7 +297,7 @@
                                             <div class="sfeedbacks">
                                                 <div class="mbp_pagination_comments">
                                                     <div class="mbp_first media csv1">
-                                                        <img src="{{asset('public/frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png">
+                                                        <img src="{{asset('frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png">
                                                         <div class="media-body">
                                                             <h4 class="sub_title mt-0">Warren Bethell
                                                                 <span class="sspd_review float-right">
@@ -317,7 +317,7 @@
                                                             <div class="sspd_review_liked"><a href="#"><i class="flaticon-like-1"></i> <span class="text-thm6 pl5 pr5 fz15">15</span> Thank Waren</a></div>
                                                             <div class="custom_hr style2"></div>
                                                             <div class="mbp_sub media csv1">
-                                                                <a href="#"><img src="{{asset('public/frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png"></a>
+                                                                <a href="#"><img src="{{asset('frontend/images/resource/review1.png') }}" class="mr-3" alt="review1.png"></a>
                                                                 <div class="media-body">
                                                                     <h4 class="sub_title mt-0">Anton Hilton
                                                                         <span class="sspd_review float-right">
@@ -343,7 +343,7 @@
                                                     </div>
                                                     <div class="custom_hr"></div>
                                                     <div class="mbp_second media csv1">
-                                                        <img src="{{asset('public/frontend/images/resource/review1.png') }}" class="align-self-start mr-3" alt="review1.png">
+                                                        <img src="{{asset('frontend/images/resource/review1.png') }}" class="align-self-start mr-3" alt="review1.png">
                                                         <div class="media-body">
                                                             <h4 class="sub_title mt-0">Warren Bethell
                                                                 <span class="sspd_review float-right">
@@ -419,7 +419,7 @@
                     <div class="col-lg-6 col-xl-4">
                         <div class="top_courses">
                             <div class="thumb">
-                                <img class="img-whp" src="{{asset('public/uploads/course/' .$relate_value->course_image ) }}" alt="t1.jpg">
+                                <img class="img-whp" src="{{asset('uploads/course/' .$relate_value->course_image ) }}" alt="t1.jpg">
                                 <div class="overlay">
                                     <div class="tag">{{ $relate_value->category_name }}</div>
                                     <div class="icon"><span class="flaticon-like"></span></div>

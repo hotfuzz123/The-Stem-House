@@ -10,7 +10,7 @@
                     <div class="banner-style-one owl-theme owl-carousel">
                         {{-- Hiển thị slider --}}
                         @foreach ($all_slider as $key => $slider)
-                        <div class="slide slide-one sh2" style="background-image: url({{URL::to('public/uploads/slider/' .$slider->slider_image) }});" alt="{{$slider->slider_desc}}">
+                        <div class="slide slide-one sh2" style="background-image: url({{URL::to('uploads/slider/' .$slider->slider_image) }});" alt="{{$slider->slider_desc}}">
                             {{-- <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
@@ -57,7 +57,7 @@
             <div class="col-md-6 col-lg-4 col-xl-3">
                 <div class="top_courses">
                     <div class="thumb">
-                        <img class="img-whp img-course" src="{{URL::to('public/uploads/course/' .$course->course_image) }}" alt="Ảnh khóa học {{$course->course_name}}">
+                        <img class="img-whp img-course" src="{{URL::to('uploads/course/' .$course->course_image) }}" alt="Ảnh khóa học {{$course->course_name}}">
                         <div class="overlay">
                             <div class="tag">{{$course->category_name}}</div>
                             <div class="icon"><span class="flaticon-like"></span></div>
@@ -175,7 +175,7 @@
                     <div class="item">
                         <div class="blog_post_home4">
                             <div class="bph4_thumb">
-                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h41.jpg') }}" alt="h41.jpg">
+                                <img class="img-fluid" src="{{asset('frontend/images/blog/h41.jpg') }}" alt="h41.jpg">
                                 <div class="bph4_date_meta">
                                     <p class="year">2019</p>
                                     <p class="date">April 24</p>
@@ -191,7 +191,7 @@
                     <div class="item">
                         <div class="blog_post_home4">
                             <div class="bph4_thumb">
-                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
+                                <img class="img-fluid" src="{{asset('frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
                                 <div class="bph4_date_meta">
                                     <p class="year">2019</p>
                                     <p class="date">April 24</p>
@@ -207,7 +207,7 @@
                     <div class="item">
                         <div class="blog_post_home4">
                             <div class="bph4_thumb">
-                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h43.jpg') }}" alt="h43.jpg">
+                                <img class="img-fluid" src="{{asset('frontend/images/blog/h43.jpg') }}" alt="h43.jpg">
                                 <div class="bph4_date_meta">
                                     <p class="year">2019</p>
                                     <p class="date">April 24</p>
@@ -223,7 +223,7 @@
                     <div class="item">
                         <div class="blog_post_home4">
                             <div class="bph4_thumb">
-                                <img class="img-fluid" src="{{asset('public/frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
+                                <img class="img-fluid" src="{{asset('frontend/images/blog/h42.jpg') }}" alt="h42.jpg">
                                 <div class="bph4_date_meta">
                                     <p class="year">2019</p>
                                     <p class="date">April 24</p>
@@ -261,7 +261,7 @@
                             <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
                             <div class="testimonial_content">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/1.jpg') }}" alt="1.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/testimonial/1.jpg') }}" alt="1.jpg">
                                     <h4>Alex Gibson</h4>
                                     <p>Telemarketer</p>
                                 </div>
@@ -276,7 +276,7 @@
                             <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
                             <div class="testimonial_content">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/2.jpg') }}" alt="2.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/testimonial/2.jpg') }}" alt="2.jpg">
                                     <h4>Alex Gibson</h4>
                                     <p>Telemarketer</p>
                                 </div>
@@ -291,7 +291,7 @@
                             <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
                             <div class="testimonial_content">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/3.jpg') }}" alt="3.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/testimonial/3.jpg') }}" alt="3.jpg">
                                     <h4>Alex Gibson</h4>
                                     <p>Telemarketer</p>
                                 </div>
@@ -306,7 +306,7 @@
                             <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
                             <div class="testimonial_content">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/4.jpg') }}" alt="4.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/testimonial/4.jpg') }}" alt="4.jpg">
                                     <h4>Alex Gibson</h4>
                                     <p>Telemarketer</p>
                                 </div>
@@ -321,7 +321,7 @@
                             <div class="t_icon home3"><span class="flaticon-quotation-mark"></span></div>
                             <div class="testimonial_content">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/testimonial/5.jpg') }}" alt="5.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/testimonial/5.jpg') }}" alt="5.jpg">
                                     <h4>Alex Gibson</h4>
                                     <p>Telemarketer</p>
                                 </div>
@@ -389,27 +389,27 @@
         <div class="row">
             <div class="col-sm-6 col-md-4 col-lg">
                 <div class="our_partner">
-                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/1.png') }}" alt="1.png">
+                    <img class="img-fluid" src="{{asset('frontend/images/partners/1.png') }}" alt="1.png">
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg">
                 <div class="our_partner">
-                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/2.png') }}" alt="2.png">
+                    <img class="img-fluid" src="{{asset('frontend/images/partners/2.png') }}" alt="2.png">
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg">
                 <div class="our_partner">
-                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/3.png') }}" alt="3.png">
+                    <img class="img-fluid" src="{{asset('frontend/images/partners/3.png') }}" alt="3.png">
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg">
                 <div class="our_partner">
-                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/4.png') }}" alt="4.png">
+                    <img class="img-fluid" src="{{asset('frontend/images/partners/4.png') }}" alt="4.png">
                 </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg">
                 <div class="our_partner">
-                    <img class="img-fluid" src="{{asset('public/frontend/images/partners/5.png') }}" alt="5.png">
+                    <img class="img-fluid" src="{{asset('frontend/images/partners/5.png') }}" alt="5.png">
                 </div>
             </div>
         </div>

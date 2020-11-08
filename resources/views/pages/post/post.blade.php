@@ -29,7 +29,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg1.jpg') }}" alt="bg1.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg1.jpg') }}" alt="bg1.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -48,7 +48,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg2.jpg') }}" alt="bg2.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg2.jpg') }}" alt="bg2.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -67,7 +67,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg3.jpg') }}" alt="bg3.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg3.jpg') }}" alt="bg3.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -86,7 +86,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg4.jpg') }}" alt="bg4.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg4.jpg') }}" alt="bg4.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -105,7 +105,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg1.jpg') }}" alt="bg1.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg1.jpg') }}" alt="bg1.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -124,7 +124,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg2.jpg') }}" alt="bg2.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg2.jpg') }}" alt="bg2.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -143,7 +143,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg3.jpg') }}" alt="bg3.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg3.jpg') }}" alt="bg3.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -162,7 +162,7 @@
                         <div class="col-sm-6 col-lg-6 col-xl-6">
                             <div class="blog_grid_post mb30">
                                 <div class="thumb">
-                                    <img class="img-fluid" src="{{asset('public/frontend/images/blog/bg4.jpg') }}" alt="bg4.jpg">
+                                    <img class="img-fluid" src="{{asset('frontend/images/blog/bg4.jpg') }}" alt="bg4.jpg">
                                     <div class="tag">Marketing</div>
                                     <div class="post_date"><h2>28</h2> <span>DECEMBER</span></div>
                                 </div>
@@ -232,21 +232,21 @@
                     <div class="blog_recent_post_widget media_widget">
                         <h4 class="title">Recent Posts</h4>
                         <div class="media">
-                            <img class="align-self-start mr-3" src="{{asset('public/frontend/images/blog/s1.jpg') }}" alt="s1.jpg">
+                            <img class="align-self-start mr-3" src="{{asset('frontend/images/blog/s1.jpg') }}" alt="s1.jpg">
                             <div class="media-body">
                                 <h5 class="mt-0 post_title">Half of What We Know About Coffee</h5>
                                 <a href="#">October 25, 2019.</a>
                             </div>
                         </div>
                         <div class="media">
-                            <img class="align-self-start mr-3" src="{{asset('public/frontend/images/blog/s2.jpg') }}" alt="s2.jpg">
+                            <img class="align-self-start mr-3" src="{{asset('frontend/images/blog/s2.jpg') }}" alt="s2.jpg">
                             <div class="media-body">
                                 <h5 class="mt-0 post_title">The Best Places to Start Your Travel</h5>
                                 <a href="#">October 25, 2019.</a>
                             </div>
                         </div>
                         <div class="media">
-                            <img class="align-self-start mr-3" src="{{asset('public/frontend/images/blog/s3.jpg') }}" alt="s3.jpg">
+                            <img class="align-self-start mr-3" src="{{asset('frontend/images/blog/s3.jpg') }}" alt="s3.jpg">
                             <div class="media-body">
                                 <h5 class="mt-0 post_title">The Top 25 London</h5>
                                 <a href="#">October 25, 2019.</a>
