@@ -1,9 +1,9 @@
-@extends('admin_layout')
+@extends('layouts.admin_layout.admin_layout')
 @section('admin_content')
     <div class="page-bar">
         <div class="page-title-breadcrumb">
             <div class=" pull-left">
-                <div class="page-title">Liệt kê danh mục sản phẩm</div>
+                <div class="page-title">Liệt kê danh mục khóa học</div>
                 <?php
                 $message = Session::get('message');
                 if($message){
@@ -16,7 +16,7 @@
                 <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i
                         class="fa fa-angle-right"></i>
                 </li>
-                <li class="active">Liệt kê danh mục sản phẩm</li>
+                <li class="active">Liệt kê danh mục khóa học</li>
             </ol>
         </div>
     </div>
@@ -25,7 +25,7 @@
         <div class="col-md-12">
             <div class="card card-topline-red">
                 <div class="card-head">
-                    <header>Bảng danh mục sản phẩm</header>
+                    <header>Bảng danh mục khóa học</header>
                     <div class="tools">
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -36,7 +36,7 @@
                         <div class="col-md-6 col-sm-6 col-6">
                             <div class="btn-group">
                                 <button id="addRow1" class="btn btn-info">
-                                    <a style="color:white; font-weight:700;" href="{{URL::to('/add-category-product') }}">Thêm danh mục mới <i class="fa fa-plus"></i></a>
+                                    <a style="color:white; font-weight:700;" href="{{URL::to('/add-category-course') }}">Thêm danh mục mới <i class="fa fa-plus"></i></a>
 
                                 </button>
                             </div>
@@ -93,7 +93,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($all_category_product as $key => $cate_pro)
+                                            @foreach ($all_category_course as $key => $cate_pro)
                                             <tr class="gradeX odd" role="row">
                                                 <td class="sorting_1">
                                                     <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
@@ -107,11 +107,11 @@
                                                         <?php
                                                         if($cate_pro->category_status==1) {
                                                         ?>
-                                                        <a href="{{URL::to('/unactive-category-product/' .$cate_pro->category_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
+                                                        <a href="{{URL::to('/unactive-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php
                                                         }else {
                                                         ?>
-                                                        <a href="{{URL::to('/active-category-product/' .$cate_pro->category_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
+                                                        <a href="{{URL::to('/active-category-course/' .$cate_pro->category_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
                                                         <?php
                                                         }
                                                         ?>
@@ -126,11 +126,11 @@
                                                         </button>
                                                         <ul class="dropdown-menu pull-left" role="menu">
                                                             <li>
-                                                                <a href="{{URL::to('/edit-category-product/' .$cate_pro->category_id)}}">
+                                                                <a href="{{URL::to('/edit-category-course/' .$cate_pro->category_id)}}">
                                                                     <i class="far fa-edit"></i> Cập nhật </a>
                                                             </li>
                                                             <li>
-                                                                <a onclick="return confirm('Bạn có chắc muốn xóa danh mục này không?')" href="{{URL::to('/delete-category-product/' .$cate_pro->category_id)}}">
+                                                                <a onclick="return confirm('Bạn có chắc muốn xóa danh mục này không?')" href="{{URL::to('/delete-category-course/' .$cate_pro->category_id)}}">
                                                                     <i class="far fa-trash-alt"></i> Xóa </a>
                                                             </li>
                                                         </ul>

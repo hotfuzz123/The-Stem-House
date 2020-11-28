@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('layouts.admin_layout.admin_layout')
 @section('admin_content')
     <div class="page-bar">
         <div class="page-title-breadcrumb">
@@ -107,7 +107,7 @@
                                                     </label>
                                                 </td>
                                                 <td> {{ $pro ->slider_name }} </td>
-                                                <td><img src="public/uploads/slider/{{ $pro ->slider_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
+                                                <td><img src="uploads/slider/{{ $pro ->slider_image }}" height="100" width="auto" style="display: block; margin:0 auto;"></td>
                                                 <td> {{ $pro ->slider_desc }} </td>
                                                 <td>
                                                     <span class="">

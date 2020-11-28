@@ -7,11 +7,13 @@
         <div class="row">
             <div class="col-xl-6 offset-xl-3 text-center">
                 <div class="breadcrumb_content">
-                    <h4 class="breadcrumb_title">Khóa Học</h4>
+                    @foreach ($category_name as $key => $name)
+                    <h4 class="breadcrumb_title">{{ $name->category_name }}</h4>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Khóa Học</li>
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Danh mục</li>
                     </ol>
+                    @endforeach
                 </div>
             </div>
         </div>

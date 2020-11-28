@@ -12,17 +12,7 @@ session_start();
 
 class GalleryController extends Controller
 {
-    public function Authlogin(){
-        $admin_id = Auth::id();
-        if($admin_id){
-            return Redirect::to('/dashboard');
-        } else{
-            return Redirect::to('/admin')->send();
-        }
-    }
-
     public function add_gallery($product_id){
-        //$this->Authlogin();
         $pro_id = $product_id;
         return view('admin.gallery.add_gallery')->with(compact('pro_id'));
     }
@@ -48,7 +38,6 @@ class GalleryController extends Controller
 
 
     public function select_gallery(Request $request){
-        //$this->Authlogin();
         $product_id = $request->pro_id;
         $gallery = Gallery::where('product_id', $product_id)->get();
         $gallery_count = $gallery->count();

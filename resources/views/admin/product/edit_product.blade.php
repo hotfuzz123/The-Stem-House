@@ -1,4 +1,4 @@
-@extends('admin_layout')
+@extends('layouts.admin_layout.admin_layout')
 @section('admin_content')
 <div class="page-bar">
     <div class="page-title-breadcrumb">
@@ -48,7 +48,7 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh bìa sản phẩm</label>
                     <input type="file" name="product_image" class="form-control" id="simpleFormEmail">
-                    <img src="{{URL::to('public/uploads/product/' .$pro->product_image)}}" height="100" width="100">
+                    <img src="{{URL::to('uploads/product/' .$pro->product_image)}}" height="100" width="100">
                 </div>
                 <div class="form-group">
                     <label>Mô tả sản phẩm</label>

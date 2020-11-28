@@ -70,11 +70,37 @@
                     <div class="sspd_price mb25">{{number_format($value->product_price).' '.'đ'}}</div>
                     <ul class="cart_btns ui_kit_button mb30">
                         <li class="list-inline-item"><input placeholder="4" min="1" type="number"></li>
-                        <li class="list-inline-item"><button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span>Thêm giỏ hàng</button></li>
+                        <li class="list-inline-item">
+                            <?php
+                            if($value->product_quantity == 0 ) {
+                            ?>
+                            <button type="button" class="btn" disabled><span class="flaticon-shopping-bag pr5 fz20"></span>Hết hàng</button>
+                            <?php
+                            }else {
+                            ?>
+                            <button type="button" class="btn"><span class="flaticon-shopping-bag pr5 fz20"></span>Thêm giỏ hàng</button>
+                            <?php
+                            }
+                            ?>
+                        </li>
                     </ul>
                     <ul class="sspd_sku mb30">
                         <li><a href="#">Kho: {{$value->product_quantity}}</a></li>
-                        <li><a href="#">Tình trạng: Còn hàng</a></li>
+                        <li>
+                            <a href="#">Tình trạng:
+                                <?php
+                                if($value->product_quantity == 0 ) {
+                                ?>
+                                Hết hàng
+                                <?php
+                                }else {
+                                ?>
+                                Còn hàng
+                                <?php
+                                }
+                                ?>
+                            </a>
+                        </li>
                         <li><a href="#">Danh mục: {{$value->category_name}}</a></li>
                     </ul>
                     <ul class="sspd_social_icon">

@@ -12,23 +12,12 @@ session_start();
 
 class CourseController extends Controller
 {
-    public function Authlogin(){
-        $admin_id = Auth::id();
-        if($admin_id){
-            return Redirect::to('/dashboard');
-        } else{
-            return Redirect::to('/admin')->send();
-        }
-    }
-
     public function add_course(){
-        $this->Authlogin();
         $cate_course = DB::table('tbl_category_course')->orderby('category_id', 'desc')->get();
         return view('admin.course.add_course')->with('cate_course', $cate_course);
     }
 
     public function all_course(){
-        $this->Authlogin();
         $all_course = DB::table('tbl_course')
         ->join('tbl_category_course', 'tbl_category_course.category_id', '=', 'tbl_course.category_id')
         ->orderby('tbl_course.course_id', 'desc')->get();
@@ -38,8 +27,6 @@ class CourseController extends Controller
     }
 
     public function save_course(Request $request){
-        $this->Authlogin();
-        $this->validation($request);
         $data = $request->all();
         $course = new Course();
         $course->course_name = $data['course_name'];
@@ -66,21 +53,18 @@ class CourseController extends Controller
     }
 
     public function unactive_course($course_id){
-        $this->Authlogin();
         DB::table('tbl_course')->where('course_id', $course_id)->update(['course_status' => 0]);
         Session::put('message', 'Ẩn khóa học thành công');
         return Redirect::to('/all-course');
     }
 
     public function active_course($course_id){
-        $this->Authlogin();
         DB::table('tbl_course')->where('course_id', $course_id)->update(['course_status' => 1]);
         Session::put('message', 'Hiển thị khóa học thành công');
         return Redirect::to('/all-course');
     }
 
     public function edit_course($course_id){
-        $this->Authlogin();
         $cate_course = DB::table('tbl_category_course')->orderby('category_id', 'desc')->get();
         $edit_course = DB::table('tbl_course')->where('course_id', $course_id)->get();
         $manager_course = view('admin.course.edit_course')->with('edit_course', $edit_course)
@@ -89,9 +73,7 @@ class CourseController extends Controller
 
     }
 
-
     public function update_course(Request $request, $course_id) {
-        $this->Authlogin();
         $data = $request->all();
         $course = Course::find($course_id);
         $course->course_name = $data['course_name'];
@@ -115,30 +97,7 @@ class CourseController extends Controller
         return Redirect::to('/all-course')->with('message', 'Cập nhật khóa học thành công');
     }
 
-    
-    public function validation($request){
-        return $this->validate($request,[
-            'course_name' => 'required|max:255',
-            'course_price' => 'required|max:255',
-            'course_desc' => 'required|max:255',
-            'course_content' => 'required|max:255',
-            'course_cate' => 'required|max:255',
-            'course_status' => 'required|max:255',
-            'course_image' => 'required|max:255',
-        ],
-        [
-            'course_name.required' => 'Vui lòng nhập tên khoá học',
-            'course_price.required' => 'Vui lòng nhập giá khoá học',
-            'course_desc.required' => 'Vui lòng nhập mô tả khoá học',
-            'course_content.required' => 'Vui lòng nhập nội dung khoá học',
-            'course_cate.required' => 'Vui lòng chọn danh mục khoá học',
-            'course_image.required' => 'Vui lòng thêm ảnh khoá học',
-            'course_status.required' => 'Vui lòng chọn hiển thị khoá học',
-        ]);
-    }
-
     public function delete_course($course_id) {
-        $this->Authlogin();
         $course = Course::find($course_id);
         unlink('public/uploads/course/'.$course->course_image);
         $course->delete();

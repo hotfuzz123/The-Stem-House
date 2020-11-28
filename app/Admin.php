@@ -8,26 +8,25 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Admin extends Authenticatable
 {
+    use Notifiable;
     public $timestamps = true;
 
     protected $guard = 'admin';
     protected $fillable = [
-        'admin_name', 'admin_email', 'admin_phone', 'admin_type', 'admin_image'
+        'name',
+        'email',
+        'mobile',
+        'type',
+        'image',
+        'password',
+        'status'
     ];
 
     protected $hidden = [
-        'admin_password', 'remember_token',
+        'password', 'remember_token',
     ];
 
-    
-    protected $primaryKey = 'admin_id';
-    protected $table = 'tbl_admin';
+    protected $primaryKey = 'id';
+    protected $table = 'admins';
 
-    public function roles(){
-        return $this->belongsToMany('App\Roles');
-    }
-
-    public function getAuthPassword(){
-        return $this->admin_password;
-    }
 }

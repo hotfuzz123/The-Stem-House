@@ -9,64 +9,23 @@ use App\Roles;
 use App\Product;
 use App\Course;
 use App\Http\Requests;
+use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
 session_start();
 
 class AuthController extends Controller
 {
-    public function Authlogin(){
-        $admin_id = Auth::id();
-        if($admin_id){
-            return Redirect::to('/dashboard');
-        } else{
-            return Redirect::to('/admin')->send();
-        }
-    }
-
-    public function admin(){
-        return view('admin_login');
-    }
-
-    public function show_dashboard(){
-        $this->Authlogin();
-        $total_product = Product::count();
-        $total_course = Course::count();
-        return view('admin.dashboard')->with('total_product', $total_product)->with('total_course', $total_course);
-    }
-
     public function all_auth(){
-        $this->Authlogin();
         $all_auth = Admin::all();
         return view('admin.auth.all_auth')->with('all_auth', $all_auth);
     }
 
     public function add_auth(){
-        $this->Authlogin();
         return view('admin.auth.add_auth');
     }
 
-    public function logout_auth(){
-        $this->Authlogin();
-        Auth::logout();
-        return redirect('/admin')->with('message', 'Đăng xuất authentication thành công');
-    }
 
-    public function login_auth(Request $request){
-        $this->validate($request,[
-            'admin_email' => 'required|email|max:255',
-            'admin_password' => 'required|max:255',
-        ]);
-        //$data = $request->all();
-        if(Auth::attempt(['admin_email' => $request->admin_email, 'admin_password' => $request->admin_password])){
-            return redirect('/dashboard');
-        }else{
-            return redirect('/admin')->with('message', 'Lỗi đăng nhập authentication');
-        }
-    }
-
-    public function save_auth(Request $request){
-        $this->Authlogin();
-        $data = $request->all();
+    public function save_auth(AdminRequest $request){
         $admin = new Admin();
         $admin->admin_name = $data['admin_name'];
         $admin->admin_email = $data['admin_email'];
@@ -89,24 +48,13 @@ class AuthController extends Controller
 
     }
 
-    public function validation($request){
-        return $this->validate($request,[
-            'admin_name' => 'required|max:255',
-            'admin_email' => 'required|email|max:255',
-            'admin_phone' => 'required|max:255',
-            'admin_password' => 'required|max:255',
-        ]);
-    }
-
     public function edit_auth($admin_id){
-        $this->Authlogin();
         $edit_admin = Admin::where('admin_id', $admin_id)->get();
         return view('admin.auth.edit_auth')->with('edit_admin', $edit_admin);
     }
 
 
     public function update_auth(Request $request, $admin_id) {
-        $this->Authlogin();
         $data = $request->all();
         $admin = Admin::find($admin_id);
         $admin->admin_name = $data['admin_name'];
@@ -129,7 +77,6 @@ class AuthController extends Controller
     }
 
     public function delete_auth($admin_id) {
-        $this->Authlogin();
         $admin = Admin::find($admin_id);
         unlink('public/uploads/admin/'.$admin->admin_image);
         $admin->delete();

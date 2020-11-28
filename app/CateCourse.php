@@ -16,4 +16,9 @@ class CateCourse extends Model
     ];
     protected $primaryKey = 'category_id';
     protected $table = 'tbl_category_course';
+
+    
+    public function course(){
+        return $this->hasMany('App\Course', 'category_id');
+    }
 }

@@ -110,7 +110,7 @@
                                     @foreach ($category as $key => $cate)
                                     <div class="category_sidebar_widget">
                                         <ul class="category_list">
-                                            <li><a href="{{ URL::to('/course-category/'.$cate->slug_category_course) }}">{{$cate->category_name}}<span class="float-right">(03)</span></a></li>
+                                            <li><a href="{{ URL::to('/course-category/'.$cate->slug_category_course) }}">{{$cate->category_name}}<span class="float-right">({{ $cate->course_count }})</span></a></li>
                                         </ul>
                                     </div>
                                     @endforeach

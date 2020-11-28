@@ -13,7 +13,6 @@ session_start();
 class ChapterController extends Controller
 {
     public function add_chapter(){
-        //$this->Authlogin();
         return view('admin.chapter.add_chapter');
     }
 }

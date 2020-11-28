@@ -29,7 +29,7 @@
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form action="{{URL::to('/login-auth') }}" method="post" class="login100-form validate-form">
+				<form action="{{URL::to('/admin') }}" method="post" class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<img alt="" src="{{asset('backend/admin/img/logo-2.png') }}">
 					</span>
@@ -50,11 +50,11 @@
 
                     {{ csrf_field() }}
 					<div class="wrap-input100 validate-input" data-validate="Nhập Email">
-						<input class="input100" type="text" name="admin_email" placeholder="Nhập Email">
+						<input class="input100" type="text" name="email" placeholder="Nhập Email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Nhập Mật Khẩu">
-						<input class="input100" type="password" name="admin_password" placeholder="Nhập Mật Khẩu">
+						<input class="input100" type="password" name="password" placeholder="Nhập Mật Khẩu">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 					<div class="contact100-form-checkbox">
@@ -69,7 +69,7 @@
 						</button>
                     </div>
                     <div class="text-center p-t-30 px-2">
-                        <a class="txt1" href="forgot_password.html">
+                        <a class="txt1" href="">
                             Quên mật khẩu?
                         </a>
                     </div>

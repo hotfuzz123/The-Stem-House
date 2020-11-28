@@ -21,9 +21,24 @@ Route::get('/course', 'HomeController@course');
 Route::get('/post', 'HomeController@post');
 
 
-//Back-end
-// Route::get('/dashboard', 'AdminController@show_dashboard');
-// Route::post('/admin-dashboard', 'AdminController@dashboard');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::prefix('/admin')->namespace('Admin')->group(function(){
+    // All the admin route will be defined here
+    Route::match(['get', 'post'], '/', 'AdminController@login');
+    Route::group(['middleware' => ['admin']], function () {
+        Route::get('dashboard', 'AdminController@dashboard');
+        Route::get('logout', 'AdminController@logout');
+
+
+    });
+});
+
+
 
 //Category Product
 Route::get('/add-category-product', 'CategoryProduct@add_category_product');
@@ -78,24 +93,6 @@ Route::get('/product-category/{slug_category_product}', 'CategoryProduct@show_ca
 
 //Product-detail
 Route::get('/product-detail/{product_slug}', 'ProductController@details_product');
-
-
-//Authentication roles
-Route::get('/dashboard', 'AuthController@show_dashboard');
-Route::get('/admin', 'AuthController@admin');
-Route::get('/logout-auth', 'AuthController@logout_auth');
-
-Route::get('/add-auth', 'AuthController@add_auth');
-Route::get('/edit-auth/{admin_id}', 'AuthController@edit_auth');
-Route::get('/delete-auth/{admin_id}', 'AuthController@delete_auth');
-Route::get('/all-auth', 'AuthController@all_auth');
-
-Route::post('/save-auth', 'AuthController@save_auth');
-Route::post('/update-auth/{admin_id}', 'AuthController@update_auth');
-
-Route::post('/register', 'AuthController@register');
-Route::post('/login-auth', 'AuthController@login_auth');
-
 
 
 //Course

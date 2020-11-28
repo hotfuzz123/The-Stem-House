@@ -10,8 +10,6 @@ session_start();
 
 class PostController extends Controller
 {
-    
-
     public function details_post(){
         return view('pages.post.post_details');
     }

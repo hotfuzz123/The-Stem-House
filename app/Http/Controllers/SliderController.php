@@ -11,28 +11,16 @@ session_start();
 
 class SliderController extends Controller
 {
-    public function Authlogin(){
-        $admin_id = Auth::id();
-        if($admin_id){
-            return Redirect::to('/dashboard');
-        } else{
-            return Redirect::to('/admin')->send();
-        }
-    }
-
     public function all_slider(){
-        $this->Authlogin();
         $all_slider = Slider::all();
         return view('admin.slider.all_slider')->with('all_slider', $all_slider);
     }
 
     public function add_slider(){
-        $this->Authlogin();
         return view('admin.slider.add_slider');
     }
 
     public function save_slider(Request $request){
-        $this->Authlogin();
         $data = $request->all();
         $slider = new Slider();
         $slider->slider_name = $data['slider_name'];
@@ -54,21 +42,18 @@ class SliderController extends Controller
     }
 
     public function unactive_slider($slider_id){
-        $this->Authlogin();
         DB::table('tbl_slider')->where('slider_id', $slider_id)->update(['slider_status' => 0]);
         Session::put('message', 'Ẩn slider thành công');
         return Redirect::to('/all-slider');
     }
 
     public function active_slider($slider_id){
-        $this->Authlogin();
         DB::table('tbl_slider')->where('slider_id', $slider_id)->update(['slider_status' => 1]);
         Session::put('message', 'Hiển thị slider thành công');
         return Redirect::to('/all-slider');
     }
 
     public function edit_slider($slider_id){
-        $this->Authlogin();
         $edit_slider = Slider::where('slider_id', $slider_id)->get();
         $manager_slider = view('admin.slider.edit_slider')->with('edit_slider', $edit_slider);
         return view('admin_layout')->with('admin.slider.edit_slider', $manager_slider);
@@ -77,7 +62,6 @@ class SliderController extends Controller
 
 
     public function update_slider(Request $request, $slider_id) {
-        $this->Authlogin();
         $data = $request->all();
         $slider = Slider::find($slider_id);
         $slider->slider_name = $data['slider_name'];
@@ -98,7 +82,6 @@ class SliderController extends Controller
     }
 
     public function delete_slider($slider_id) {
-        $this->Authlogin();
         $slider = Slider::find($slider_id);
         unlink('public/uploads/slider/'.$slider->slider_image);
         $slider->delete();
