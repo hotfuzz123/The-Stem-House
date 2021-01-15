@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật coupon</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật coupon</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_coupon as $key => $coupon)
-            <form action="{{URL::to('/update-coupon/'.$coupon->coupon_id) }}" method="POST" id="demoForm" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-coupon/'.$coupon->coupon_id) }}" method="POST" id="demoForm" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Mã coupon</label>
                     <input type="text" name="coupon_code" class="form-control" value="{{ $coupon->coupon_code}}">

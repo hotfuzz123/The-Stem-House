@@ -7,7 +7,7 @@
             </div>
             <ol class="breadcrumb page-breadcrumb pull-right">
                 <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                        href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        href="{{URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i>
                 </li>
                 <li class="active">Dashboard</li>
             </ol>
@@ -315,7 +315,7 @@
                                 <h5 class="list-heading">Online</h5>
                             </div>
                             <ul class="media-list list-items">
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof3.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof3.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="online dot"></i>
                                     <div class="media-body">
@@ -326,7 +326,7 @@
                                 <li class="media">
                                     <div class="media-status">
                                         <span class="badge badge-success">5</span>
-                                    </div> <img class="media-object" src="{{asset('public/backend/admin/img/prof/prof1.jpg') }}"
+                                    </div> <img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof1.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="busy dot"></i>
                                     <div class="media-body">
@@ -334,7 +334,7 @@
                                         <div class="media-heading-sub">Director</div>
                                     </div>
                                 </li>
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof5.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof5.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="away dot"></i>
                                     <div class="media-body">
@@ -345,7 +345,7 @@
                                 <li class="media">
                                     <div class="media-status">
                                         <span class="badge badge-danger">8</span>
-                                    </div> <img class="media-object" src="{{asset('public/backend/admin/img/prof/prof4.jpg') }}"
+                                    </div> <img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof4.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="online dot"></i>
                                     <div class="media-body">
@@ -353,7 +353,7 @@
                                         <div class="media-heading-sub">CEO</div>
                                     </div>
                                 </li>
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof2.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof2.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="busy dot"></i>
                                     <div class="media-body">
@@ -361,7 +361,7 @@
                                         <div class="media-heading-sub">Anaesthetics</div>
                                     </div>
                                 </li>
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof7.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof7.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="online dot"></i>
                                     <div class="media-body">
@@ -377,7 +377,7 @@
                                 <li class="media">
                                     <div class="media-status">
                                         <span class="badge badge-warning">4</span>
-                                    </div> <img class="media-object" src="{{asset('public/backend/admin/img/prof/prof6.jpg') }}"
+                                    </div> <img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof6.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="offline dot"></i>
                                     <div class="media-body">
@@ -386,7 +386,7 @@
                                         <div class="media-heading-small">Last seen 01:20 AM</div>
                                     </div>
                                 </li>
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof8.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof8.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="offline dot"></i>
                                     <div class="media-body">
@@ -398,7 +398,7 @@
                                 <li class="media">
                                     <div class="media-status">
                                         <span class="badge badge-success">9</span>
-                                    </div> <img class="media-object" src="{{asset('public/backend/admin/img/prof/prof9.jpg') }}"
+                                    </div> <img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof9.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="offline dot"></i>
                                     <div class="media-body">
@@ -407,7 +407,7 @@
                                         <div class="media-heading-small">Last seen 3:31 PM</div>
                                     </div>
                                 </li>
-                                <li class="media"><img class="media-object" src="{{asset('public/backend/admin/img/prof/prof10.jpg') }}"
+                                <li class="media"><img class="media-object" src="{{ asset('public/backend/admin/img/prof/prof10.jpg') }}"
                                         width="35" height="35" alt="...">
                                     <i class="offline dot"></i>
                                     <div class="media-body">

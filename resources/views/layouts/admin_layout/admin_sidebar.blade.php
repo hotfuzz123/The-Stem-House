@@ -11,26 +11,10 @@
                 <li class="sidebar-user-panel">
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="
-                                {{-- <?php
-                                // $image = Auth::user()->admin_image;
-                                // if($image){
-                                //     echo ('uploads/admin/'.$image);
-                                // }
-                                ?> --}}
-                                {{asset('backend/admin/img/dp.jpg') }}
-                            " class="img-circle user-img-circle" alt="Ảnh đại diện" />
+                            <img src="{{ asset('uploads/admin/'.Auth::guard('admin')->user()->image) }}" class="img-circle user-img-circle" alt="Ảnh đại diện" />
                         </div>
                         <div class="pull-left info">
-                            <p>
-                                <?php
-                                // $name = Auth::user()->admin_name;
-                                // if($name){
-                                //     echo $name;
-                                // }
-                                ?>
-                                Admin
-                            </p>
+                            <p>{{ Auth::guard('admin')->user()->name }}</p>
                             <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline">Online</span></a>
                         </div>
                     </div>
@@ -72,7 +56,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{URL::to('/all-auth') }}" class="nav-link nav-toggle"> <i class="material-icons">account_box</i>
+                    <a href="{{ URL::to('/all-auth') }}" class="nav-link nav-toggle"> <i class="material-icons">account_box</i>
                         <span class="title">Admin</span>
                     </a>
                 </li>
@@ -114,11 +98,11 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="{{URL::to('/admin/add-course') }}" class="nav-link "> <span class="title">Thêm khoá học</span>
+                            <a href="{{ URL::to('/admin/add-course') }}" class="nav-link "> <span class="title">Thêm khoá học</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{URL::to('/admin/all-course') }}" class="nav-link "> <span class="title">Danh sách khoá học</span>
+                            <a href="{{ URL::to('/admin/all-course') }}" class="nav-link "> <span class="title">Danh sách khoá học</span>
                             </a>
                         </li>
                     </ul>
@@ -129,15 +113,15 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="{{URL::to('/all-category-product') }}" class="nav-link "> <span class="title">Danh mục sản phẩm</span>
+                            <a href="{{ URL::to('/all-category-product') }}" class="nav-link "> <span class="title">Danh mục sản phẩm</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{URL::to('/all-teacher') }}" class="nav-link "> <span class="title">Danh mục tin tức</span>
+                            <a href="{{ URL::to('/all-teacher') }}" class="nav-link "> <span class="title">Danh mục tin tức</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{URL::to('/all-category-course') }}" class="nav-link "> <span class="title">Danh mục khóa học</span>
+                            <a href="{{ URL::to('/all-category-course') }}" class="nav-link "> <span class="title">Danh mục khóa học</span>
                             </a>
                         </li>
                     </ul>
@@ -148,22 +132,22 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item">
-                            <a href="{{URL::to('/admin/add-product') }}" class="nav-link "> <span class="title">Thêm sản phẩm</span>
+                            <a href="{{ URL::to('/admin/add-product') }}" class="nav-link "> <span class="title">Thêm sản phẩm</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{URL::to('/admin/all-product') }}" class="nav-link "> <span class="title">Danh sách sản phẩm</span>
+                            <a href="{{ URL::to('/admin/all-product') }}" class="nav-link "> <span class="title">Danh sách sản phẩm</span>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{URL::to('/all-coupon') }}" class="nav-link nav-toggle"> <i class="material-icons">redeem</i>
+                    <a href="{{ URL::to('/admin/all-coupon') }}" class="nav-link nav-toggle"> <i class="material-icons">redeem</i>
                         <span class="title">Coupon</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{URL::to('/all-slider') }}" class="nav-link nav-toggle"> <i class="material-icons">slideshow</i>
+                    <a href="{{ URL::to('/admin/all-slider') }}" class="nav-link nav-toggle"> <i class="material-icons">slideshow</i>
                         <span class="title">Slider</span>
                     </a>
                 </li>
@@ -174,13 +158,13 @@
                     </a>
                     <ul class="sub-menu">
                         <li class="nav-item  ">
-                            <a href="" class="nav-link "> <span class="title">Tài khoản</span></a>
+                            <a href="{{ URL::to('/admin/settings') }}" class="nav-link "> <span class="title">Tài khoản</span></a>
                         </li>
                         <li class="nav-item  ">
-                            <a href="" class="nav-link "> <span class="title">Đổi mật khẩu</span></a>
+                            <a href="{{ URL::to('/admin/password') }}" class="nav-link "> <span class="title">Đổi mật khẩu</span></a>
                         </li>
                         <li class="nav-item  ">
-                            <a href="" class="nav-link "> <span class="title">Đăng xuất</span></a>
+                            <a href="{{ URL::to('/admin/logout') }}" class="nav-link "> <span class="title">Đăng xuất</span></a>
                         </li>
                     </ul>
                 </li>

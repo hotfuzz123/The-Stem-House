@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Thêm danh mục khóa học</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Thêm danh mục khóa học</li>
         </ol>
     </div>
@@ -23,8 +14,8 @@
 <div class="col-md-12 col-sm-12 mx-auto">
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
-            <form action="{{URL::to('/save-category-course') }}" method="POST">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/save-category-course') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên danh mục</label>
                     <input type="text" name="category_course_name" class="form-control" onkeyup="ChangeToSlug();" id="slug"

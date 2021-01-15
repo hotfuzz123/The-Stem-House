@@ -4,18 +4,9 @@
         <div class="page-title-breadcrumb">
             <div class=" pull-left">
                 <div class="page-title">Danh sách slider</div>
-                <?php
-                $message = Session::get('message');
-                if($message){
-                    echo '<span class="text-alert">'.$message. '</span>';
-                    Session::put('message', null);
-                }
-                ?>
             </div>
             <ol class="breadcrumb page-breadcrumb pull-right">
-                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Trang chủ</a>&nbsp;<i
-                        class="fa fa-angle-right"></i>
-                </li>
+                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
                 <li class="active">Danh sách slider</li>
             </ol>
         </div>
@@ -31,12 +22,13 @@
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
                     </div>
                 </div>
+                @include('partials.messages')
                 <div class="card-body ">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-6">
                             <div class="btn-group">
                                 <button id="addRow1" class="btn btn-info">
-                                    <a style="color:white; font-weight:700;" href="{{URL::to('/add-slider') }}">Thêm slider <i class="fa fa-plus"></i></a>
+                                    <a style="color:white; font-weight:700;" href="{{ URL::to('/add-slider') }}">Thêm slider <i class="fa fa-plus"></i></a>
                                 </button>
                             </div>
                         </div>
@@ -114,11 +106,11 @@
                                                         <?php
                                                         if($pro->slider_status==1) {
                                                         ?>
-                                                        <a href="{{URL::to('/unactive-slider/' .$pro->slider_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
+                                                        <a href="{{ URL::to('/unactive-slider/' .$pro->slider_id)}}"><span class="label label-sm label-success"> Hiển thị </span></a>
                                                         <?php
                                                         }else {
                                                         ?>
-                                                        <a href="{{URL::to('/active-slider/' .$pro->slider_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
+                                                        <a href="{{ URL::to('/active-slider/' .$pro->slider_id)}}"><span class="label label-sm label-danger">Ẩn</span></a>
                                                         <?php
                                                         }
                                                         ?>
@@ -133,11 +125,11 @@
                                                         </button>
                                                         <ul class="dropdown-menu pull-left" role="menu">
                                                             <li>
-                                                                <a href="{{URL::to('/edit-slider/' .$pro->slider_id)}}">
+                                                                <a href="{{ URL::to('/edit-slider/' .$pro->slider_id)}}">
                                                                     <i class="far fa-edit"></i> Cập nhật </a>
                                                             </li>
                                                             <li>
-                                                                <a onclick="return confirm('Bạn có chắc muốn xóa slider này không?')" href="{{URL::to('/delete-slider/' .$pro->slider_id)}}">
+                                                                <a onclick="return confirm('Bạn có chắc muốn xóa slider này không?')" href="{{ URL::to('/delete-slider/' .$pro->slider_id)}}">
                                                                     <i class="far fa-trash-alt"></i> Xóa </a>
                                                             </li>
                                                         </ul>

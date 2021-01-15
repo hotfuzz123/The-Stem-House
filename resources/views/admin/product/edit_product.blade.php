@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật sản phẩm</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật sản phẩm</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_product as $key => $pro)
-            <form action="{{URL::to('/update-product/'.$pro->product_id) }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-product/'.$pro->product_id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên sản phẩm</label>
                     <input type="text" name="product_name" class="form-control" onkeyup="ChangeToSlug();" id="slug" value="{{ $pro ->product_name }}">
@@ -48,7 +39,7 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh bìa sản phẩm</label>
                     <input type="file" name="product_image" class="form-control" id="simpleFormEmail">
-                    <img src="{{URL::to('uploads/product/' .$pro->product_image)}}" height="100" width="100">
+                    <img src="{{ URL::to('uploads/product/' .$pro->product_image)}}" height="100" width="100">
                 </div>
                 <div class="form-group">
                     <label>Mô tả sản phẩm</label>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB, Session, Log, Auth;
 use App\Product;
@@ -22,7 +23,7 @@ class ProductController extends Controller
         ->join('tbl_category_product', 'tbl_category_product.category_id', '=', 'tbl_product.category_id')
         ->orderby('tbl_product.product_id', 'desc')->get();
         $manager_product = view('admin.product.all_product')->with('all_product', $all_product);
-        return view('admin_layout')->with('admin.product.all_product', $manager_product);
+        return view('layouts.admin_layout.admin_layout')->with('admin.product.all_product', $manager_product);
     }
 
     public function save_product(ProductRequest $request){
@@ -65,7 +66,7 @@ class ProductController extends Controller
         $edit_product = DB::table('tbl_product')->where('product_id', $product_id)->get();
         $manager_product = view('admin.product.edit_product')->with('edit_product', $edit_product)
         ->with('cate_product', $cate_product);
-        return view('admin_layout')->with('admin.product.edit_product', $manager_product);
+        return view('layouts.admin_layout.admin_layout')->with('admin.product.edit_product', $manager_product);
     }
 
     public function update_product(ProductRequest $request, $product_id) {

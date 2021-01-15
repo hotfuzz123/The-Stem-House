@@ -2,7 +2,7 @@
     <div class="page-header-inner ">
         <!-- logo start -->
         <div class="page-logo">
-            <a href="{{URL::to('/admin/dashboard') }}">
+            <a href="{{ URL::to('/admin/dashboard') }}">
                 <span class="logo-icon material-icons fa-rotate-45">school</span>
                 <span class="logo-default">Smart</span> </a>
         </div>
@@ -207,13 +207,8 @@
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                         data-close-others="true">
-                        <img alt="" class="img-circle " src="
-                        {{asset('backend/admin/img/dp.jpg') }}
-
-                        " />
-                        <span class="username username-hide-on-mobile">
-                            Admin
-                        </span>
+                        <img alt="" class="img-circle " src="{{ asset('uploads/admin/'.Auth::guard('admin')->user()->image) }}"/>
+                        <span class="username username-hide-on-mobile">{{ Auth::guard('admin')->user()->name }}</span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
@@ -238,7 +233,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{URL::to('/admin/logout') }}">
+                            <a href="{{ URL::to('/admin/logout') }}">
                                 <i class="icon-logout"></i> Đăng Xuất </a>
                         </li>
                     </ul>

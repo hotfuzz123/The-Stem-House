@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật slider</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật slider</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_slider as $key => $pro)
-            <form action="{{URL::to('/update-slider/'.$pro->slider_id) }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-slider/'.$pro->slider_id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên slider</label>
                     <input type="text" name="slider_name" class="form-control" value="{{ $pro ->slider_name }}">
@@ -33,7 +24,7 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh slider</label>
                     <input type="file" name="slider_image" class="form-control" id="simpleFormEmail">
-                    <img src="{{URL::to('uploads/slider/' .$pro->slider_image)}}" height="100" width="100">
+                    <img src="{{ URL::to('uploads/slider/' .$pro->slider_image)}}" height="100" width="100">
                 </div>
                 <div class="form-group">
                     <label>Mô tả slider</label>

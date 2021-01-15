@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật người dùng</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật người dùng</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_admin as $key => $auth)
-            <form action="{{URL::to('/update-auth/'.$auth->admin_id) }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-auth/'.$auth->admin_id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Nhập Họ & Tên</label>
                     <input type="text" name="admin_name" class="form-control" value="{{ $auth ->admin_name }}">
@@ -36,7 +27,7 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh đại diện</label>
                     <input type="file" name="admin_image" class="form-control" id="simpleFormEmail">
-                    <img src="{{URL::to('uploads/admin/' .$auth->admin_image)}}" height="100" width="100">
+                    <img src="{{ URL::to('uploads/admin/' .$auth->admin_image)}}" height="100" width="100">
                     @if ($errors->has('admin_image'))
                     <span class="text-danger">{{ $errors->first('admin_image') }}</span>
                     @endif

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB, Session, Log, Auth;
 use App\Coupon;
@@ -29,7 +30,7 @@ class CouponController extends Controller
         $coupon->coupon_expire_date = $data['coupon_expire_date'];
         $coupon->coupon_status = $data['coupon_status'];
         $coupon->save();
-        return Redirect::to('/all-coupon')->with('message', 'Thêm coupon thành công');
+        return Redirect::to('/admin/all-coupon')->with('success_message', 'Thêm coupon thành công');
     }
 
     public function unactive_coupon($coupon_id){

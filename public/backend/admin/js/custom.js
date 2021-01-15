@@ -39,5 +39,67 @@ function ChangeToSlug() {
     document.getElementById('convert_slug').value = slug;
 }
 
+$(document).ready(function () {
+    // Check Admin Password is correct or not
+    $("#current_pwd").keyup(function () {
+        var current_pwd = $("#current_pwd").val();
+        //alert(current_pwd);
+        $.ajax({
+            type: 'post',
+            url: '/admin/check-current-pwd',
+            data: {
+                current_pwd: current_pwd
+            },
+            success: function (resp) {
+                if (resp == "false") {
+                    $("#chkCurrentPwd").html("<font color=red>Mật khẩu hiện tại sai rồi!!!</font>");
+                } else if (resp == "true") {
+                    $("#chkCurrentPwd").html("<font color=green>Mật khẩu hiện tại đúng rồi</font>");
+                }
+            },
+            error: function () {
+                alert("Bị lỗi !!!");
+            }
+        });
+    });
+});
 
 
+// $(document).ready(function () {
+//     load_gallery();
+
+//     function load_gallery(){
+//         var pro_id = $('.pro_id').val();
+//         var _token = $('input[name="_token"]').val();
+//         //alert(pro_id);
+//         $.ajax({
+//             url : "{{url('/select-gallery')}}",
+//             method: "POST",
+//             data:{pro_id:pro_id,_token:_token},
+//             success:function(data){
+//                 $('#gallery_load').html(data);
+//             }
+//         });
+//     }
+
+//     $('#file').change(function(){
+//         var error = '';
+//         var files = $('#file')[0].files;
+
+//         if(files.length = 5){
+//             error += "<p>Bạn chỉ được chọn tối đa 5 ảnh</p>";
+//         }else if(files.length = ''){
+//             error += "<p>Bạn không được bỏ trống ảnh</p>";
+//         }else if(files.length > 2000000){
+//             error += "<p>File ảnh không được lớn hơn 2 MB</p>";
+//         }
+
+//         if(error == ''){
+
+//         }else {
+//             $('#file').val('');
+//             $('#error_gallery').html('<span class="text-danger">'+error+'</span>'); // Hiện tại ko in lỗi ra được
+//             return false;
+//         }
+//     });
+// });

@@ -5,18 +5,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Danh sách người dùng</div>
-            <?php
-                $message = Session::get('message');
-                if($message){
-                    echo '<span class="text-alert">'.$message. '</span>';
-                    Session::put('message', null);
-                }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li><a class="parent-item" href="#">Người dùng</a>&nbsp;<i class="fa fa-angle-right"></i>
             </li>
             <li class="active">Danh sách người dùng</li>
@@ -54,11 +45,12 @@
                                             href="javascript:;"></a>
                                     </div>
                                 </div>
+                                @include('partials.messages')
                                 <div class="card-body ">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-6">
                                             <div class="btn-group">
-                                                <a style="" href="{{URL::to('/add-auth') }}" id="addRow"
+                                                <a style="" href="{{ URL::to('/add-auth') }}" id="addRow"
                                                     class="btn btn-info">
                                                     Thêm người dùng <i class="fa fa-plus"></i>
                                                 </a>
@@ -124,11 +116,11 @@
                                                             </button>
                                                             <ul class="dropdown-menu pull-left" role="menu">
                                                                 <li>
-                                                                    <a href="{{URL::to('/edit-auth/' .$auth->admin_id)}}">
+                                                                    <a href="{{ URL::to('/edit-auth/' .$auth->admin_id)}}">
                                                                         <i class="far fa-edit"></i> Cập nhật </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a onclick="return confirm('Bạn có chắc muốn xóa người dùng này không?')" href="{{URL::to('/delete-auth/' .$auth->admin_id)}}">
+                                                                    <a onclick="return confirm('Bạn có chắc muốn xóa người dùng này không?')" href="{{ URL::to('/delete-auth/' .$auth->admin_id)}}">
                                                                         <i class="far fa-trash-alt"></i> Xóa </a>
                                                                 </li>
                                                             </ul>

@@ -12,30 +12,30 @@
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<!-- icons -->
-	<link href="{{asset('backend/admin/fonts/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/fonts/material-design-icons/material-icon.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/fonts/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/fonts/material-design-icons/material-icon.css') }}" rel="stylesheet" type="text/css" />
 	<!--bootstrap -->
-	<link href="{{asset('backend/admin/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/plugins/summernote/summernote.css') }}" rel="stylesheet">
+	<link href="{{ asset('backend/admin/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/plugins/summernote/summernote.css') }}" rel="stylesheet">
     <!-- data tables -->
-    <link href="{{asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome 5 -->
     <script src="https://kit.fontawesome.com/91f55319c9.js" crossorigin="anonymous"></script>
     <!-- Material Design Lite CSS -->
-	<link rel="stylesheet" href="{{asset('backend/admin/plugins/material/material.min.css') }}">
-	<link rel="stylesheet" href="{{asset('backend/admin/css/material_style.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/admin/plugins/material/material.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/admin/css/material_style.css') }}">
 	<!-- inbox style -->
-	<link href="{{asset('backend/admin/css/pages/inbox.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/css/pages/inbox.min.css') }}" rel="stylesheet" type="text/css" />
 	<!-- Theme Styles -->
-	<link href="{{asset('backend/admin/css/theme/light/theme_style.css') }}" rel="stylesheet" id="rt_style_components" type="text/css" />
-	<link href="{{asset('backend/admin/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/css/theme/light/style.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/css/responsive.css') }}" rel="stylesheet" type="text/css" />
-	<link href="{{asset('backend/admin/css/theme/light/theme-color.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('backend/admin/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('backend/admin/css/theme/light/theme_style.css') }}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{{ asset('backend/admin/css/plugins.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/css/theme/light/style.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('backend/admin/css/theme/light/theme-color.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/admin/plugins/sweet-alert/sweetalert2.min.css') }}" rel="stylesheet">
     <!-- favicon -->
-	<link rel="shortcut icon" href="{{asset('backend/admin/img/favicon.ico') }}" />
+	<link rel="shortcut icon" href="{{ asset('backend/admin/img/favicon.ico') }}" />
 </head>
 <!-- END HEAD -->
 
@@ -69,92 +69,50 @@
 		<!-- end footer -->
 	</div>
 	<!-- start js include path -->
-	<script src="{{asset('backend/admin/plugins/jquery/jquery.min.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/popper/popper.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/jquery-blockui/jquery.blockui.min.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
-    <script src="{{asset('backend/admin/plugins/jquery-validation/js/jquery.validate.min.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/jquery/jquery.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/popper/popper.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/jquery-blockui/jquery.blockui.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/jquery-validation/js/jquery.validate.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
     <!-- bootstrap -->
-	<script src="{{asset('backend/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
-	<script src="{{asset('backend/admin/plugins/sparkline/jquery.sparkline.js') }}"></script>
-	<script src="{{asset('backend/admin/js/pages/sparkline/sparkline-data.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/sparkline/jquery.sparkline.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/pages/sparkline/sparkline-data.js') }}"></script>
     <!-- data tables -->
-    <script src="{{asset('backend/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{asset('backend/admin/js/pages/table/table_data.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('backend/admin/js/pages/table/table_data.js') }}"></script>
     <!-- Common js-->
-	<script src="{{asset('backend/admin/js/app.js') }}"></script>
-	<script src="{{asset('backend/admin/js/layout.js') }}"></script>
-	<script src="{{asset('backend/admin/js/theme-color.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/app.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/layout.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/theme-color.js') }}"></script>
 	<!-- material -->
-    <script src="{{asset('backend/admin/plugins/material/material.min.js') }}"></script>
-    <script src="{{asset('backend/admin/plugins/flatpicker/js/flatpicker.min.js') }}"></script>
-	<script src="{{asset('backend/admin/js/pages/date-time/date-time.init.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/material/material.min.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/flatpicker/js/flatpicker.min.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/pages/date-time/date-time.init.js') }}"></script>
 	<!--apex chart-->
-	<script src="{{asset('backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{asset('backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('backend/admin/js/pages/chart/chartjs/home-data.js') }}"></script>
     <!-- Ckeditor 4 -->
     <script src="//cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
     <!-- Ckeditor 5 -->
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/decoupled-document/ckeditor.js"></script> --}}
-    {{-- <script src="{{asset('backend/admin/plugins/ckeditor5/build/ckeditor.js') }}"></script>
-    <script src="{{asset('backend/admin/plugins/ckeditor5/build/ckeditor.js.map') }}"></script>
-    <script src="{{asset('backend/admin/plugins/ckeditor5/src/ckeditor.js') }}"></script> --}}
+    {{-- <script src="{{ asset('backend/admin/plugins/ckeditor5/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/ckeditor5/build/ckeditor.js.map') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/ckeditor5/src/ckeditor.js') }}"></script> --}}
 
     <!-- Validator -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-    <script src="{{asset('backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
+    <script src="{{ asset('backend/admin/plugins/validator/jquery.form-validator.min.js') }}"></script>
     <!-- Custom js -->
-    <script src="{{asset('backend/admin/js/custom.js') }}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            load_gallery();
-
-            function load_gallery(){
-                var pro_id = $('.pro_id').val();
-                var _token = $('input[name="_token"]').val();
-                //alert(pro_id);
-                $.ajax({
-                    url : "{{url('/select-gallery')}}",
-                    method: "POST",
-                    data:{pro_id:pro_id,_token:_token},
-                    success:function(data){
-                        $('#gallery_load').html(data);
-                    }
-                });
-            }
-
-            $('#file').change(function(){
-                var error = '';
-                var files = $('#file')[0].files;
-
-                if(files.length = 5){
-                    error += "<p>Bạn chỉ được chọn tối đa 5 ảnh</p>";
-                }else if(files.length = ''){
-                    error += "<p>Bạn không được bỏ trống ảnh</p>";
-                }else if(files.length > 2000000){
-                    error += "<p>File ảnh không được lớn hơn 2 MB</p>";
-                }
-
-                if(error == ''){
-
-                }else {
-                    $('#file').val('');
-                    $('#error_gallery').html('<span class="text-danger">'+error+'</span>'); // Hiện tại ko in lỗi ra được
-                    return false;
-                }
-            });
-        });
-
-    </script>
-
+    <script src="{{ asset('backend/admin/js/custom.js')}}"></script>
 	<!-- summernote -->
-	<script src="{{asset('backend/admin/plugins/summernote/summernote.js') }}"></script>
-	<script src="{{asset('backend/admin/js/pages/summernote/summernote-data.js') }}"></script>
+	<script src="{{ asset('backend/admin/plugins/summernote/summernote.js') }}"></script>
+	<script src="{{ asset('backend/admin/js/pages/summernote/summernote-data.js') }}"></script>
 	<!-- end js include path -->
 </body>
 

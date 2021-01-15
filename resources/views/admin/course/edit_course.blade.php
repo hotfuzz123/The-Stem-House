@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật khóa học</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật khóa học</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_course as $key => $pro)
-            <form action="{{URL::to('/update-course/'.$pro->course_id) }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-course/'.$pro->course_id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên khóa học</label>
                     <input type="text" name="course_name" class="form-control" onkeyup="ChangeToSlug();" id="slug" value="{{ $pro ->course_name }}">
@@ -41,7 +32,7 @@
                 <div class="form-group">
                     <label for="simpleFormEmail">Ảnh bìa khóa học</label>
                     <input type="file" name="course_image" class="form-control" id="simpleFormEmail">
-                    <img src="{{URL::to('uploads/course/' .$pro->course_image)}}" height="100" width="100">
+                    <img src="{{ URL::to('uploads/course/' .$pro->course_image)}}" height="100" width="100">
                 </div>
                 <div class="form-group">
                     <label>Mô tả khóa học</label>

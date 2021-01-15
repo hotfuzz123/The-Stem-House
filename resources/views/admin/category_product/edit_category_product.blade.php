@@ -4,18 +4,9 @@
     <div class="page-title-breadcrumb">
         <div class=" pull-left">
             <div class="page-title">Cập nhật danh mục sản phẩm</div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span class="text-alert">'.$message. '</span>';
-                Session::put('message', null);
-            }
-            ?>
         </div>
         <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                    href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
-            </li>
+            <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{ URL::to('/admin/dashboard') }}">Trang chủ</a>&nbsp;<i class="fa fa-angle-right"></i></li>
             <li class="active">Cập nhật danh mục sản phẩm</li>
         </ol>
     </div>
@@ -24,8 +15,8 @@
     <div class="card card-box">
         <div class="card-body " id="bar-parent">
             @foreach ($edit_category_product as $key => $edit_value)
-            <form action="{{URL::to('/update-category-product/' .$edit_value->category_id) }}" method="POST">
-                {{ csrf_field() }}
+            <form action="{{ URL::to('/update-category-product/' .$edit_value->category_id) }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên danh mục</label>
                     <input type="text" value="{{ $edit_value ->category_name }}" name="category_product_name" class="form-control" onkeyup="ChangeToSlug();" id="slug">
@@ -46,7 +37,7 @@
             </form>
             @endforeach
 
-            {{-- <form action="{{URL::to('/update-category-product/ .$edit_category_product->category_id') }}" method="POST">
+            {{-- <form action="{{ URL::to('/update-category-product/ .$edit_category_product->category_id') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="simpleFormEmail">Tên danh mục</label>
