@@ -23,7 +23,18 @@ class ProductRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {   
+        // $rules = [
+        //     'name' => 'required',
+        //     'email' => 'required',
+        // ];
+    
+        // if ($this->getMethod() == 'POST') {
+        //     $rules += ['password' => 'required|min:6'];
+        // }
+    
+        // return $rules;
+
         return [
             'product_name' => 'required|',
             'product_slug' => 'required|',
@@ -38,6 +49,26 @@ class ProductRequest extends FormRequest
     }
 
     /**
+     * Get the error messages attributes for the defined validation rules.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'product_name' => 'Tên sản phẩm',
+            'brand_id' => 'Nhãn hiệu',
+            'category_id' => 'Danh mục',
+            'tax_id' => 'Thuế',
+            'description' => 'Giới thiệu',
+            'price' => 'Giá',
+            'quantity' => 'Số lượng hàng trong kho',
+            'featured_image' => 'Ảnh đại diện',
+            'images' => 'Album ảnh'
+        ];
+    }
+
+    /**
      * Get the error messages for the defined validation rules.
      *
      * @return array
@@ -45,18 +76,15 @@ class ProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'product_name.required' => 'Vui lòng nhập tên sản phẩm',
-            'product_slug.required' => 'Vui lòng nhập đường dẫn sản phẩm',
-            'product_price.required' => 'Vui lòng nhập giá sản phẩm',
-            'product_quantity.required' => 'Vui lòng nhập số lượng hàng có trong kho',
-            'product_desc.required' => 'Vui lòng nhập mô tả sản phẩm',
-            'product_desc.max' => 'Vui lòng nhập tối đa 255 kí tự',
-            'product_content.required' => 'Vui lòng nhập nội dung sản phẩm',
-            'product_content.max' => 'Vui lòng nhập tối đa 255 kí tự',
-            'product_cate.required' => 'Vui lòng chọn danh mục sản phẩm',
-            'product_image.required' => 'Vui lòng thêm ảnh sản phẩm',
-            'product_image.image' => 'Ảnh sản phẩm phải là hình',
-            'product_status.required' => 'Vui lòng chọn hiển thị sản phẩm',
+            'required' => ':attribute không được bỏ trống',
+            'string' => ':attribute phải là chuỗi',
+            'name.max' => 'Tên sản phẩm tối đa 255 ký tự',
+            'featured_image.max' => 'Ảnh dung lượng tối đa 10mb',
+            'price.min' => 'Giá sản phẩm không được âm',
+            'quantity.min' => 'Số lượng hàng trong kho không được âm',
+            'numeric' => ':attribute phải là số',
+            'mimes' => ':attribute chỉ chấp nhận file ảnh',
+            'exists' => ':attribute không tồn tại',
         ];
     }
 }

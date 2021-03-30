@@ -9,12 +9,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Admin extends Authenticatable
 {
     use Notifiable;
+    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
     public $timestamps = true;
 
     protected $guard = 'admin';
     protected $fillable = [
         'name',
         'email',
+        'description',
         'mobile',
         'type',
         'image',

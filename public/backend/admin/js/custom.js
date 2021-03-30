@@ -1,12 +1,3 @@
-// Editor for product
-CKEDITOR.replace('editor-product-1');
-CKEDITOR.replace('editor-product-2');
-
-// Editor for category
-CKEDITOR.replace('editor-category');
-
-
-
 // Đổi dữ liệu từ input qua slug tự động
 function ChangeToSlug() {
     var slug;
@@ -64,42 +55,3 @@ $(document).ready(function () {
     });
 });
 
-
-// $(document).ready(function () {
-//     load_gallery();
-
-//     function load_gallery(){
-//         var pro_id = $('.pro_id').val();
-//         var _token = $('input[name="_token"]').val();
-//         //alert(pro_id);
-//         $.ajax({
-//             url : "{{url('/select-gallery')}}",
-//             method: "POST",
-//             data:{pro_id:pro_id,_token:_token},
-//             success:function(data){
-//                 $('#gallery_load').html(data);
-//             }
-//         });
-//     }
-
-//     $('#file').change(function(){
-//         var error = '';
-//         var files = $('#file')[0].files;
-
-//         if(files.length = 5){
-//             error += "<p>Bạn chỉ được chọn tối đa 5 ảnh</p>";
-//         }else if(files.length = ''){
-//             error += "<p>Bạn không được bỏ trống ảnh</p>";
-//         }else if(files.length > 2000000){
-//             error += "<p>File ảnh không được lớn hơn 2 MB</p>";
-//         }
-
-//         if(error == ''){
-
-//         }else {
-//             $('#file').val('');
-//             $('#error_gallery').html('<span class="text-danger">'+error+'</span>'); // Hiện tại ko in lỗi ra được
-//             return false;
-//         }
-//     });
-// });

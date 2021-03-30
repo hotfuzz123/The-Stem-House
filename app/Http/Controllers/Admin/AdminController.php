@@ -7,22 +7,20 @@ use Illuminate\Http\Request;
 use DB, Session, Log, Auth, Hash, Image;
 use App\Admin;
 use App\Roles;
-use App\Product;
-use App\Course;
 use App\Http\Requests;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Support\Facades\Redirect;
-session_start();
+
 
 class AdminController extends Controller
 {
     public function dashboard(){
-        return view('admin.admin_dashboard');
+        return view('backend.admin_dashboard');
     }
 
     public function password(){
         $adminPassword = Admin::where('email', Auth::guard('admin')->user()->email)->first();
-        return view('admin.admin_password')->with(compact('adminPassword'));
+        return view('backend.admin_password')->with(compact('adminPassword'));
     }
 
     public function login(Request $request){
@@ -34,7 +32,7 @@ class AdminController extends Controller
                 return redirect('/admin')->with('error_message', 'Email hoặc mật khẩu sai !!!');
             }
         }
-        return view('admin.admin_login');
+        return view('backend.admin_login');
     }
 
     public function logout(){
@@ -56,12 +54,13 @@ class AdminController extends Controller
     public function updateCurrentPassword(Request $request){
         if($request -> isMethod('post')){
             $data = $request->all();
+            // Check if current password is correct
             if(Hash::check($data['current_pwd'], Auth::guard('admin')->user()->password)){
-                // Check new pwd and confirm pwd are same
+                // Check new password and confirm password are same
                 if ($data['new_pwd'] == $data['confirm_pwd']) {
                     Admin::where('id', Auth::guard('admin')->user()->id)->update(['password' => bcrypt($data['new_pwd'])]);
-                    Session::flash('success_message', 'Mật khẩu được cập nhật thành công!');
-                // Check new pwd and confirm pwd are not same
+                    Session::flash('success_message', 'Cập nhật mật khẩu thành công!');
+                // Check new password and confirm password are not same
                 } else {
                     Session::flash('error_message', 'Mật khẩu mới và xác nhận mật khẩu không giống nhau !!!');
                     return redirect()->back();
@@ -101,12 +100,13 @@ class AdminController extends Controller
             ->update([
                 'name' => $data['admin_name'],
                 'mobile' => $data['admin_mobile'],
+                'description' => $data['admin_description'],
                 'image' => $imageName
             ]);
             Session::flash('success_message', 'Cập nhật tài khoản Admin thành công !');
             return redirect()->back();
         }
-        return view('admin.admin_settings');
+        return view('backend.admin_settings');
     }
 
 

@@ -179,3 +179,17 @@ span.text-alert {
     font-size: 15px;
     text-transform: uppercase;
 }
+
+.sidebar-divider {
+    margin: 10px 0;
+}
+
+.sidebar-title {
+    padding: 5px 17px;
+}
+
+/* Editor */
+.ck-editor__editable_inline { 
+    min-height:200px; 
+    max-height:400px; 
+}
